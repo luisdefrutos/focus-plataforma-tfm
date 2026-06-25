@@ -1,0 +1,196 @@
+// ==============================================================================
+// PROJECT FOCUS - DBML COMPACTO (Solo PK, FK y campos clave)
+// ==============================================================================
+// Versión reducida para generar un diagrama que quepa en UNA sola página.
+// Solo muestra: PK, FKs y 1-2 campos identificativos por tabla.
+//
+// Instrucciones:
+//   1. Ir a https://dbdiagram.io → "Go to App"
+//   2. Pegar este contenido en el editor izquierdo
+//   3. Zoom out (Ctrl + rueda ratón) hasta que quepa todo
+//   4. Export → PNG o PDF
+//
+// NOTA: dbdiagram.io NO muestra nombres de FK en las líneas.
+//       Para ver nombres de FK usar: draw.io o Oracle SQL Developer Data Modeler.
+// ==============================================================================
+
+// ─── GOLDEN RECORD ───
+
+Table CORPORATE_HOLDINGS [headercolor: #2d6a4f] {
+  holding_id    int [pk, note: 'seq auto']
+  holding_name  varchar [unique]
+}
+
+Table BUSINESS_UNITS [headercolor: #2d6a4f] {
+  bu_id    int [pk, note: 'seq auto']
+  sap_code varchar [unique]
+  bu_name  varchar [unique]
+}
+
+Table PRODUCT_CATALOG [headercolor: #2d6a4f] {
+  catalog_id    int [pk, note: 'seq auto']
+  material_code varchar [unique]
+}
+
+Table CUSTOMER_MASTER [headercolor: #1b4332] {
+  customer_id int [pk, note: 'seq auto']
+  holding_id  int [note: 'FK opc.']
+  tax_id      varchar [unique, note: 'CIF/NIF']
+  legal_name  varchar
+}
+
+Table ADDRESSES [headercolor: #40916c] {
+  address_id  int [pk]
+  customer_id int [not null]
+}
+
+Table CONTACTS [headercolor: #40916c] {
+  contact_id  int [pk]
+  customer_id int [not null]
+  bu_id       int [not null, note: 'RGPD']
+}
+
+// ─── CLASIFICACIÓN SECTORIAL ───
+
+Table CNAE_CATALOG [headercolor: #7b2cbf] {
+  cnae_id   int [pk]
+  cnae_code varchar [unique]
+}
+
+Table CUSTOMER_CNAE [headercolor: #7b2cbf] {
+  customer_cnae_id int [pk]
+  customer_id      int [not null]
+  cnae_id          int [not null]
+  is_primary       char [note: 'Y/N']
+}
+
+// ─── INTELIGENCIA COMERCIAL ───
+
+Table BILLING_RECORDS [headercolor: #e76f51] {
+  billing_id     int [pk]
+  customer_id    int [not null]
+  bu_id          int [not null]
+  catalog_id     int [not null]
+  invoice_amount decimal
+  invoice_date   date
+}
+
+Table CROSS_SELL_OPPORTUNITIES [headercolor: #e76f51] {
+  opportunity_id int [pk]
+  customer_id    int [not null]
+  billing_id     int [note: 'FK opc.']
+  origin_bu_id   int [not null]
+  target_bu_id   int [not null]
+  catalog_id     int [not null]
+  status         varchar [note: 'CHECK: NEW\|ACCEPTED\|... → Logica→STATUS_CATALOG']
+}
+
+// ─── EXCLUSIONES ───
+
+Table CROSS_SELL_EXCLUSIONS [headercolor: #e63946] {
+  exclusion_id   int [pk]
+  customer_id    int [note: 'FK opc.']
+  cnae_id        int [note: 'FK opc.']
+  bu_id          int [note: 'FK opc.']
+  exclusion_type varchar [note: 'Logica→STATUS_CATALOG']
+}
+
+// ─── IAM ───
+
+Table APP_USERS [headercolor: #457b9d] {
+  user_id   int [pk]
+  username  varchar [unique]
+  user_type varchar [note: 'AD/LOCAL']
+  is_active char [note: 'Y/N']
+}
+
+Table APP_ROLES [headercolor: #457b9d] {
+  role_id   int [pk]
+  role_name varchar [unique]
+}
+
+Table APP_PERMISSIONS [headercolor: #457b9d] {
+  permission_id   int [pk]
+  permission_code varchar [unique]
+}
+
+Table APP_USER_ROLES [headercolor: #457b9d] {
+  user_id int [not null]
+  role_id int [not null]
+  bu_id   int [not null]
+}
+
+Table APP_ROLE_PERMISSIONS [headercolor: #457b9d] {
+  role_id       int [not null]
+  permission_id int [not null]
+}
+
+// ─── CAMPAÑAS ───
+
+Table COMMERCIAL_CAMPAIGNS [headercolor: #f4a261] {
+  campaign_id  int [pk]
+  origin_bu_id int [not null]
+  created_by   int [not null]
+  status       varchar [note: 'Logica→STATUS_CATALOG']
+}
+
+Table CAMPAIGN_TARGETS [headercolor: #f4a261] {
+  target_id      int [pk]
+  campaign_id    int [not null]
+  customer_id    int [not null]
+  opportunity_id int [note: 'FK opc.']
+  status         varchar [note: 'Logica→STATUS_CATALOG']
+}
+
+// ─── REFERENCIA ───
+
+Table STATUS_CATALOG [headercolor: #6c757d] {
+  status_id    int [pk]
+  entity_name  varchar [note: 'OPPORTUNITY|CAMPAIGN|TARGET|EXCLUSION']
+  status_code  varchar
+  status_name  varchar [note: 'UI label']
+  Note: 'Relacion LOGICA con tablas operativas (sin FK fisica)'
+}
+
+// ─── RELACIONES ───
+
+// Golden Record
+Ref: CUSTOMER_MASTER.holding_id > CORPORATE_HOLDINGS.holding_id
+Ref: ADDRESSES.customer_id > CUSTOMER_MASTER.customer_id
+Ref: CONTACTS.customer_id > CUSTOMER_MASTER.customer_id
+Ref: CONTACTS.bu_id > BUSINESS_UNITS.bu_id
+
+// Clasificación
+Ref: CUSTOMER_CNAE.customer_id > CUSTOMER_MASTER.customer_id
+Ref: CUSTOMER_CNAE.cnae_id > CNAE_CATALOG.cnae_id
+
+// Facturación
+Ref: BILLING_RECORDS.customer_id > CUSTOMER_MASTER.customer_id
+Ref: BILLING_RECORDS.bu_id > BUSINESS_UNITS.bu_id
+Ref: BILLING_RECORDS.catalog_id > PRODUCT_CATALOG.catalog_id
+
+// Oportunidades
+Ref: CROSS_SELL_OPPORTUNITIES.customer_id > CUSTOMER_MASTER.customer_id
+Ref: CROSS_SELL_OPPORTUNITIES.billing_id > BILLING_RECORDS.billing_id
+Ref: CROSS_SELL_OPPORTUNITIES.origin_bu_id > BUSINESS_UNITS.bu_id
+Ref: CROSS_SELL_OPPORTUNITIES.target_bu_id > BUSINESS_UNITS.bu_id
+Ref: CROSS_SELL_OPPORTUNITIES.catalog_id > PRODUCT_CATALOG.catalog_id
+
+// Exclusiones
+Ref: CROSS_SELL_EXCLUSIONS.customer_id > CUSTOMER_MASTER.customer_id
+Ref: CROSS_SELL_EXCLUSIONS.cnae_id > CNAE_CATALOG.cnae_id
+Ref: CROSS_SELL_EXCLUSIONS.bu_id > BUSINESS_UNITS.bu_id
+
+// IAM
+Ref: APP_USER_ROLES.user_id > APP_USERS.user_id
+Ref: APP_USER_ROLES.role_id > APP_ROLES.role_id
+Ref: APP_USER_ROLES.bu_id > BUSINESS_UNITS.bu_id
+Ref: APP_ROLE_PERMISSIONS.role_id > APP_ROLES.role_id
+Ref: APP_ROLE_PERMISSIONS.permission_id > APP_PERMISSIONS.permission_id
+
+// Campañas
+Ref: COMMERCIAL_CAMPAIGNS.origin_bu_id > BUSINESS_UNITS.bu_id
+Ref: COMMERCIAL_CAMPAIGNS.created_by > APP_USERS.user_id
+Ref: CAMPAIGN_TARGETS.campaign_id > COMMERCIAL_CAMPAIGNS.campaign_id
+Ref: CAMPAIGN_TARGETS.customer_id > CUSTOMER_MASTER.customer_id
+Ref: CAMPAIGN_TARGETS.opportunity_id > CROSS_SELL_OPPORTUNITIES.opportunity_id

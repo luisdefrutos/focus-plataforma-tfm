@@ -1,0 +1,175 @@
+# =========================================================================
+# Pipeline de CI / Test — Proyecto Focus
+# =========================================================================
+# Valida cada cambio (puede activarse como Build Validation para gating de PRs).
+# La app vive en app/ (Next.js 16). Pasos:
+#
+#   1. npm ci ................. instalación reproducible (lockfile)
+#   2. prisma generate ....... genera el cliente Prisma (necesario para tsc)
+#   3. prisma validate ....... valida el esquema
+#   4. tsc --noEmit .......... comprobación de tipos TypeScript    [BLOQUEANTE]
+#   5. npm run lint .......... ESLint                              [BLOQUEANTE]
+#   6. vitest run --coverage . tests unitarios + cobertura         [BLOQUEANTE]
+#      -> publica JUnit (pestaña Tests) y Cobertura (Code Coverage)
+#   7. npm audit ............. auditoría de vulnerabilidades        [INFORMATIVO]
+#      -> resumen en la página del run + artefacto `npm-audit` descargable
+#
+# Lint BLOQUEANTE: `main` está a 0 errores de ESLint. Quedan 25 warnings
+# preexistentes (no-unused-vars) que NO bloquean (ESLint sale 0 con warnings).
+# Para exigir también 0 warnings, añade `-- --max-warnings 0` al script de lint.
+#
+# Para convertirlo en la puerta de la revisión de código, añade este pipeline
+# como "Build validation" en la política de rama de `main`
+# (ver docs/wiki/CI-CD.md).
+# =========================================================================
+
+trigger:
+  branches:
+    include:
+      - main
+      # - develop      # (futuro) rama de desarrollo
+
+# NOTA: en Azure Repos la validación de Pull Requests se configura con
+# Branch Policies (Build validation), NO con la clave `pr:` (que aquí se
+# ignora). Por eso no se define un trigger `pr`.
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  workingDir: app
+  nodeVersion: 20.x
+  # Valores DUMMY: prisma generate/validate y tsc NO conectan a la base de
+  # datos. No son secretos; solo evitan que prisma.config.ts falle porque la
+  # variable de entorno no esté definida. (Las variables del pipeline se
+  # exponen como variables de entorno a los pasos `script`.)
+  DATABASE_URL: 'mysql://ci:ci@localhost:3306/ci'
+  SHADOW_DATABASE_URL: 'mysql://ci:ci@localhost:3306/ci_shadow'
+  NEXTAUTH_SECRET: 'ci-placeholder-not-a-secret'
+
+stages:
+  - stage: Validacion
+    displayName: 'Validación de código'
+    jobs:
+      - job: validate
+        displayName: 'Lint, tipos y esquema'
+        steps:
+          # UseNode@1 reemplaza a NodeTool@0 (deprecado). OJO: el input es `version`,
+          # no `versionSpec`.
+          - task: UseNode@1
+            displayName: 'Usar Node.js $(nodeVersion)'
+            inputs:
+              version: $(nodeVersion)
+
+          - task: Cache@2
+            displayName: 'Cache de npm'
+            inputs:
+              key: 'npm | "$(Agent.OS)" | $(workingDir)/package-lock.json'
+              restoreKeys: |
+                npm | "$(Agent.OS)"
+              path: $(Pipeline.Workspace)/.npm
+
+          # El feed privado @tuvsud (Azure Artifacts) se configura en app/.npmrc,
+          # que está GITIGNORED (no se versiona, para no arrastrar tokens). Por eso
+          # el pipeline genera un .npmrc SIN token (solo el mapeo de registro) y
+          # npmAuthenticate@0 le inyecta las credenciales con la identidad del
+          # pipeline. Requiere que "Focus Build Service (tuvsud01)" tenga rol
+          # Reader sobre el feed `design-system` (ver docs/wiki/CI-CD.md).
+          - script: |
+              cat > .npmrc <<'EOF'
+              registry=https://registry.npmjs.org/
+              always-auth=true
+              @tuvsud:registry=https://pkgs.dev.azure.com/tuvsud01/_packaging/design-system/npm/registry/
+              EOF
+            displayName: 'Generar .npmrc (registro @tuvsud, sin token)'
+            workingDirectory: $(workingDir)
+
+          - task: npmAuthenticate@0
+            displayName: 'Autenticar feed privado @tuvsud (Azure Artifacts)'
+            inputs:
+              workingFile: $(workingDir)/.npmrc
+
+          - script: npm ci --cache $(Pipeline.Workspace)/.npm
+            displayName: 'Instalar dependencias (npm ci)'
+            workingDirectory: $(workingDir)
+
+          - script: npx prisma generate
+            displayName: 'Generar cliente Prisma'
+            workingDirectory: $(workingDir)
+
+          - script: npx prisma validate
+            displayName: 'Validar esquema Prisma'
+            workingDirectory: $(workingDir)
+
+          - script: npx tsc --noEmit
+            displayName: 'Comprobación de tipos (tsc --noEmit)'
+            workingDirectory: $(workingDir)
+
+          - script: npm run lint
+            displayName: 'Lint (ESLint)'
+            workingDirectory: $(workingDir)
+
+          - script: npm run test:coverage
+            displayName: 'Tests unitarios + cobertura (Vitest)'
+            workingDirectory: $(workingDir)
+
+          # condition: succeededOrFailed() → publica resultados aunque algún test
+          # falle, para ver en la UI CUÁLES fallaron (el paso anterior ya pone el
+          # build en rojo si hay fallos).
+          - task: PublishTestResults@2
+            displayName: 'Publicar resultados de tests (JUnit)'
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: '$(workingDir)/test-results/junit.xml'
+              failTaskOnFailedTests: true
+
+          - task: PublishCodeCoverageResults@2
+            displayName: 'Publicar cobertura (Cobertura)'
+            condition: succeededOrFailed()
+            inputs:
+              summaryFileLocation: '$(workingDir)/coverage/cobertura-coverage.xml'
+              pathToSources: '$(workingDir)'
+
+          # ---- Seguridad: auditoría de dependencias (INFORMATIVA, no bloquea) ----
+          # `npm audit` sale != 0 si hay vulnerabilidades; `|| true` evita romper el
+          # build. Produce: log + resumen en la página del run + artefacto descargable.
+          # Para hacerlo BLOQUEANTE por severidad, añade un paso con
+          # `npm audit --audit-level=high` (sin `|| true`).
+          - script: |
+              npm audit || true
+              npm audit --json > audit.json || true
+            displayName: 'Auditoría de dependencias (npm audit)'
+            workingDirectory: $(workingDir)
+
+          - script: node scripts/npm-audit-summary.mjs $(workingDir)/audit.json $(workingDir)/audit-summary.md
+            displayName: 'Generar resumen de vulnerabilidades'
+            condition: succeededOrFailed()
+
+          - script: echo "##vso[task.uploadsummary]$(Build.SourcesDirectory)/$(workingDir)/audit-summary.md"
+            displayName: 'Publicar resumen de vulnerabilidades en el run'
+            condition: succeededOrFailed()
+
+          - task: PublishPipelineArtifact@1
+            displayName: 'Publicar informe de auditoría (artefacto npm-audit)'
+            condition: succeededOrFailed()
+            inputs:
+              targetPath: '$(workingDir)/audit.json'
+              artifact: 'npm-audit'
+
+# =========================================================================
+# FUTURO (no activo todavía): cuando existan ramas develop/producción y un
+# entorno de despliegue en Azure DevOps, se añadirá un stage de Deploy
+# condicionado a la rama de producción, p. ej.:
+#
+#   - stage: Deploy
+#     dependsOn: Validacion
+#     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+#     jobs:
+#       - deployment: deploy_prod
+#         environment: 'focus-produccion'   # Environments de Azure DevOps
+#         strategy:
+#           runOnce:
+#             deploy:
+#               steps: [ ... build + publish + release ... ]
+# =========================================================================

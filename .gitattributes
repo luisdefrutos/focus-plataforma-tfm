@@ -1,0 +1,38 @@
+# =============================================================================
+# .gitattributes — política de line endings para Focus
+# =============================================================================
+# Estrategia: LF en el repo (convención git/unix estándar), sin conversiones
+# automáticas en checkout. Los editores modernos (VSCode, JetBrains) entienden
+# LF en Windows sin problemas. Esto silencia los avisos "LF will be replaced
+# by CRLF".
+# =============================================================================
+
+# Por defecto: detectar texto y forzar LF
+* text=auto eol=lf
+
+# Excepciones: scripts batch/PowerShell de Windows necesitan CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+
+# Binarios — sin conversión nunca
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.pbix  binary
+*.xlsx  binary
+*.xls   binary
+*.docx  binary
+*.pptx  binary
+*.m4a   binary
+*.mp3   binary
+*.mp4   binary
+*.ai    binary
+*.eps   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary

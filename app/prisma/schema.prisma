@@ -1,0 +1,685 @@
+// ==============================================================================
+// Proyecto Focus — Esquema de base de datos (Prisma → MySQL)
+// ==============================================================================
+// Versión v1 — módulos: Estructura Organizativa + Golden Record + CNAE + Inteligencia Comercial
+// (incl. incompatibilidades legales de servicios) + Activos Inspeccionables + Catálogo de Estados + IAM (24 tablas).
+// Los módulos Campañas y Exclusiones siguen pospuestos, comentados al final como `// v2`.
+//
+// Convenciones (heredadas del modelo Oracle original):
+// - Todas las tablas operativas llevan tripleta de auditoría (createdAt, sourceSystem, etlRunId).
+// - Identidad dual: PK numérica autoincremental + externalGuid UUID para integración externa.
+// - Los nombres de modelo van en PascalCase (estilo Prisma) y mapean a tablas en MAYÚSCULAS_SNAKE_CASE
+//   (estilo Oracle/PostgreSQL) mediante @@map, para mantener compatibilidad con la documentación.
+// - Los estados se modelan como enum nativo MySQL (Prisma enum). STATUS_CATALOG sigue siendo
+//   tabla aparte para metadatos de UI (label legible, orden, traducciones) — relación lógica, sin FK física.
+// ==============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  // url se configura en prisma.config.ts (Prisma 7+)
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 0: ESTRUCTURA ORGANIZATIVA (nuevo en v1)
+// ─────────────────────────────────────────────
+
+/// Sociedades legales del grupo TÜV SÜD en España (códigos SAP: 0135, 0136, 0158, 0359, 0380, 0442).
+/// K999 (Konsolidierung V1-CON) se excluye por ser entidad contable de consolidación.
+model LegalEntity {
+  entityId     Int      @id @default(autoincrement()) @map("entity_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  sapCode      String   @unique @map("sap_code") @db.VarChar(10)
+  legalName    String   @map("legal_name") @db.VarChar(255)
+  countryCode  String   @default("ES") @map("country_code") @db.VarChar(2)
+  countryName  String?  @map("country_name") @db.VarChar(64)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem String   @map("source_system") @db.VarChar(64)
+  etlRunId     BigInt   @map("etl_run_id")
+
+  businessUnits BusinessUnit[]
+  contacts      Contact[]
+  inspections   Inspection[]
+
+  @@map("LEGAL_ENTITIES")
+}
+
+/// Divisiones funcionales del grupo (II, MO, NGB, BA, PS). Catálogo de 5 filas.
+model Division {
+  divisionId   Int      @id @default(autoincrement()) @map("division_id")
+  divisionCode String   @unique @map("division_code") @db.VarChar(8)
+  divisionName String   @map("division_name") @db.VarChar(128)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+
+  businessUnits BusinessUnit[]
+
+  @@map("DIVISIONS")
+}
+
+/// Business Unit operativa = instancia (entidad legal × tipo de BU funcional).
+/// Ej.: "II - Building Lifecycle Services" en 0135 es distinto registro que en 0158,
+/// porque pertenecen a empresas distintas con su propio P&L.
+/// Es la tabla más referenciada del modelo (RGPD, facturación, oportunidades, etc.).
+model BusinessUnit {
+  buId         Int      @id @default(autoincrement()) @map("bu_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  entityId     Int      @map("entity_id")
+  divisionId   Int      @map("division_id")
+  buCode       String   @map("bu_code") @db.VarChar(32)
+  buName       String   @map("bu_name") @db.VarChar(128)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem String   @map("source_system") @db.VarChar(64)
+  etlRunId     BigInt   @map("etl_run_id")
+
+  entity   LegalEntity @relation(fields: [entityId], references: [entityId])
+  division Division    @relation(fields: [divisionId], references: [divisionId])
+
+  contacts              Contact[]
+  billingRecords        BillingRecord[]
+  opportunitiesAsOrigin CrossSellOpportunity[] @relation("OpportunityOriginBU")
+  opportunitiesAsTarget CrossSellOpportunity[] @relation("OpportunityTargetBU")
+  userRoles             AppUserRole[]
+
+  @@unique([entityId, buCode], name: "uk_bu_entity_code")
+  @@index([divisionId])
+  @@map("BUSINESS_UNITS")
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 1: GOLDEN RECORD
+// ─────────────────────────────────────────────
+
+/// Agrupación corporativa superior (UTEs, Grandes Cuentas). Sin datos en v1 — pendiente fuente TÜV.
+model CorporateHolding {
+  holdingId    Int      @id @default(autoincrement()) @map("holding_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  holdingName  String   @unique @map("holding_name") @db.VarChar(255)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem String   @map("source_system") @db.VarChar(64)
+  etlRunId     BigInt   @map("etl_run_id")
+
+  customers CustomerMaster[]
+
+  @@map("CORPORATE_HOLDINGS")
+}
+
+/// Catálogo de servicios de TÜV SÜD. Fuente: data/raw/Table_MATERIALS.xlsx.
+model ProductCatalog {
+  catalogId     Int      @id @default(autoincrement()) @map("catalog_id")
+  externalGuid  String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  materialCode  String   @unique @map("material_code") @db.VarChar(64)
+  descriptionEn String   @map("description_en") @db.VarChar(500)
+  descriptionEs String?  @map("description_es") @db.VarChar(500)
+  category      String?  @db.VarChar(128)
+  serviceCode   String?  @map("service_code") @db.VarChar(32)
+  serviceName   String?  @map("service_name") @db.VarChar(255)
+  productCode   String?  @map("product_code") @db.VarChar(32)
+  productName   String?  @map("product_name") @db.VarChar(255)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem  String   @map("source_system") @db.VarChar(64)
+  etlRunId      BigInt   @map("etl_run_id")
+
+  billingRecords BillingRecord[]
+  opportunities  CrossSellOpportunity[]
+
+  @@map("PRODUCT_CATALOG")
+}
+
+/// Severidad de una incompatibilidad legal entre servicios (matriz de conflictos OC):
+/// TOTAL = no se puede prestar al mismo cliente (se excluye del buscador);
+/// PARCIAL = requiere vigilancia (se muestra con warning).
+enum IncompatibilitySeverity {
+  TOTAL
+  PARCIAL
+}
+
+/// Incompatibilidades legales entre servicios (Anexo 4 procedimiento GG6 — matriz de
+/// conflictos TSA×TSI de organismo de control). Un par por combinación de material codes;
+/// en consulta se trata como relación NO dirigida (A⊥B ⇒ B⊥A). Relación LÓGICA con
+/// PRODUCT_CATALOG por material_code (sin FK, igual que STATUS_CATALOG): un código sin
+/// catálogo simplemente no matchea facturación. Fuente: data/raw/Matriz de conflictos
+/// TSA-TSI OC.xlsx (hoja "Cruces"), cargada por el seed 18 (recarga completa).
+model ServiceIncompatibility {
+  incompatibilityId Int                      @id @default(autoincrement()) @map("incompatibility_id")
+  externalGuid      String                   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  /// Material del lado TSA (organismo de control) tal y como factura (product_catalog.material_code).
+  materialCodeA     String                   @map("material_code_a") @db.VarChar(64)
+  /// Material del lado TSI (consultoría/asistencia).
+  materialCodeB     String                   @map("material_code_b") @db.VarChar(64)
+  severity          IncompatibilitySeverity
+  /// Actividad(es) de la matriz que originan el par (trazabilidad al Anexo 4).
+  sourceNote        String?                  @map("source_note") @db.VarChar(500)
+  createdAt         DateTime                 @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem      String                   @map("source_system") @db.VarChar(64)
+  etlRunId          BigInt                   @map("etl_run_id")
+
+  @@unique([materialCodeA, materialCodeB])
+  @@index([materialCodeB])
+  @@map("SERVICE_INCOMPATIBILITIES")
+}
+
+/// Estado del cliente. Refleja el ciclo de vida administrativo de SAP.
+/// Sincronizado manualmente con STATUS_CATALOG (entityName='CUSTOMER').
+enum CustomerStatus {
+  ACTIVE
+  BLOCKED_DUP
+  BLOCKED_UNPAID
+  BLOCKED_OTHER
+}
+
+/// Golden Record — un registro único por código de cliente SAP.
+/// Fuente: data/raw/CUSTOMER_LIST/*.XLSX + data/raw/DATOS_FACTURACION/*.xlsx.
+/// Identidad fuerte: sapCustomerCode (único). taxId queda como atributo (puede faltar o
+/// repetirse entre registros legacy); cuando SAP exporta "Not assigned" se guarda como NULL.
+model CustomerMaster {
+  customerId          Int            @id @default(autoincrement()) @map("customer_id")
+  externalGuid        String         @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  holdingId           Int?           @map("holding_id")
+  orgId               Int?           @map("org_id")
+  taxId               String?        @map("tax_id") @db.VarChar(64)
+  legalName           String         @map("legal_name") @db.VarChar(255)
+  sapCustomerCode     String?        @unique @map("sap_customer_code") @db.VarChar(32)
+  industryCode        String?        @map("industry_code") @db.VarChar(16)
+  phone               String?        @db.VarChar(64)
+  status              CustomerStatus @default(ACTIVE)
+  blockReason         String?        @map("block_reason") @db.VarChar(500)
+  supersededBySapCode String?        @map("superseded_by_sap_code") @db.VarChar(32)
+  createdAt           DateTime       @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem        String         @map("source_system") @db.VarChar(64)
+  etlRunId            BigInt         @map("etl_run_id")
+
+  holding CorporateHolding? @relation(fields: [holdingId], references: [holdingId])
+  org     Organization?     @relation(fields: [orgId], references: [orgId])
+
+  addresses      Address[]
+  contacts       Contact[]
+  customerCnaes  CustomerCnae[]
+  billingRecords BillingRecord[]
+  opportunities  CrossSellOpportunity[]
+
+  @@index([taxId])
+  @@index([orgId])
+  @@index([status])
+  @@index([legalName])
+  @@map("CUSTOMER_MASTER")
+}
+
+/// Ubicaciones operativas del cliente (sedes, plantas, almacenes).
+model Address {
+  addressId    Int      @id @default(autoincrement()) @map("address_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  customerId   Int      @map("customer_id")
+  fullAddress  String   @map("full_address") @db.VarChar(500)
+  postalCode   String?  @map("postal_code") @db.VarChar(16)
+  city         String?  @db.VarChar(128)
+  province     String?  @db.VarChar(128)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem String   @map("source_system") @db.VarChar(64)
+  etlRunId     BigInt   @map("etl_run_id")
+
+  customer CustomerMaster @relation(fields: [customerId], references: [customerId])
+
+  @@index([customerId])
+  @@index([postalCode])
+  @@map("ADDRESSES")
+}
+
+/// Personas físicas de contacto bajo protección RGPD.
+/// La FK opcional `entityId` indica la empresa del grupo desde la que se gestiona el contacto (RGPD).
+/// `buId` se rellena cuando se conoce la BU específica; en cargas CRM masivas suele quedar null.
+/// Fuente: data/raw/CONTACTOS CRM/CONTACTOS_CRM.xlsx (filtrar por Email-Validacion='Válido').
+model Contact {
+  contactId       Int      @id @default(autoincrement()) @map("contact_id")
+  externalGuid    String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  customerId      Int      @map("customer_id")
+  buId            Int?     @map("bu_id")
+  entityId        Int?     @map("entity_id")
+  fullName        String   @map("full_name") @db.VarChar(255)
+  firstName       String?  @map("first_name") @db.VarChar(128)
+  lastName        String?  @map("last_name") @db.VarChar(128)
+  title           String?  @db.VarChar(16)
+  email           String?  @db.VarChar(255)
+  phone           String?  @db.VarChar(64)
+  mobile          String?  @db.VarChar(64)
+  contactPosition String?  @map("contact_position") @db.VarChar(255)
+  emailValidation String?  @map("email_validation") @db.VarChar(64)
+  postalCode      String?  @map("postal_code") @db.VarChar(16)
+  consentEmail    Boolean? @map("consent_email")
+  consentFax      Boolean? @map("consent_fax")
+  consentLetter   Boolean? @map("consent_letter")
+  consentPhone    Boolean? @map("consent_phone")
+  consentSms      Boolean? @map("consent_sms")
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem    String   @map("source_system") @db.VarChar(64)
+  etlRunId        BigInt   @map("etl_run_id")
+
+  customer CustomerMaster @relation(fields: [customerId], references: [customerId])
+  bu       BusinessUnit?  @relation(fields: [buId], references: [buId])
+  entity   LegalEntity?   @relation(fields: [entityId], references: [entityId])
+
+  @@unique([customerId, email], name: "uk_contact_customer_email")
+  @@index([customerId])
+  @@index([buId])
+  @@index([email])
+  @@map("CONTACTS")
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 2: CLASIFICACIÓN SECTORIAL (CNAE)
+// ─────────────────────────────────────────────
+
+/// Catálogo CNAE 2009 (INE). Precargado por el seed 08: 88 divisiones + '999' sin clasificar.
+/// CUSTOMER_CNAE sigue vacía — el mapeo cliente↔CNAE está pendiente.
+model CnaeCatalog {
+  cnaeId       Int      @id @default(autoincrement()) @map("cnae_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  cnaeCode     String   @unique @map("cnae_code") @db.VarChar(10)
+  cnaeName     String   @map("cnae_name") @db.VarChar(500)
+  cnaeLevel    String?  @map("cnae_level") @db.VarChar(32)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem String   @map("source_system") @db.VarChar(64)
+  etlRunId     BigInt   @map("etl_run_id")
+
+  customerCnaes CustomerCnae[]
+
+  @@map("CNAE_CATALOG")
+}
+
+/// Relación N:M cliente × CNAE. Un cliente puede tener un CNAE principal y varios secundarios.
+model CustomerCnae {
+  customerCnaeId Int      @id @default(autoincrement()) @map("customer_cnae_id")
+  externalGuid   String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  customerId     Int      @map("customer_id")
+  cnaeId         Int      @map("cnae_id")
+  isPrimary      Boolean  @default(false) @map("is_primary")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem   String   @map("source_system") @db.VarChar(64)
+  etlRunId       BigInt   @map("etl_run_id")
+
+  customer CustomerMaster @relation(fields: [customerId], references: [customerId])
+  cnae     CnaeCatalog    @relation(fields: [cnaeId], references: [cnaeId])
+
+  @@unique([customerId, cnaeId], name: "uk_customer_cnae")
+  @@map("CUSTOMER_CNAE")
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 3: INTELIGENCIA COMERCIAL
+// ─────────────────────────────────────────────
+
+/// Histórico de facturación. Base del Buscador 360, segmentación, top y whitespots
+/// (el motor automático de cross-sell quedó desactivado; el análisis es manual).
+/// Fuente: data/raw/DATOS_FACTURACION/ZKSD_SD14_YYYY.xlsx (2019-2026).
+model BillingRecord {
+  billingId          Int       @id @default(autoincrement()) @map("billing_id")
+  externalGuid       String    @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  customerId         Int       @map("customer_id")
+  buId               Int       @map("bu_id")
+  catalogId          Int       @map("catalog_id")
+  invoiceNumber      String?   @map("invoice_number") @db.VarChar(64)
+  salesOrderNumber   String?   @map("sales_order_number") @db.VarChar(32)
+  invoiceAmount      Decimal?  @map("invoice_amount") @db.Decimal(18, 2)
+  invoiceDate        DateTime? @map("invoice_date") @db.Date
+  invoiceDescription String?   @map("invoice_description") @db.VarChar(1000)
+  currencyCode       String?   @default("EUR") @map("currency_code") @db.VarChar(3)
+  expiryDate         DateTime? @map("expiry_date") @db.Date
+  serviceStartDate   DateTime? @map("service_start_date") @db.Date
+  serviceEndDate     DateTime? @map("service_end_date") @db.Date
+  profitCenterCode   String?   @map("profit_center_code") @db.VarChar(32)
+  createdAt          DateTime  @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem       String    @map("source_system") @db.VarChar(64)
+  etlRunId           BigInt    @map("etl_run_id")
+
+  customer CustomerMaster @relation(fields: [customerId], references: [customerId])
+  bu       BusinessUnit   @relation(fields: [buId], references: [buId])
+  catalog  ProductCatalog @relation(fields: [catalogId], references: [catalogId])
+
+  opportunities CrossSellOpportunity[]
+
+  @@index([catalogId])
+  @@index([invoiceDate])
+  @@index([invoiceNumber])
+  @@index([salesOrderNumber])
+  // (Eliminados 2026-06-15, migración 20260615000000_drop_redundant_billing_indexes)
+  //   · idx customer_id / bu_id: redundantes — son el prefijo izquierdo de
+  //     idx_br_cust_agg / idx_br_bu_agg (que además cubren sus FKs).
+  //   · idx expiry_date: la columna es 100% NULL (índice muerto).
+  // Índices de cobertura para la agregación por cliente del Buscador 360
+  // (SUM/COUNT/MAX por customer_id, con o sin filtro de BU). De ~34s a ~2s.
+  @@index([customerId, buId, invoiceDate, invoiceAmount], map: "idx_br_cust_agg")
+  @@index([buId, customerId, invoiceDate, invoiceAmount], map: "idx_br_bu_agg")
+  @@map("BILLING_RECORDS")
+}
+
+/// Estado de una oportunidad comercial. Sincronizado manualmente con STATUS_CATALOG (entityName='OPPORTUNITY').
+enum OpportunityStatus {
+  NEW
+  ACCEPTED
+  IN_PROGRESS
+  IN_CAMPAIGN
+  QUALIFIED
+  REJECTED
+  CLOSED_WON
+  CLOSED_LOST
+}
+
+/// Alerta de venta cruzada generada por el motor comercial.
+model CrossSellOpportunity {
+  opportunityId     Int               @id @default(autoincrement()) @map("opportunity_id")
+  externalGuid      String            @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  customerId        Int               @map("customer_id")
+  billingId         Int?              @map("billing_id")
+  originBuId        Int               @map("origin_bu_id")
+  targetBuId        Int               @map("target_bu_id")
+  catalogId         Int               @map("catalog_id")
+  opportunityReason String            @map("opportunity_reason") @db.VarChar(1000)
+  priorityScore     Decimal?          @map("priority_score") @db.Decimal(5, 2)
+  potentialAmount   Decimal?          @map("potential_amount") @db.Decimal(18, 2)
+  status            OpportunityStatus @default(NEW)
+  reviewedBy        String?           @map("reviewed_by") @db.VarChar(128)
+  reviewedAt        DateTime?         @map("reviewed_at") @db.Timestamp(6)
+  createdAt         DateTime          @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem      String            @map("source_system") @db.VarChar(64)
+  etlRunId          BigInt            @map("etl_run_id")
+
+  customer CustomerMaster @relation(fields: [customerId], references: [customerId])
+  billing  BillingRecord? @relation(fields: [billingId], references: [billingId])
+  originBu BusinessUnit   @relation("OpportunityOriginBU", fields: [originBuId], references: [buId])
+  targetBu BusinessUnit   @relation("OpportunityTargetBU", fields: [targetBuId], references: [buId])
+  catalog  ProductCatalog @relation(fields: [catalogId], references: [catalogId])
+
+  @@index([customerId])
+  @@index([status])
+  @@index([targetBuId])
+  @@map("CROSS_SELL_OPPORTUNITIES")
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 4: ACTIVOS INSPECCIONABLES (nuevo)
+// ─────────────────────────────────────────────
+// Casuística de inspecciones (arranca con ascensores). Diseño en 3 capas:
+//   · Organization → Golden Record real deduplicado por CIF (eleva a CustomerMaster, que es 1 registro SAP).
+//   · Asset        → activo inspeccionable GENÉRICO y opcional (ascensor, aparato a presión, AT/BT, máquina…).
+//   · Inspection   → acto reglamentario con caducidad, opcional (assetId nullable = inspección puntual).
+// Un servicio "tal cual" (formación, consultoría) NO crea Asset ni Inspection: vive sólo en BillingRecord.
+// Carga HÍBRIDA: las partes (titular/mantenedor) se guardan en crudo (*_tax_id, *_sap_code, *_name) y además
+// se enlazan por FK a Organization cuando el CIF resuelve. Las propias inspecciones siembran Organization.
+
+/// Golden Record real: una fila por CIF/NIF. Deduplica los N registros SAP (CustomerMaster) de una misma entidad.
+/// Ancla de los roles titular/mantenedor, que pueden no existir en SAP (p.ej. comunidades de propietarios).
+/// Se siembra desde los extractos de inspecciones (seed 10) y se completa de forma UNIVERSAL con el
+/// backfill por CIF de CUSTOMER_MASTER (seed 15). taxId normalizado sin prefijo ES (normCif).
+model Organization {
+  orgId        Int      @id @default(autoincrement()) @map("org_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  taxId        String   @unique @map("tax_id") @db.VarChar(64)
+  legalName    String   @map("legal_name") @db.VarChar(255)
+  orgType      String?  @map("org_type") @db.VarChar(32)
+  countryCode  String   @default("ES") @map("country_code") @db.VarChar(2)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem String   @map("source_system") @db.VarChar(64)
+  etlRunId     BigInt   @map("etl_run_id")
+
+  customers      CustomerMaster[]
+  ownedAssets    Asset[]               @relation("AssetOwner")
+  maintainedInsp Inspection[]          @relation("InspectionMaintainer")
+  orgContacts    OrganizationContact[]
+
+  @@index([legalName])
+  @@map("ORGANIZATIONS")
+}
+
+/// Catálogo de tipos de activo inspeccionable. TABLA (no enum) para añadir tipos sin migración de esquema.
+model AssetType {
+  assetTypeId              Int      @id @default(autoincrement()) @map("asset_type_id")
+  typeCode                 String   @unique @map("type_code") @db.VarChar(32)
+  typeName                 String   @map("type_name") @db.VarChar(128)
+  regCodeKind              String?  @map("reg_code_kind") @db.VarChar(32)
+  isRegulated              Boolean  @default(true) @map("is_regulated")
+  defaultPeriodicityMonths Int?     @map("default_periodicity_months")
+  createdAt                DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+
+  assets Asset[]
+
+  @@map("ASSET_TYPES")
+}
+
+/// Activo inspeccionable genérico. OPCIONAL en el flujo (sólo cuando hay algo físico que inspeccionar).
+/// regCode (RAE u otro) es OPCIONAL: una máquina puede no tener registro reglamentario.
+/// `attributes` (JSON) absorbe los campos propios de cada tipo; se promueven a columna al consolidarse.
+model Asset {
+  assetId      Int      @id @default(autoincrement()) @map("asset_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  assetTypeId  Int      @map("asset_type_id")
+  regCode      String?  @map("reg_code") @db.VarChar(64)
+  regCodeKind  String?  @map("reg_code_kind") @db.VarChar(32)
+  assetName    String?  @map("asset_name") @db.VarChar(255)
+  fullAddress  String?  @map("full_address") @db.VarChar(500)
+  postalCode   String?  @map("postal_code") @db.VarChar(16)
+  city         String?  @db.VarChar(128)
+  province     String?  @db.VarChar(128)
+  ownerOrgId   Int?     @map("owner_org_id")
+  ownerTaxId   String?  @map("owner_tax_id") @db.VarChar(64)
+  ownerSapCode String?  @map("owner_sap_code") @db.VarChar(32)
+  ownerName    String?  @map("owner_name") @db.VarChar(255)
+  attributes   Json?
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem String   @map("source_system") @db.VarChar(64)
+  etlRunId     BigInt   @map("etl_run_id")
+
+  assetType   AssetType     @relation(fields: [assetTypeId], references: [assetTypeId])
+  ownerOrg    Organization? @relation("AssetOwner", fields: [ownerOrgId], references: [orgId])
+  inspections Inspection[]
+
+  @@unique([regCodeKind, regCode, province], name: "uk_asset_regcode")
+  @@index([assetTypeId])
+  @@index([regCode])
+  @@index([ownerOrgId])
+  @@index([province])
+  @@map("ASSETS")
+}
+
+/// Acto de inspección con periodicidad/caducidad. assetId OPCIONAL (inspección puntual sin activo registrado).
+/// Enlace a facturación por número de documento (validado ~90%): orderNumber/subjectNumber ↔ BillingRecord.
+model Inspection {
+  inspectionId      Int       @id @default(autoincrement()) @map("inspection_id")
+  externalGuid      String    @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  assetId           Int?      @map("asset_id")
+  codIndustria      String    @unique @map("cod_industria") @db.VarChar(64)
+  inspectionType    String?   @map("inspection_type") @db.VarChar(32)
+  inspectionDate    DateTime? @map("inspection_date") @db.Date
+  nextDueDate       DateTime? @map("next_due_date") @db.Date
+  periodicityMonths Int?      @map("periodicity_months")
+  result            String?   @db.VarChar(32)
+  maintainerOrgId   Int?      @map("maintainer_org_id")
+  maintainerTaxId   String?   @map("maintainer_tax_id") @db.VarChar(64)
+  maintainerSapCode String?   @map("maintainer_sap_code") @db.VarChar(32)
+  maintainerName    String?   @map("maintainer_name") @db.VarChar(255)
+  offerNumber       String?   @map("offer_number") @db.VarChar(32)
+  subjectNumber     String?   @map("subject_number") @db.VarChar(32)
+  orderNumber       String?   @map("order_number") @db.VarChar(32)
+  legalEntityId     Int?      @map("legal_entity_id")
+  createdAt         DateTime  @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem      String    @map("source_system") @db.VarChar(64)
+  etlRunId          BigInt    @map("etl_run_id")
+
+  asset         Asset?        @relation(fields: [assetId], references: [assetId])
+  maintainerOrg Organization? @relation("InspectionMaintainer", fields: [maintainerOrgId], references: [orgId])
+  legalEntity   LegalEntity?  @relation(fields: [legalEntityId], references: [entityId])
+
+  @@index([assetId])
+  @@index([nextDueDate])
+  @@index([maintainerOrgId])
+  @@index([orderNumber])
+  @@index([subjectNumber])
+  @@index([offerNumber])
+  @@index([legalEntityId])
+  @@map("INSPECTIONS")
+}
+
+/// Personas de contacto de una organización (rol GESTOR/TITULAR), extraídas de los extractos de inspecciones.
+/// Tabla aparte de CONTACTS (que cuelga de CustomerMaster) para NO acoplar ni tocar el frontend; cuelga de ORGANIZATIONS.
+/// RGPD: se carga todo el dato y `emailValidation` clasifica (VALIDO/GRATUITO/SIN_EMAIL) para poder filtrar en consulta.
+model OrganizationContact {
+  orgContactId    Int      @id @default(autoincrement()) @map("org_contact_id")
+  externalGuid    String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  orgId           Int      @map("org_id")
+  role            String?  @db.VarChar(16)
+  fullName        String?  @map("full_name") @db.VarChar(255)
+  firstName       String?  @map("first_name") @db.VarChar(128)
+  lastName        String?  @map("last_name") @db.VarChar(128)
+  email           String?  @db.VarChar(255)
+  phone           String?  @db.VarChar(64)
+  mobile          String?  @db.VarChar(64)
+  fax             String?  @db.VarChar(64)
+  emailValidation String?  @map("email_validation") @db.VarChar(32)
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  sourceSystem    String   @map("source_system") @db.VarChar(64)
+  etlRunId        BigInt   @map("etl_run_id")
+
+  organization Organization @relation(fields: [orgId], references: [orgId])
+
+  @@unique([orgId, email], name: "uk_orgcontact_email")
+  @@index([orgId])
+  @@index([email])
+  @@map("ORGANIZATION_CONTACTS")
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO REFERENCIA: CATÁLOGO DE ESTADOS
+// ─────────────────────────────────────────────
+
+/// Metadatos de UI para los estados del sistema. RELACIÓN LÓGICA con tablas operativas (sin FK física).
+/// 23 registros precargados en el seed (4 CUSTOMER + 8 OPPORTUNITY + 4 CAMPAIGN + 4 TARGET + 3 EXCLUSION).
+/// Cuando se añade un nuevo valor de status hay que actualizar también el enum correspondiente.
+model StatusCatalog {
+  statusId     Int      @id @default(autoincrement()) @map("status_id")
+  entityName   String   @map("entity_name") @db.VarChar(32)
+  statusCode   String   @map("status_code") @db.VarChar(32)
+  statusName   String   @map("status_name") @db.VarChar(128)
+  description  String?  @db.VarChar(500)
+  displayOrder Int?     @map("display_order")
+  isActive     Boolean  @default(true) @map("is_active")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+
+  @@unique([entityName, statusCode], name: "uk_status_entity_code")
+  @@index([entityName, displayOrder])
+  @@map("STATUS_CATALOG")
+}
+
+// ==============================================================================
+// v2 — Módulos pospuestos (NO crear todavía):
+// ==============================================================================
+// - CrossSellExclusion         → exclusiones comerciales con vigencia temporal
+// - CommercialCampaign, CampaignTarget → gestión de campañas
+//
+// Cuando lleguen, su `status` / `exclusionType` también será un enum nativo,
+// y STATUS_CATALOG se ampliará con sus filas correspondientes.
+// ==============================================================================
+
+// ─────────────────────────────────────────────
+// MÓDULO IAM (CONTROL DE ACCESO)
+// ─────────────────────────────────────────────
+
+model AppUser {
+  userId       Int      @id @default(autoincrement()) @map("user_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  username     String   @unique @db.VarChar(128)
+  userType     String   @default("LOCAL") @map("user_type") @db.VarChar(16)
+  fullName     String   @map("full_name") @db.VarChar(255)
+  email        String?  @db.VarChar(255)
+  isActive     Boolean  @default(true) @map("is_active")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+
+  userRoles   AppUserRole[]
+  auditEvents AuditEvent[]
+
+  // Filtros granulares (JSON) para listas blancas de CCAA, Materiales, etc.
+  allowedFilters Json? @map("allowed_filters")
+
+  @@map("APP_USERS")
+}
+
+model AppRole {
+  roleId      Int     @id @default(autoincrement()) @map("role_id")
+  roleName    String  @unique @map("role_name") @db.VarChar(64)
+  description String? @db.VarChar(255)
+
+  userRoles       AppUserRole[]
+  rolePermissions AppRolePermission[]
+
+  @@map("APP_ROLES")
+}
+
+model AppPermission {
+  permissionId   Int     @id @default(autoincrement()) @map("permission_id")
+  permissionCode String  @unique @map("permission_code") @db.VarChar(64)
+  description    String? @db.VarChar(255)
+
+  rolePermissions AppRolePermission[]
+
+  @@map("APP_PERMISSIONS")
+}
+
+model AppUserRole {
+  userId Int @map("user_id")
+  roleId Int @map("role_id")
+  buId   Int @map("bu_id")
+
+  user AppUser      @relation(fields: [userId], references: [userId])
+  role AppRole      @relation(fields: [roleId], references: [roleId])
+  bu   BusinessUnit @relation(fields: [buId], references: [buId])
+
+  @@id([userId, roleId, buId])
+  @@map("APP_USER_ROLES")
+}
+
+model AppRolePermission {
+  roleId       Int @map("role_id")
+  permissionId Int @map("permission_id")
+
+  role       AppRole       @relation(fields: [roleId], references: [roleId])
+  permission AppPermission @relation(fields: [permissionId], references: [permissionId])
+
+  @@id([roleId, permissionId])
+  @@map("APP_ROLE_PERMISSIONS")
+}
+
+/// Registro de auditoría append-only: un evento por acción relevante de usuario
+/// (inicios/cierres de sesión, intentos fallidos, exportaciones CSV y acciones de
+/// administración de accesos). Solo lo consultan administradores (permiso IAM_MANAGE).
+/// Sigue el estilo de las tablas IAM (PK + externalGuid + createdAt) — NO lleva la
+/// tripleta ETL (sourceSystem/etlRunId) porque es dato generado por la app, no cargado
+/// por seeds. `userId` es nullable (un login fallido puede ser de un usuario inexistente);
+/// `username`/`userFullName` se guardan como snapshot para que el registro siga siendo
+/// legible aunque el AppUser se elimine. `eventType`/`category` son strings (catálogo en
+/// app/src/lib/audit-events.ts) para añadir tipos sin migración de esquema.
+model AuditEvent {
+  auditId      Int      @id @default(autoincrement()) @map("audit_id")
+  externalGuid String   @unique @default(uuid()) @map("external_guid") @db.VarChar(36)
+  userId       Int?     @map("user_id")
+  username     String   @db.VarChar(128)
+  userFullName String?  @map("user_full_name") @db.VarChar(255)
+  eventType    String   @map("event_type") @db.VarChar(64)
+  category     String   @db.VarChar(32)
+  outcome      String   @default("SUCCESS") @db.VarChar(16)
+  description  String   @db.VarChar(500)
+  targetType   String?  @map("target_type") @db.VarChar(32)
+  targetId     String?  @map("target_id") @db.VarChar(64)
+  metadata     Json?
+  ipAddress    String?  @map("ip_address") @db.VarChar(64)
+  userAgent    String?  @map("user_agent") @db.VarChar(512)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+
+  user AppUser? @relation(fields: [userId], references: [userId], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+  @@index([createdAt])
+  @@index([eventType])
+  @@index([category])
+  @@index([outcome])
+  @@map("AUDIT_EVENTS")
+}

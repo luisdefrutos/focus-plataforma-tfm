@@ -1,0 +1,34 @@
+@layer base {
+  :root {
+    --ts-semantic-color-background-base-default: var(--background);
+    --ts-semantic-color-background-base-hover: var(--accent);
+    --ts-semantic-color-background-danger-subtle-default: color-mix(in srgb, var(--destructive) 10%, transparent);
+    --ts-semantic-color-background-info-default: #e0f2fe;
+    --ts-semantic-color-background-neutral-subtle-default: var(--muted);
+    --ts-semantic-color-background-primary-dark-default: #001b3d;
+    --ts-semantic-color-background-primary-default: var(--primary);
+    --ts-semantic-color-background-primary-subtle-default: #e6eef6;
+    --ts-semantic-color-background-secondary-default: var(--secondary);
+    --ts-semantic-color-background-success-subtle-default: #dcfce7;
+    --ts-semantic-color-background-warning-subtle-default: #fef3c7;
+    --ts-semantic-color-border-base-default: var(--border);
+    --ts-semantic-color-border-base-subtle: var(--border);
+    --ts-semantic-color-border-primary-default: #005696;
+    --ts-semantic-color-icon-neutral-default: var(--muted-foreground);
+    --ts-semantic-color-icon-primary-default: #005696;
+    --ts-semantic-color-icon-secondary-default: var(--muted-foreground);
+    --ts-semantic-color-interactive-primary-default: #005696;
+    --ts-semantic-color-surface-base-default: var(--card);
+    --ts-semantic-color-surface-default: var(--card);
+    --ts-semantic-color-surface-subtle: var(--muted);
+    --ts-semantic-color-text-base-default: var(--foreground);
+    --ts-semantic-color-text-danger-default: var(--destructive);
+    --ts-semantic-color-text-link-default: #005696;
+    --ts-semantic-color-text-neutral-default: var(--muted-foreground);
+    --ts-semantic-color-text-primary-default: var(--foreground);
+    --ts-semantic-color-text-secondary-default: var(--muted-foreground);
+    --ts-semantic-color-text-success-default: #16a34a;
+    --ts-semantic-color-text-tertiary-default: var(--muted-foreground);
+    --ts-semantic-color-text-warning-default: #d97706;
+  }
+}

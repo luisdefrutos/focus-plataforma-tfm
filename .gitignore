@@ -1,0 +1,129 @@
+# ============================================================
+# Node / Next.js
+# ============================================================
+node_modules/
+.next/
+out/
+build/
+dist/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Scratch files (Local debug/temp scripts)
+scratch/
+
+*.log
+
+# Env vars (NEVER commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# ============================================================
+# Editors / OS
+# ============================================================
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Obsidian workspace (keep markdown notes, ignore workspace state)
+.obsidian/workspace*
+.obsidian/cache/
+
+# ============================================================
+# Datos crudos (NO se versionan: pesados y/o sensibles RGPD)
+# ============================================================
+# Power BI workbook (108 MB, supera el límite de GitHub/Azure DevOps)
+data/raw/*.pbix
+docs/**/*.pbix
+
+# Excels y datasets en bruto / limpios
+data/raw/**/*.xlsx
+data/raw/**/*.XLSX
+data/raw/**/*.xls
+data/raw/**/*.csv
+data/raw/backup/
+
+# DEROGACIÓN: estos catálogos pequeños SÍ se versionan
+!data/raw/Table_MATERIALS.xlsx
+!data/raw/Profit centers.xls
+
+# Multimedia ejecutivos pesados
+docs/executive/*.m4a
+docs/executive/*.mp4
+docs/executive/*.mov
+docs/executive/*.pdf
+
+# Exportaciones de datos sueltas en docs/executive (pueden contener PII de clientes /
+# RGPD: nombres, CIF, facturación). Se ignoran por defecto; para versionar un
+# entregable AGREGADO concreto, añadir su excepción explícita (!docs/executive/foo.xlsx).
+docs/executive/*.csv
+docs/executive/*.xlsx
+docs/executive/*.XLSX
+
+# Artefactos sueltos de la app: scripts de un solo uso y exports de prueba con
+# datos reales de clientes (nunca deben versionarse).
+app/update-ids.js
+test_export.csv
+**/test_export*.csv
+
+# Salidas de seed / dumps de DB
+data/seeds/output/
+*.sql.gz
+*.sql.bz2
+mysqldump-*.sql
+
+# ============================================================
+# Prisma
+# ============================================================
+# Conserva schema.prisma y migrations; ignora artefactos generados
+app/node_modules/.prisma/
+app/prisma/generated/
+
+# ============================================================
+# Tests
+# ============================================================
+coverage/
+*.lcov
+.nyc_output
+
+# ============================================================
+# Sistema operativo / temporales
+# ============================================================
+*.tmp
+*.temp
+~$*
+
+# ============================================================
+# Configuración personal del asistente (NO compartir entre devs)
+# ============================================================
+# Claude Code: ignorar todo lo que es per-sesión / per-dev,
+# manteniendo skills/ porque ESA SÍ es documentación compartida del equipo.
+.claude/*
+!.claude/skills/
+!.claude/skills/**
+
+# Claude Code MCP config: cada dev decide qué MCPs usar
+# (y los compañeros que usan Antigravity u otros asistentes no lo necesitan).
+.mcp.json
+
+# Ignorar helper MCP local de este desarrollador
+app/mcp-server.mjs
+docs/PROPUESTA_REDIS_FOCUS.md
+
+# Trabajo local de deduplicación (SQL + exports con datos de clientes)
+db/dedup/

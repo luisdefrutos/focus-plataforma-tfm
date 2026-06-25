@@ -1,0 +1,2562 @@
+MIME-Version: 1.0
+X-Document-Type: Worksheet
+Content-Type: multipart/related; boundary="NEXTMIME"
+
+
+--NEXTMIME
+Content-Location: file:///C:/abc/Doc.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=3D"Excel Workbook Frameset">
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3DUTF-8">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 11">
+<style> br{mso-data-placement:same-cell;}
+.x1			{background:#ffffff;padding-left:3.0pt;padding-right:3.0pt;padding-top:3.0pt;padding-bottom:3.0pt;mso-char-indent-count:0; color:#000000; font-size:8.0pt; font-family:Arial;}
+.x4			{text-align:right;vertical-align:middle;background:#ffffff;border-bottom:1.0pt solid #aeaeae;border-top:1.0pt solid #aeaeae;border-left:1.0pt solid #aeaeae;border-right:1.0pt solid #aeaeae;padding-left:3.0pt;padding-right:3.0pt;padding-top:3.0pt;padding-bottom:3.0pt;mso-char-indent-count:0; color:#000000; font-size:8.0pt; font-family:Arial;}
+.x3			{text-align:right;vertical-align:middle;background:#c6c4c4;border-bottom:1.0pt solid #aeaeae;border-top:1.0pt solid #aeaeae;border-left:1.0pt solid #aeaeae;border-right:1.0pt solid #aeaeae;padding-left:3.0pt;padding-right:3.0pt;padding-top:3.0pt;padding-bottom:3.0pt;mso-char-indent-count:0; color:#000000; font-size:8.0pt; font-family:Arial;}
+.x2			{text-align:left;vertical-align:middle;background:#c6c4c4;border-bottom:1.0pt solid #aeaeae;border-top:1.0pt solid #aeaeae;border-left:1.0pt solid #aeaeae;border-right:1.0pt solid #aeaeae;padding-left:3.0pt;padding-right:3.0pt;padding-top:3.0pt;padding-bottom:3.0pt;mso-char-indent-count:0; color:#000000; font-size:8.0pt; font-family:Arial;}
+.x5			{text-align:right;vertical-align:middle;background:#e9eef4;border-bottom:1.0pt solid #aeaeae;border-top:1.0pt solid #aeaeae;border-left:1.0pt solid #aeaeae;border-right:1.0pt solid #aeaeae;padding-left:3.0pt;padding-right:3.0pt;padding-top:3.0pt;padding-bottom:3.0pt;mso-char-indent-count:0; color:#000000; font-size:8.0pt; font-family:Arial;}
+.x0			{background:#ffffff;padding-left:3.0pt;padding-right:3.0pt;padding-top:3.0pt;padding-bottom:3.0pt;mso-char-indent-count:0; color:#000000; font-size:12.0pt; font-family:Arial; font-weight:700;}
+</style>
+</head>
+<body>
+<xml>
+<o:OfficeDocumentSettings>
+<o:Colors>
+<o:Color>
+<o:Index>2</o:Index>
+<o:RGB>#e9eef4</o:RGB>
+</o:Color>
+<o:Color>
+<o:Index>3</o:Index>
+<o:RGB>#ffffff</o:RGB>
+</o:Color>
+<o:Color>
+<o:Index>4</o:Index>
+<o:RGB>#c6c4c4</o:RGB>
+</o:Color>
+<o:Color>
+<o:Index>5</o:Index>
+<o:RGB>#000000</o:RGB>
+</o:Color>
+</o:Colors>
+</o:OfficeDocumentSettings>
+</xml>
+<table>
+<tr>
+<td class=3Dx0 style=3D" mso-number-format:'\@';">PC01&#32;Overview&#32;Profitcenter</td>
+</tr>
+</table>
+<table><tr><td>&#160;</td></tr></table><table>
+<tr>
+<td class=3Dx1 style=3D" mso-number-format:''">Profit&#32;Center&#32;Hierarchy</td>
+<td class=3Dx1 style=3D" mso-number-format:'\@'">TÜV&#32;SÜD&#32;Group&#32;Management&#32;View</td>
+</tr>
+</table>
+<table><tr><td>&#160;</td></tr></table><table>
+<tr>
+<td class=3Dx0 colspan=3D2 style=3D" mso-number-format:''">Dynamic&#32;Filters</td>
+</tr>
+<tr>
+<td class=3Dx1 style=3D" mso-number-format:''">Profit&#32;Center</td>
+<td class=3Dx1 style=3D" mso-number-format:'\@'">0001ES&#32;Espania</td>
+</tr>
+</table>
+<table><tr><td>&#160;</td></tr></table><table>
+<tr>
+<td class=3Dx2 colspan=3D2 style=3D" mso-number-format:'\@'">Company&#32;code</td>
+<td class=3Dx2 colspan=3D2 style=3D" mso-number-format:'\@'">Country</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@'">Division</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@'">Business&#32;Line</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@'">Business&#32;Unit</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@'">Profit&#32;Center</td>
+<td class=3Dx3 style=3D" mso-number-format:'\@'"></td>
+<td class=3Dx2 style=3D" mso-number-format:'\@'">Number&#32;of&#32;Records</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Madrid</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13502161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Galicia</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13503161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Pais&#32;Vasco,&#32;Navarra,</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13507161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Castilla&#32;y&#32;León&#32;&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Cataluña&#32;&#32;(ZE)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13510161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Valenciana</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BEM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13516161</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;BEM&#32;Andalucía</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Madrid&#32;&#32;(ZC)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13502160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Asturias&#32;-Oviedo&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13503160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Cantabria-&#32;Santander&#32;&#32;(ZN)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13507160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Castilla&#32;y&#32;León&#32;&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Cataluña&#32;&#32;(ZE)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13510160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Valencia&#32;+Baleares&#32;(ZE)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;BMT</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13516160</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;BTI&#32;Extremadura&#32;-Mérida&#32;(ZS)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;CPI&#32;CPI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Chemical&#32;&amp;&#32;Process&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500150</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;COG</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;ENS&#32;ENS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Energy&#32;&amp;&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13517170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;PWS&#32;Metrology</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Madrid</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13502170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Galicia</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13503170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Pais&#32;Vasco,&#32;Navarra</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13507170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Castilla&#32;y&#32;León&#32;&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Cataluña&#32;&#32;(ZE)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13510170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Valencia</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13516170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;GES&#32;Andalucía</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;LTI&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;Madrid&#32;&#32;(ZC)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13502120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;Asturias&#32;-Oviedo&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13503120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;Cantabria-&#32;Santander&#32;&#32;(ZN)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13507120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;Castilla&#32;y&#32;León&#32;&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;Cataluña&#32;&#32;(ZE)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13510120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;Valencia&#32;+Baleares&#32;(ZE)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;TIC</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13516120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;LCC&#32;Extremadura&#32;-Mérida&#32;(ZS)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500199</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;ENAC</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500960</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;Location&#32;Miscellaneous&#32;Industry</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;Madrid,&#32;La&#32;Mancha,&#32;Canarias</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501101</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501102</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;Management</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501103</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;RI&#32;Restructuring</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501104</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IS&#32;Restructuring</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13502100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;Galicia,&#32;Asturias</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13503100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;Pais&#32;Vasco,&#32;Navarra,&#32;La&#32;Rioja,&#32;C</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13507100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;Cataluña,&#32;Aragón</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13510100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;C.&#32;Valenciana,&#32;Murcia,&#32;I.&#32;Balear</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13516100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;IND&#32;C.&#32;Andalucía,&#32;Extremadura</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Madrid&#32;&#32;(ZC)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13502110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Asturias&#32;-Oviedo&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13503110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Cantabria-&#32;Santander&#32;&#32;(ZN)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13507110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Castilla&#32;y&#32;León&#32;&#32;(ZN)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Cataluña&#32;&#32;(ZE)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13510110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Valencia&#32;+Baleares&#32;(ZE)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13516110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Extremadura&#32;-Mérida&#32;(ZS)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13517110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IS&#32;STP&#32;Andalucia&#32;&#32;(ZS)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;RLS&#32;RST</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Rail&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501660</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;RI&#32;RLS&#32;RST</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500640</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;MO&#32;MOI&#32;Mangement&#32;(inactive)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500810</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;MO&#32;MOI&#32;Management</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500811</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;MOI&#32;Remarketing</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500812</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;MO&#32;MOI&#32;Consulting</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500813</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;MO&#32;MOI&#32;Training</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500814</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;MO&#32;MOI&#32;Customer&#32;Care</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500815</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;MO&#32;MOI&#32;Multibrand&#32;training</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;Management</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Madrid&#32;Region</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13503430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;La&#32;Rioja&#32;Region</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13507430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Castilla&#32;y&#32;León&#32;Region</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Catalonian&#32;Region</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13511430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Castilla&#32;la&#32;Mancha&#32;Region</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13532430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;PUERTOLLANO</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13535430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;TRES&#32;CANTOS</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13536430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;LOZOYUELA</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13537430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;YÉBENES</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13538430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;PCUELLAR</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13540430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;ALCAZAR</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13554430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;EL&#32;ESPINAR</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13557430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;ALBACETE</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13558430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;LOGROÑO</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13559430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;VALVERDE&#32;MANJANO</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13563430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;SANT&#32;CELONI</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13564430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;BORGES&#32;BLANQUES</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13565430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;AMPOSTA</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13566430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;ALCOBENDAS</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13567430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;VILLALBA</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13568430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;NAJERA</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13569430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;AS&#32;PTI&#32;COSLADA</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13570430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Las&#32;Rozas</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13571430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Illescas</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13572430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Toledo</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13573430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Fuenlabrada</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13574430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Cuatro&#32;Vientos</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13575430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Arroyomolinos</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13576430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Navahermosa</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13577430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Madrid&#32;Renting&#32;Customers</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13578430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Alcala&#32;Henares</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13579430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;AS&#32;PTI&#32;Arroyosur&#32;(Leganes)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13581430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13581430</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13500900</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Region&#32;Spanien</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501891</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;ZONE&#32;CENTRAL&#32;OVERHEAD</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501900</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Management</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501905</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Legal/Compliance/Insurance</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501910</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Accounting</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501911</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501911</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501912</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501912</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501913</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501913</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501914</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Finance/Accounting</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501916</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;Topex&#32;/&#32;Location</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501920</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;HR/&#32;Training</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501921</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;Payroll</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501930</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IT&#32;(Standard)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501931</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;IT&#32;(Projects)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501940</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Sales&#32;&amp;&#32;Marketing</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501950</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Internal&#32;Quality</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501970</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Procurement&#32;&amp;&#32;Facilities</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501975</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI&#32;Research&#32;&amp;&#32;Development</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501985</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;H&amp;S&#32;(Risk&#32;Prevention)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501990</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;General</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501991</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;Neutral</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501999</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13501999</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13504891</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;ZONE&#32;NORTH&#32;OVERHEAD</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13509891</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;ZONE&#32;EAST&#32;OVERHEAD</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13517891</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;ZONE&#32;SOUTH&#32;OVERHEAD</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0135</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;ATISAE&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13599900</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">dummy&#32;(receivables)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0136</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;AMT,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;ACA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Academy</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13601750</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13601750</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0136</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;AMT,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13601500</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AMT&#32;BA&#32;MSC</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0136</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;AMT,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;ENS&#32;ENS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Energy&#32;&amp;&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13601170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AMT&#32;IS&#32;PWS&#32;LAB&#32;Madrid</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0136</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;AMT,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;ENS&#32;ENS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Energy&#32;&amp;&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13609170</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AMT&#32;IS&#32;PWS&#32;Certification&#32;Barcelona</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0136</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;AMT,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13601990</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AMT&#32;General</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0136</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;AMT,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/13601991</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AMT&#32;Neutral</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;ACA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Academy</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801750</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Academy</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801500</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MS-Madrid</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801510</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;Quality</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15802500</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MS-Valencia</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15802510</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;MS&#32;Valencia</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803500</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MS-Barcelona</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803510</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;MS&#32;Barcelona</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;SSB</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801165</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;RI&#32;BAS&#32;BEC</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;SSB</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801166</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;RI&#32;BLS&#32;Consultoría&#32;Eléctrica</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;CPI&#32;CPI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Chemical&#32;&amp;&#32;Process&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15800150</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;CPI&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;CPI&#32;CPI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Chemical&#32;&amp;&#32;Process&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801150</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;CPI&#32;BLLP&#32;(Loss&#32;Prev.)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;CPI&#32;CPI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Chemical&#32;&amp;&#32;Process&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801151</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;CPI&#32;BLRE&#32;(Reach)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;CPI&#32;CPI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Chemical&#32;&amp;&#32;Process&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801152</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;CPI&#32;BLCA&#32;(CAE)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;CPI&#32;CPI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Chemical&#32;&amp;&#32;Process&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801153</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;CPI&#32;BLFE&#32;(Fire&#32;Expert)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;ENS&#32;ENS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Energy&#32;&amp;&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801172</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;PWS&#32;Energy&#32;Training</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;ENS&#32;ENS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Energy&#32;&amp;&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801173</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;PWS&#32;NDT</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15800173</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES&#32;Management&#32;Geotecnia</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801171</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;PWS&#32;Energy</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801174</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES&#32;SyBG</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801175</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES&#32;Renewables</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15802173</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803173</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES&#32;Laboratory&#32;&amp;&#32;Geotechnics&#32;stud</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15804173</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES&#32;Contaminated&#32;soils</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15805173</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES&#32;Remediatio</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;GES&#32;GES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Green&#32;Energy&#32;&amp;&#32;Sustainability</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15806173</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;GES&#32;Cataluña</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801120</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;RI&#32;LCC</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;LCC&#32;CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Lifts,&#32;Cranes&#32;&amp;&#32;Conveyors</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801121</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;RI&#32;LCC&#32;Lift&#32;Equipment</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801100</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801101</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;Project&#32;ATISAE</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801102</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;RI&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801155</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;STP&#32;Machine&#32;Safety</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801156</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;STP&#32;CTVA</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803155</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IS&#32;Smart&#32;Inspection</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;RLS&#32;RST</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Rail&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801660</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;RI&#32;RLS</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;FLE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15834821</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AS&#32;Fleet</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;FLE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15849821</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AS&#32;Fleet&#32;International</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801800</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AS&#32;Management</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;REM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803800</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AS&#32;Barcelona</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;REM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15804810</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;AS&#32;CGP&#32;Cordoba</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801900</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;Management</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801910</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;SSO</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801920</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;People</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801930</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IT&#32;(Standard)</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801931</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;IT&#32;(Projects)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801940</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;Sales</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801941</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;Marketing</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801990</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;General</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801991</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;Neutral</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803890</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;Location&#32;Barcelona</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15899900</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">dummy&#32;(receivables)</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;CPS&#32;ENE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;-&#32;Consumer&#32;Products</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15801200</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS-Madrid</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;CPS&#32;ENE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;-&#32;Consumer&#32;Products</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803210</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;PS&#32;CAC&#32;Barcelona</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;CPS&#32;SFL</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;-&#32;Consumer&#32;Products</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803240</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;PS&#32;TXT&#32;Barcelona</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;CPS&#32;SFL</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;-&#32;Consumer&#32;Products</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15897240</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TUVIB-DIV-Retail</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;CPS&#32;SFL</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;-&#32;Consumer&#32;Products</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15897246</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TUVIB-DIV-Softlines</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0158</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">TÜV&#32;SÜD&#32;Iberia,&#32;S.A.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;MHS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">PS&#32;-&#32;Medical&#32;&amp;&#32;Health&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/15803400</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES&#32;PS&#32;MHS&#32;Barcelona</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0359</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Swissi&#32;España,&#32;S.L.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;CPI&#32;CPI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Chemical&#32;&amp;&#32;Process&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/35901150</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">IB&#32;IS&#32;COG&#32;Swissi</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0359</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Swissi&#32;España,&#32;S.L.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/35901990</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">IB&#32;Swissi&#32;general</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0359</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Swissi&#32;España,&#32;S.L.U.</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;NON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/35901991</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">IB&#32;Swissi&#32;general</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38000430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI-CAL&#32;AS&#32;PTI</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38001430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38001430</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38001890</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38001890</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38001990</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI-CAL&#32;General</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38002430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38002430</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38003430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38003430</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;RET&#32;REI</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Retail</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38004430</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38004430</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0380</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATISAE&#32;de&#32;Castilla&#32;y&#32;León</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NON&#32;-&#32;Rest</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Not&#32;assigned</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">NGB&#32;-&#32;Others</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/38001991</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ATI-CAL&#32;Neutral</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0442</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Ctva&#32;Ingenieria&#32;De&#32;Seguri</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/44201110</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/44201110</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0442</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Ctva&#32;Ingenieria&#32;De&#32;Seguri</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/44201990</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/44201990</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0442</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Ctva&#32;Ingenieria&#32;De&#32;Seguri</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">ES</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Spain</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;PLS&#32;PLS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Plant&#32;Safety</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/44201991</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/44201991</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">K999</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Konsolidierung&#32;V1-CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">DE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Germany</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99998269</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MSC&#32;Iberia</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">K999</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Konsolidierung&#32;V1-CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">DE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Germany</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;MSC&#32;Certification</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">BA&#32;-&#32;Mgmt.&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99998279</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99998279</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">K999</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Konsolidierung&#32;V1-CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">DE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Germany</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;BLS&#32;SSB</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Building&#32;Lifecycle&#32;Services</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99902203</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99902203</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">K999</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Konsolidierung&#32;V1-CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">DE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Germany</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;ENS&#32;ENS</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">II&#32;-&#32;Energy&#32;&amp;&#32;Systems</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99902200</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99902200</td>
+<td class=3Dx4 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+<tr>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">K999</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Konsolidierung&#32;V1-CON</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">DE</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">Germany</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;IND&#32;REM</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">MO&#32;-&#32;Industry</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">0001/K99998267</td>
+<td class=3Dx2 style=3D" mso-number-format:'\@';">CBS&#32;Iberia</td>
+<td class=3Dx5 x:num=3D"1.0" style=3D" mso-number-format:'#,##0;-#,##0;#,##0;\@'">1</td>
+</tr>
+</table>
+</body>
+</html>
+
+
+--NEXTMIME--
+

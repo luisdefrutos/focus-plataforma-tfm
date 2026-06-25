@@ -1,0 +1,394 @@
+// ==============================================================================
+// PROJECT FOCUS - DBML SCHEMA FOR dbdiagram.io
+// ==============================================================================
+// Instrucciones:
+//   1. Ir a https://dbdiagram.io
+//   2. Click en "Go to App" o "Create your diagram"
+//   3. Borrar el contenido del editor de la izquierda
+//   4. Pegar TODO este archivo
+//   5. El diagrama se genera automáticamente a la derecha
+//   6. Exportar como PNG, PDF o SVG desde el menú
+// ==============================================================================
+
+// ─────────────────────────────────────────────
+// MÓDULO 1: GOLDEN RECORD (Dato Maestro)
+// ─────────────────────────────────────────────
+
+Table CORPORATE_HOLDINGS {
+  holding_id    int [pk, increment, note: 'ID interno autogenerado']
+  external_guid varchar(36) [unique, not null, note: 'UUID para integración externa']
+  holding_name  varchar(255) [unique, not null, note: 'Nombre del grupo empresarial']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Agrupaciones corporativas y holdings de grandes cuentas. Tabla padre nivel 1.'
+}
+
+Table BUSINESS_UNITS {
+  bu_id         int [pk, increment, note: 'ID interno autogenerado']
+  external_guid varchar(36) [unique, not null, note: 'UUID para integración externa']
+  sap_code      varchar(10) [unique, not null, note: 'Código identificador en SAP']
+  bu_name       varchar(100) [unique, not null, note: 'Nombre funcional de la BU']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Sociedades legales de TÜV SÜD (ITV, Industria, etc.). Tabla más referenciada del modelo.'
+}
+
+Table PRODUCT_CATALOG {
+  catalog_id    int [pk, increment, note: 'ID interno autogenerado']
+  external_guid varchar(36) [unique, not null, note: 'UUID para integración externa']
+  material_code varchar(64) [unique, not null, note: 'Código material o servicio origen']
+  description   varchar(255) [not null]
+  category      varchar(100) [note: 'Categoría o familia comercial']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Catálogo corporativo de productos y servicios.'
+}
+
+Table CUSTOMER_MASTER {
+  customer_id   int [pk, increment, note: 'ID interno autogenerado']
+  external_guid varchar(36) [unique, not null, note: 'UUID para integración externa']
+  holding_id    int [note: 'FK opcional al holding']
+  tax_id        varchar(64) [unique, not null, note: 'CIF, NIF o identificador fiscal']
+  legal_name    varchar(255) [not null, note: 'Razón social del cliente']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Golden Record. Cada registro es un cliente único por CIF/NIF.'
+}
+
+Table ADDRESSES {
+  address_id    int [pk, increment]
+  external_guid varchar(36) [unique, not null]
+  customer_id   int [not null]
+  full_address  varchar(255) [not null, note: 'Dirección completa del centro o sede']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Ubicaciones operativas del cliente (plantas, sedes, centros).'
+}
+
+Table CONTACTS {
+  contact_id    int [pk, increment]
+  external_guid varchar(36) [unique, not null]
+  customer_id   int [not null]
+  bu_id         int [not null, note: 'BU responsable RGPD']
+  full_name     varchar(255) [not null]
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Personas físicas de contacto bajo protección RGPD.'
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 2: CLASIFICACIÓN SECTORIAL (CNAE)
+// ─────────────────────────────────────────────
+
+Table CNAE_CATALOG {
+  cnae_id       int [pk, increment]
+  external_guid varchar(36) [unique, not null]
+  cnae_code     varchar(10) [unique, not null, note: 'Código CNAE']
+  cnae_name     varchar(255) [not null, note: 'Descripción del CNAE']
+  cnae_level    varchar(32) [note: 'Nivel jerárquico']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Tabla maestra de CNAEs para clasificación sectorial.'
+}
+
+Table CUSTOMER_CNAE {
+  customer_cnae_id int [pk, increment]
+  external_guid    varchar(36) [unique, not null]
+  customer_id      int [not null]
+  cnae_id          int [not null]
+  is_primary       char(1) [not null, default: 'N', note: 'Y=principal, N=secundario']
+  created_at       timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system    varchar(64) [not null]
+  etl_run_id       int [not null]
+
+  indexes {
+    (customer_id, cnae_id) [unique, name: 'UK_CUSTOMER_CNAE_REL']
+  }
+
+  Note: 'Relación N:M entre clientes y CNAEs.'
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 3: INTELIGENCIA COMERCIAL
+// ─────────────────────────────────────────────
+
+Table BILLING_RECORDS {
+  billing_id          int [pk, increment]
+  external_guid       varchar(36) [unique, not null]
+  customer_id         int [not null]
+  bu_id               int [not null]
+  catalog_id          int [not null]
+  invoice_number      varchar(64) [note: 'Número de factura']
+  invoice_amount      decimal(18,2) [note: 'Importe >= 0']
+  invoice_date        date [note: 'Fecha de la factura']
+  invoice_description varchar(500) [note: 'Detalle comercial']
+  currency_code       varchar(3) [note: 'ISO 4217 (EUR, USD...)']
+  expiry_date         date [note: 'Fecha de renovación esperada']
+  service_start_date  date
+  service_end_date    date
+  created_at          timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system       varchar(64) [not null]
+  etl_run_id          int [not null]
+
+  Note: 'Histórico de facturación y actividad comercial. Fuente para detección de oportunidades.'
+}
+
+Table CROSS_SELL_OPPORTUNITIES {
+  opportunity_id     int [pk, increment]
+  external_guid      varchar(36) [unique, not null]
+  customer_id        int [not null]
+  billing_id         int [note: 'FK opcional a factura origen']
+  origin_bu_id       int [not null, note: 'BU donde está el cliente']
+  target_bu_id       int [not null, note: 'BU objetivo de la propuesta']
+  catalog_id         int [not null, note: 'Servicio sugerido']
+  opportunity_reason varchar(1000) [not null, note: 'Motivo de la recomendación']
+  priority_score     decimal(5,2) [note: '0-100']
+  potential_amount   decimal(18,2) [note: 'Potencial económico estimado']
+  status             varchar(32) [not null, default: 'NEW', note: 'CHECK: NEW|ACCEPTED|IN_PROGRESS|IN_CAMPAIGN|QUALIFIED|REJECTED|CLOSED_WON|CLOSED_LOST → Lógica: STATUS_CATALOG(OPPORTUNITY)']
+  reviewed_by        varchar(128)
+  reviewed_at        timestamp
+  created_at         timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system      varchar(64) [not null]
+  etl_run_id         int [not null]
+
+  Note: 'Alertas de venta cruzada. status corresponde lógicamente a STATUS_CATALOG (entity_name=OPPORTUNITY).'
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 4: EXCLUSIONES COMERCIALES
+// ─────────────────────────────────────────────
+
+Table CROSS_SELL_EXCLUSIONS {
+  exclusion_id   int [pk, increment]
+  external_guid  varchar(36) [unique, not null]
+  customer_id    int [note: 'FK opcional — excluye cliente']
+  cnae_id        int [note: 'FK opcional — excluye sector']
+  bu_id          int [note: 'FK opcional — excluye BU']
+  exclusion_type varchar(32) [not null, default: 'PERMANENT', note: 'CHECK: PERMANENT|TEMPORARY|MARKETING_ONLY → Lógica: STATUS_CATALOG(EXCLUSION)']
+  reason         varchar(500) [not null, note: 'Motivo del bloqueo']
+  valid_from     timestamp [not null, default: `SYSTIMESTAMP`]
+  valid_to       timestamp [note: 'NULL = indefinida']
+  created_at     timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system  varchar(64) [not null]
+  etl_run_id     int [not null]
+
+  Note: 'Reglas de exclusión e incompatibilidades comerciales. exclusion_type corresponde lógicamente a STATUS_CATALOG (entity_name=EXCLUSION).'
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 5: CONTROL DE ACCESO (IAM)
+// ─────────────────────────────────────────────
+
+Table APP_USERS {
+  user_id       int [pk, increment]
+  external_guid varchar(36) [unique, not null]
+  username      varchar(128) [unique, not null]
+  user_type     varchar(16) [not null, default: 'LOCAL', note: 'AD o LOCAL']
+  full_name     varchar(255) [not null]
+  email         varchar(255)
+  is_active     char(1) [not null, default: 'Y', note: 'Y/N - baja lógica']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+
+  Note: 'Maestro de usuarios. Autenticación dual: AD (empleados) y LOCAL (externos).'
+}
+
+Table APP_ROLES {
+  role_id     int [pk, increment]
+  role_name   varchar(64) [unique, not null]
+  description varchar(255)
+
+  Note: 'Perfiles funcionales: Consulta, Comercial, Administrador.'
+}
+
+Table APP_PERMISSIONS {
+  permission_id   int [pk, increment]
+  permission_code varchar(64) [unique, not null, note: 'CAMPAIGN_CREATE, DATA_VIEW, etc.']
+  description     varchar(255)
+
+  Note: 'Acciones granulares del sistema.'
+}
+
+Table APP_USER_ROLES {
+  user_id int [not null]
+  role_id int [not null]
+  bu_id   int [not null, note: 'Ámbito del rol por BU']
+
+  indexes {
+    (user_id, role_id, bu_id) [pk]
+  }
+
+  Note: 'Relación N:M:M entre usuarios, roles y BUs. Para perfiles globales: un registro por BU.'
+}
+
+Table APP_ROLE_PERMISSIONS {
+  role_id       int [not null]
+  permission_id int [not null]
+
+  indexes {
+    (role_id, permission_id) [pk]
+  }
+
+  Note: 'Matriz de capacidades por perfil.'
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 6: CAMPAÑAS COMERCIALES
+// ─────────────────────────────────────────────
+
+Table COMMERCIAL_CAMPAIGNS {
+  campaign_id   int [pk, increment]
+  external_guid varchar(36) [unique, not null]
+  campaign_name varchar(255) [not null]
+  origin_bu_id  int [not null, note: 'BU propietaria']
+  created_by    int [not null, note: 'Usuario creador']
+  description   varchar(1000)
+  start_date    date
+  end_date      date
+  status        varchar(32) [not null, default: 'DRAFT', note: 'CHECK: DRAFT|ACTIVE|COMPLETED|CANCELLED → Lógica: STATUS_CATALOG(CAMPAIGN)']
+  created_at    timestamp [not null, default: `SYSTIMESTAMP`]
+  source_system varchar(64) [not null]
+  etl_run_id    int [not null]
+
+  Note: 'Campañas comerciales con trazabilidad. status corresponde lógicamente a STATUS_CATALOG (entity_name=CAMPAIGN).'
+}
+
+Table CAMPAIGN_TARGETS {
+  target_id      int [pk, increment]
+  external_guid  varchar(36) [unique, not null]
+  campaign_id    int [not null]
+  customer_id    int [not null]
+  opportunity_id int [note: 'FK opcional a oportunidad origen']
+  status         varchar(32) [not null, default: 'PENDING', note: 'CHECK: PENDING|CONTACTED|CONVERTED|REJECTED → Lógica: STATUS_CATALOG(TARGET)']
+  contact_date   date [note: 'Fecha efectiva del contacto']
+  notes          varchar(4000)
+  created_at     timestamp [not null, default: `SYSTIMESTAMP`]
+
+  indexes {
+    (campaign_id, customer_id) [unique, name: 'UK_TARGET_COLLISION']
+  }
+
+  Note: 'Clientes objetivo de una campaña. UK anti-duplicados. status corresponde lógicamente a STATUS_CATALOG (entity_name=TARGET).'
+}
+
+// ─────────────────────────────────────────────
+// MÓDULO 7: REFERENCIA (Sin FKs físicas)
+// ─────────────────────────────────────────────
+
+Table STATUS_CATALOG {
+  status_id     int [pk, increment]
+  entity_name   varchar(64) [not null, note: 'OPPORTUNITY|CAMPAIGN|TARGET|EXCLUSION']
+  status_code   varchar(32) [not null, note: 'Código técnico (coincide con CHECK constraints)']
+  status_name   varchar(128) [not null, note: 'Nombre legible para UI']
+  description   varchar(500)
+  display_order int [note: 'Orden de presentación']
+  is_active     char(1) [not null, default: 'Y', note: 'Y/N']
+
+  indexes {
+    (entity_name, status_code) [unique, name: 'UK_STATUS_ENTITY_CODE']
+  }
+
+  Note: 'Catálogo maestro de estados. RELACIÓN LÓGICA (sin FK física) con tablas operativas. Sirve a la capa de aplicación: desplegables, traducciones, orden de presentación. 18 registros precargados.'
+}
+
+// ─────────────────────────────────────────────
+// RELACIONES (Foreign Keys físicas)
+// ─────────────────────────────────────────────
+
+// Golden Record
+Ref FK_CM_HOLDING:       CUSTOMER_MASTER.holding_id    > CORPORATE_HOLDINGS.holding_id
+Ref FK_ADD_CUSTOMER:     ADDRESSES.customer_id         > CUSTOMER_MASTER.customer_id
+Ref FK_CON_CUSTOMER:     CONTACTS.customer_id          > CUSTOMER_MASTER.customer_id
+Ref FK_CON_BU:           CONTACTS.bu_id                > BUSINESS_UNITS.bu_id
+
+// Clasificación Sectorial
+Ref FK_CC_CUSTOMER:      CUSTOMER_CNAE.customer_id     > CUSTOMER_MASTER.customer_id
+Ref FK_CC_CNAE:          CUSTOMER_CNAE.cnae_id         > CNAE_CATALOG.cnae_id
+
+// Facturación
+Ref FK_BILL_CUSTOMER:    BILLING_RECORDS.customer_id   > CUSTOMER_MASTER.customer_id
+Ref FK_BILL_BU:          BILLING_RECORDS.bu_id         > BUSINESS_UNITS.bu_id
+Ref FK_BILL_CATALOG:     BILLING_RECORDS.catalog_id    > PRODUCT_CATALOG.catalog_id
+
+// Oportunidades
+Ref FK_OPP_CUSTOMER:     CROSS_SELL_OPPORTUNITIES.customer_id  > CUSTOMER_MASTER.customer_id
+Ref FK_OPP_BILLING:      CROSS_SELL_OPPORTUNITIES.billing_id   > BILLING_RECORDS.billing_id
+Ref FK_OPP_ORIGIN_BU:    CROSS_SELL_OPPORTUNITIES.origin_bu_id > BUSINESS_UNITS.bu_id
+Ref FK_OPP_TARGET_BU:    CROSS_SELL_OPPORTUNITIES.target_bu_id > BUSINESS_UNITS.bu_id
+Ref FK_OPP_CATALOG:      CROSS_SELL_OPPORTUNITIES.catalog_id   > PRODUCT_CATALOG.catalog_id
+
+// Exclusiones
+Ref FK_EXCL_CUSTOMER:    CROSS_SELL_EXCLUSIONS.customer_id > CUSTOMER_MASTER.customer_id
+Ref FK_EXCL_CNAE:        CROSS_SELL_EXCLUSIONS.cnae_id     > CNAE_CATALOG.cnae_id
+Ref FK_EXCL_BU:          CROSS_SELL_EXCLUSIONS.bu_id       > BUSINESS_UNITS.bu_id
+
+// IAM
+Ref FK_UR_USER:          APP_USER_ROLES.user_id       > APP_USERS.user_id
+Ref FK_UR_ROLE:          APP_USER_ROLES.role_id       > APP_ROLES.role_id
+Ref FK_UR_BU:            APP_USER_ROLES.bu_id         > BUSINESS_UNITS.bu_id
+Ref FK_RP_ROLE:          APP_ROLE_PERMISSIONS.role_id       > APP_ROLES.role_id
+Ref FK_RP_PERM:          APP_ROLE_PERMISSIONS.permission_id > APP_PERMISSIONS.permission_id
+
+// Campañas
+Ref FK_CAMP_BU:          COMMERCIAL_CAMPAIGNS.origin_bu_id > BUSINESS_UNITS.bu_id
+Ref FK_CAMP_USER:        COMMERCIAL_CAMPAIGNS.created_by   > APP_USERS.user_id
+Ref FK_TGT_CAMP:         CAMPAIGN_TARGETS.campaign_id      > COMMERCIAL_CAMPAIGNS.campaign_id
+Ref FK_TGT_CUST:         CAMPAIGN_TARGETS.customer_id      > CUSTOMER_MASTER.customer_id
+Ref FK_TGT_OPP:          CAMPAIGN_TARGETS.opportunity_id   > CROSS_SELL_OPPORTUNITIES.opportunity_id
+
+// ─────────────────────────────────────────────
+// GRUPOS POR COLOR (para dbdiagram.io)
+// ─────────────────────────────────────────────
+
+TableGroup GoldenRecord {
+  CORPORATE_HOLDINGS
+  BUSINESS_UNITS
+  PRODUCT_CATALOG
+  CUSTOMER_MASTER
+  ADDRESSES
+  CONTACTS
+}
+
+TableGroup ClasificacionSectorial {
+  CNAE_CATALOG
+  CUSTOMER_CNAE
+}
+
+TableGroup InteligenciaComercial {
+  BILLING_RECORDS
+  CROSS_SELL_OPPORTUNITIES
+}
+
+TableGroup Exclusiones {
+  CROSS_SELL_EXCLUSIONS
+}
+
+TableGroup ControlAcceso {
+  APP_USERS
+  APP_ROLES
+  APP_PERMISSIONS
+  APP_USER_ROLES
+  APP_ROLE_PERMISSIONS
+}
+
+TableGroup Campanas {
+  COMMERCIAL_CAMPAIGNS
+  CAMPAIGN_TARGETS
+}
+
+TableGroup Referencia {
+  STATUS_CATALOG
+}

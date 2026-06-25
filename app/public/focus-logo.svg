@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Focus">
+  <defs>
+    <linearGradient id="focusRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52B4E8" />
+      <stop offset="100%" stop-color="#2E8BC9" />
+    </linearGradient>
+  </defs>
+  <!-- Marco de enfoque (4 corchetes de esquina) -->
+  <g fill="none" stroke="#1F6AA5" stroke-width="12" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M46 76 V46 H76" />
+    <path d="M124 46 H154 V76" />
+    <path d="M46 124 V154 H76" />
+    <path d="M124 154 H154 V124" />
+  </g>
+  <!-- Anillo central -->
+  <circle cx="100" cy="100" r="29" fill="none" stroke="url(#focusRing)" stroke-width="13" />
+</svg>
