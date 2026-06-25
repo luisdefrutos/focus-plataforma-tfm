@@ -48,7 +48,7 @@ function buildPrismaClient(): PrismaClient {
     allowPublicKeyRetrieval,
     // ssl: true valida el certificado contra las CAs del sistema. Para una CA
     // corporativa propia, montar { ca: ... } vía configuración del entorno.
-    ...(useSsl ? { ssl: true } : {}),
+    ...(useSsl ? { ssl: { rejectUnauthorized: true, servername: host } } : {}),
   });
 
   return new PrismaClient({ adapter });
