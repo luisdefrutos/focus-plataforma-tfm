@@ -14,6 +14,7 @@ const adapter = new PrismaMariaDb({
   database: u.pathname.slice(1),
   connectionLimit: 5,
   allowPublicKeyRetrieval: true,
+  ssl: { rejectUnauthorized: true, servername: u.hostname } as any,
 });
 
 export const prisma = new PrismaClient({ adapter });
