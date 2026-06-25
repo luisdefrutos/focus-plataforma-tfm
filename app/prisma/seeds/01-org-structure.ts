@@ -46,7 +46,7 @@ export async function seedOrgStructure(): Promise<void> {
       include: { businessUnits: { select: { buId: true } } },
     });
     if (!ent) continue;
-    const buIds = ent.businessUnits.map(b => b.buId);
+    const buIds = ent.businessUnits.map((b: any) => b.buId);
     const billed = buIds.length > 0
       ? await prisma.billingRecord.count({ where: { buId: { in: buIds } } })
       : 0;

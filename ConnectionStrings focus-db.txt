@@ -1,0 +1,1 @@
+mysql://p2jZbQHxKL82emR.root:WhV1sOZe1M0kZXAQ@gateway01.eu-central-1.prod.aws.tidbcloud.com:4000/sys
