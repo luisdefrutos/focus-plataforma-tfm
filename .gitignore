@@ -127,3 +127,4 @@ docs/PROPUESTA_REDIS_FOCUS.md
 
 # Trabajo local de deduplicación (SQL + exports con datos de clientes)
 db/dedup/
+PLAN_CIERRE_TFM.md

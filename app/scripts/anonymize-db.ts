@@ -4,20 +4,20 @@ import { fakerES as faker } from '@faker-js/faker';
 async function main() {
   console.log('Iniciando anonimización con faker...');
 
-  // 1. APP_USERS (Normalmente pocos)
-  console.log('Anonimizando APP_USERS...');
-  const users = await prisma.appUser.findMany({ select: { userId: true } });
-  for (const user of users) {
-    const firstName = faker.person.firstName();
-    const lastName = faker.person.lastName();
-    await prisma.appUser.update({
-      where: { userId: user.userId },
-      data: {
-        fullName: `${firstName} ${lastName}`,
-        email: faker.internet.email({ firstName, lastName }),
-      }
-    });
-  }
+  // 1. APP_USERS (Ignoramos para mantener nombres reales en el TFM)
+  // console.log('Anonimizando APP_USERS...');
+  // const users = await prisma.appUser.findMany({ select: { userId: true } });
+  // for (const user of users) {
+  //   const firstName = faker.person.firstName();
+  //   const lastName = faker.person.lastName();
+  //   await prisma.appUser.update({
+  //     where: { userId: user.userId },
+  //     data: {
+  //       fullName: `${firstName} ${lastName}`,
+  //       email: faker.internet.email({ firstName, lastName }),
+  //     }
+  //   });
+  // }
   
   // 2. ORGANIZATIONS (Pueden ser miles, usamos chunks)
   console.log('Anonimizando ORGANIZATIONS...');

@@ -49,7 +49,7 @@ export function SapRecordsChip({ records }: { records: SapRecord[] }) {
             Registros de cliente en SAP que comparten el CIF de esta organización. Abre uno para ver
             su ficha individual.
           </p>
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1.5 overflow-y-auto max-h-[50vh] pr-1">
             {records.map(r => (
               <Link
                 key={r.customerId}
