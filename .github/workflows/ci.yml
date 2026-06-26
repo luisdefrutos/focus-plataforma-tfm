@@ -51,7 +51,7 @@ jobs:
       - name: E2E Tests (Playwright)
         run: npx playwright test
         env:
-          # Si tienes env vars necesarias para arrancar en local, añádelas aquí.
-          # Por ejemplo, AUTH_ALLOW_MOCK: "true"
           AUTH_ALLOW_MOCK: "true"
           DATABASE_URL: "mysql://dummy:dummy@localhost:3306/dummy"
+          NEXTAUTH_SECRET: "dummy_secret_for_testing_purposes"
+          NEXTAUTH_URL: "http://localhost:3000"
