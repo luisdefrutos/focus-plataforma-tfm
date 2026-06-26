@@ -86,63 +86,66 @@ export default async function SegmentacionPage({
           }}
         >
           <div className="overflow-x-auto">
-          <table className="w-full min-w-[560px] text-sm">
-            <thead
-              className="border-b"
-              style={{ borderColor: 'var(--ts-semantic-color-border-base-default)' }}
-            >
-              <tr>
-                <Th>Rango facturación</Th>
-                <Th align="right">Clientes</Th>
-                <Th align="right">% clientes</Th>
-                <Th align="right">Facturado</Th>
-                <Th align="right">Media</Th>
-                <Th align="right">% facturado</Th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map(r => (
-                <tr
-                  key={r.code}
-                  className="border-b"
-                  style={{ borderColor: 'var(--ts-semantic-color-border-base-default)' }}
-                >
-                  <td className="px-4 py-2.5 text-sm font-medium" style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}>
-                    <Link
-                      href={`/clientes?range=${r.code}${sp.entity ? `&entity=${sp.entity}` : ''}${sp.division ? `&division=${sp.division}` : ''}`}
-                      className="hover:underline"
-                      style={{ color: 'var(--ts-semantic-color-text-link-default)' }}
-                    >
-                      {r.label}
-                    </Link>
-                  </td>
-                  <td className="px-4 py-2.5 text-right text-sm tabular-nums">
-                    {formatNumber(r.customerCount)}
-                  </td>
-                  <td className="px-4 py-2.5 text-right text-sm tabular-nums" style={{ color: 'var(--ts-semantic-color-text-tertiary-default)' }}>
-                    {r.pctCustomers.toFixed(0)}%
-                  </td>
-                  <td className="px-4 py-2.5 text-right text-sm font-semibold tabular-nums">
-                    {formatCurrency(r.totalAmount, { compact: true })}
-                  </td>
-                  <td className="px-4 py-2.5 text-right text-sm tabular-nums" style={{ color: 'var(--ts-semantic-color-text-tertiary-default)' }}>
-                    {r.customerCount > 0 ? formatCurrency(r.totalAmount / r.customerCount, { compact: true }) : '—'}
-                  </td>
-                  <td className="px-4 py-2.5 text-right text-sm tabular-nums" style={{ color: 'var(--ts-semantic-color-text-tertiary-default)' }}>
-                    {r.pctAmount.toFixed(0)}%
-                  </td>
+            <table className="w-full text-sm" style={{ minWidth: '480px' }}>
+              <thead
+                className="border-b"
+                style={{
+                  borderColor: 'var(--ts-semantic-color-border-base-default)',
+                  background: 'var(--ts-semantic-color-background-neutral-subtle-default)',
+                }}
+              >
+                <tr>
+                  <Th>Rango</Th>
+                  <Th align="right">Clientes</Th>
+                  <Th align="right">% cli.</Th>
+                  <Th align="right">Facturado</Th>
+                  <Th align="right">Media</Th>
+                  <Th align="right">% fact.</Th>
                 </tr>
-              ))}
-              <tr className="font-bold" style={{ background: 'var(--ts-semantic-color-background-neutral-subtle-default)' }}>
-                <td className="px-4 py-2.5 text-sm">Total</td>
-                <td className="px-4 py-2.5 text-right text-sm tabular-nums">{formatNumber(totalCust)}</td>
-                <td className="px-4 py-2.5 text-right text-sm tabular-nums">100%</td>
-                <td className="px-4 py-2.5 text-right text-sm tabular-nums">{formatCurrency(totalAmt, { compact: true })}</td>
-                <td className="px-4 py-2.5 text-right text-sm tabular-nums">{totalCust > 0 ? formatCurrency(totalAmt / totalCust, { compact: true }) : '—'}</td>
-                <td className="px-4 py-2.5 text-right text-sm tabular-nums">100%</td>
-              </tr>
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y" style={{ borderColor: 'var(--ts-semantic-color-border-base-default)' }}>
+                {rows.map(r => (
+                  <tr
+                    key={r.code}
+                    className="transition-colors hover:bg-[var(--ts-semantic-color-background-neutral-subtle-default)]"
+                  >
+                    <td className="px-4 py-3 font-medium">
+                      <Link
+                        href={`/clientes?range=${r.code}${sp.entity ? `&entity=${sp.entity}` : ''}${sp.division ? `&division=${sp.division}` : ''}`}
+                        className="hover:underline"
+                        style={{ color: 'var(--ts-semantic-color-text-link-default)' }}
+                      >
+                        {r.label}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums" style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}>
+                      {formatNumber(r.customerCount)}
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums" style={{ color: 'var(--ts-semantic-color-text-tertiary-default)' }}>
+                      {r.pctCustomers.toFixed(0)}%
+                    </td>
+                    <td className="px-4 py-3 text-right font-semibold tabular-nums" style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}>
+                      {formatCurrency(r.totalAmount, { compact: true })}
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums" style={{ color: 'var(--ts-semantic-color-text-tertiary-default)' }}>
+                      {r.customerCount > 0 ? formatCurrency(r.totalAmount / r.customerCount, { compact: true }) : '—'}
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums" style={{ color: 'var(--ts-semantic-color-text-tertiary-default)' }}>
+                      {r.pctAmount.toFixed(0)}%
+                    </td>
+                  </tr>
+                ))}
+                {/* Fila total */}
+                <tr style={{ background: 'var(--ts-semantic-color-background-neutral-subtle-default)' }}>
+                  <td className="px-4 py-3 text-sm font-bold" style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}>Total</td>
+                  <td className="px-4 py-3 text-right text-sm font-bold tabular-nums">{formatNumber(totalCust)}</td>
+                  <td className="px-4 py-3 text-right text-sm font-bold tabular-nums">100%</td>
+                  <td className="px-4 py-3 text-right text-sm font-bold tabular-nums">{formatCurrency(totalAmt, { compact: true })}</td>
+                  <td className="px-4 py-3 text-right text-sm font-bold tabular-nums">{totalCust > 0 ? formatCurrency(totalAmt / totalCust, { compact: true }) : '—'}</td>
+                  <td className="px-4 py-3 text-right text-sm font-bold tabular-nums">100%</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -177,7 +180,7 @@ function Th({ children, align = 'left' }: { children: React.ReactNode; align?: '
   return (
     <th
       scope="col"
-      className={`px-4 py-3 text-xs font-semibold uppercase tracking-wider ${align === 'right' ? 'text-right' : 'text-left'}`}
+      className={`px-4 py-2.5 text-xs font-semibold uppercase tracking-wider whitespace-nowrap ${align === 'right' ? 'text-right' : 'text-left'}`}
       style={{ color: 'var(--ts-semantic-color-text-secondary-default)' }}
     >
       {children}
