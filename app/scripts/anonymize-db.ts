@@ -29,7 +29,7 @@ async function main() {
         where: { orgId: org.orgId },
         data: {
           legalName: faker.company.name(),
-          taxId: 'B' + String(i + idx).padStart(8, '0'),
+          taxId: 'B' + String(i + idx).padStart(7, '0'),
         }
       }))
     );
@@ -46,7 +46,7 @@ async function main() {
         where: { customerId: c.customerId },
         data: {
           legalName: faker.company.name(),
-          taxId: 'B' + String(i + idx).padStart(8, '0'),
+          taxId: 'B' + String(i + idx).padStart(7, '0'),
           phone: faker.phone.number(),
         }
       }))
