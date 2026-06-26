@@ -31,7 +31,7 @@ const VALID_SORTS = new Set<SortField>(['legalName', 'totalAmount', 'lastInvoice
 const QUERY_KEYS = [
   'search', 'entity', 'division', 'ccaa', 'province', 'entityType', 'range',
   'cp', 'pc', 'pcMode', 'mat', 'matMode', 'cnae', 'cnaeMode', 'intercompany', 'minAmount',
-  'active12m', 'recurring', 'hideBlocked', 'year', 'sort', 'dir', 'page',
+  'active12m', 'recurring', 'hideBlocked', 'year', 'sort', 'dir', 'page', 'view',
 ];
 
 function parseSearchParams(sp: Record<string, string | string[] | undefined>) {
@@ -126,15 +126,15 @@ export default async function ClientesPage({
 
   // Catálogo de filtros (ligero) + búsqueda (solo si hay filtros) en PARALELO. Antes
   // iban en serie (catálogo → búsqueda), añadiendo una ida-y-vuelta extra a cada carga.
-  // En modo whitespot agregamos además la cartera por sociedad/BU.
+  // En modo whitespot cargamos la cartera SIEMPRE (incluso sin filtros activos) para que
+  // el grid global sea visible. La tabla solo se consulta si hay filtros activos.
+  const hasTableQuery = hasQuery && view !== 'whitespot' || (hasQuery && view === 'whitespot');
   const [catalogs, [result, whitespots]] = await Promise.all([
     getFilterCatalogs(buIds, allowedFilters),
-    hasQuery
-      ? Promise.all([
-          searchCustomers(opts),
-          view === 'whitespot' ? getPortfolioWhitespots(opts) : Promise.resolve(null),
-        ])
-      : Promise.resolve([null, null] as [null, null]),
+    Promise.all([
+      hasQuery ? searchCustomers(opts) : Promise.resolve(null),
+      view === 'whitespot' ? getPortfolioWhitespots(opts) : Promise.resolve(null),
+    ]),
   ]);
 
   return (
@@ -171,89 +171,89 @@ export default async function ClientesPage({
         years={catalogs.years}
       />
 
-      {result ? (
-        <>
-          {/* Conmutador de agrupación (org/SAP) + vista (tabla/whitespot) */}
-          <div className="flex items-center justify-between gap-2">
-            {view === 'table' ? (
-              <div
-                className="inline-flex overflow-hidden rounded-md border text-sm"
-                style={{ borderColor: 'var(--ts-semantic-color-border-base-default)' }}
+      {/* Conmutador tabla/whitespot — siempre visible una vez que hay resultados o estamos en modo whitespot */}
+      {(result || view === 'whitespot') && (
+        <div className="flex items-center justify-between gap-2">
+          {view === 'table' && result ? (
+            <div
+              className="inline-flex overflow-hidden rounded-md border text-sm"
+              style={{ borderColor: 'var(--ts-semantic-color-border-base-default)' }}
+            >
+              <Link
+                href={mkGroupUrl('org')}
+                className="px-3 py-1.5 font-medium transition-colors"
+                style={opts.group === 'org'
+                  ? { background: 'var(--ts-semantic-color-background-primary-default)', color: '#fff' }
+                  : { color: 'var(--ts-semantic-color-text-secondary-default)' }}
+                title="Agrupa los registros SAP del mismo CIF en una sola fila (Golden Record)"
               >
-                <Link
-                  href={mkGroupUrl('org')}
-                  className="px-3 py-1.5 font-medium transition-colors"
-                  style={opts.group === 'org'
-                    ? { background: 'var(--ts-semantic-color-background-primary-default)', color: '#fff' }
-                    : { color: 'var(--ts-semantic-color-text-secondary-default)' }}
-                  title="Agrupa los registros SAP del mismo CIF en una sola fila (Golden Record)"
-                >
-                  Por organización
-                </Link>
-                <Link
-                  href={mkGroupUrl('sap')}
-                  className="px-3 py-1.5 font-medium transition-colors"
-                  style={opts.group === 'sap'
-                    ? { background: 'var(--ts-semantic-color-background-primary-default)', color: '#fff' }
-                    : { color: 'var(--ts-semantic-color-text-secondary-default)' }}
-                  title="Una fila por cada registro de cliente en SAP"
-                >
-                  Registros SAP
-                </Link>
-              </div>
-            ) : (
-              <div />
-            )}
-            <ViewToggle current={view} />
-          </div>
+                Por organización
+              </Link>
+              <Link
+                href={mkGroupUrl('sap')}
+                className="px-3 py-1.5 font-medium transition-colors"
+                style={opts.group === 'sap'
+                  ? { background: 'var(--ts-semantic-color-background-primary-default)', color: '#fff' }
+                  : { color: 'var(--ts-semantic-color-text-secondary-default)' }}
+                title="Una fila por cada registro de cliente en SAP"
+              >
+                Registros SAP
+              </Link>
+            </div>
+          ) : (
+            <div />
+          )}
+          <ViewToggle current={view} />
+        </div>
+      )}
 
-          {/* Incompatibilidades legales: persistente mientras el filtro de material las active */}
+      {view === 'whitespot' ? (
+        <>
+          {/* Resumen de la cartera filtrada — solo si hay resultado de búsqueda */}
+          {result && (
+            <p
+              className="px-1 text-sm"
+              style={{ color: 'var(--ts-semantic-color-text-secondary-default)' }}
+            >
+              <strong>{formatNumber(result.total)}</strong> clientes · Facturación total:{' '}
+              <strong style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}>
+                {formatCurrency(result.sumAmount)}
+              </strong>
+            </p>
+          )}
+
+          {whitespots && whitespots.societies.length > 0 ? (
+            <PortfolioWhitespotMap data={whitespots} />
+          ) : (
+            <div
+              className="rounded-lg border-2 border-dashed py-12 text-center text-sm"
+              style={{
+                borderColor: 'var(--ts-semantic-color-border-base-default)',
+                color: 'var(--ts-semantic-color-text-tertiary-default)',
+              }}
+            >
+              No hay facturación que mostrar para los filtros aplicados.
+            </div>
+          )}
+        </>
+      ) : result ? (
+        <>
+          {/* Incompatibilidades legales */}
           {result.incompatibility && <IncompatibilityBanner data={result.incompatibility} />}
 
-          {view === 'whitespot' ? (
-            <>
-              {/* Resumen de la cartera filtrada */}
-              <p
-                className="px-1 text-sm"
-                style={{ color: 'var(--ts-semantic-color-text-secondary-default)' }}
-              >
-                <strong>{formatNumber(result.total)}</strong> clientes · Facturación total:{' '}
-                <strong style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}>
-                  {formatCurrency(result.sumAmount)}
-                </strong>
-              </p>
+          {/* Resumen + paginación */}
+          <Pagination
+            page={result.page}
+            pageSize={result.pageSize}
+            total={result.total}
+            sumAmount={result.sumAmount}
+          />
 
-              {whitespots && whitespots.societies.length > 0 ? (
-                <PortfolioWhitespotMap data={whitespots} />
-              ) : (
-                <div
-                  className="rounded-lg border-2 border-dashed py-12 text-center text-sm"
-                  style={{
-                    borderColor: 'var(--ts-semantic-color-border-base-default)',
-                    color: 'var(--ts-semantic-color-text-tertiary-default)',
-                  }}
-                >
-                  No hay facturación que mostrar para los filtros aplicados.
-                </div>
-              )}
-            </>
-          ) : (
-            <>
-              {/* Resumen + paginación (encima de la tabla): total de facturación filtrada */}
-              <Pagination
-                page={result.page}
-                pageSize={result.pageSize}
-                total={result.total}
-                sumAmount={result.sumAmount}
-              />
-
-              {/* Tabla */}
-              <CustomersTable
-                data={result.rows}
-                currentSort={{ field: opts.sortField ?? 'totalAmount', dir: opts.sortDir ?? 'desc' }}
-              />
-            </>
-          )}
+          {/* Tabla */}
+          <CustomersTable
+            data={result.rows}
+            currentSort={{ field: opts.sortField ?? 'totalAmount', dir: opts.sortDir ?? 'desc' }}
+          />
         </>
       ) : (
         <div
