@@ -2,9 +2,9 @@
 
 La base de datos (`focus_dev` en local) consta de **25 tablas** organizadas en **7 módulos**. El esquema canónico es **[`app/prisma/schema.prisma`](/app/prisma/schema.prisma)** — esa es la única fuente de verdad; esta página lo explica.
 
-![Esquema de la base de datos Focus](../diagrams/Esquema%20BBDD%20Focus.png)
+> **Ver Diagrama Completo**: Puedes consultar el [Diagrama Entidad-Relación Completo (Mermaid)](../diagrams/DIAGRAMA_ER_COMPLETO.md) con las 25 tablas exactas tal y como están definidas en Prisma.
 
-> Diagramas adicionales en `docs/diagrams/`: `Diagrama Focus BBDD.png` (ERD) y `Mapa Mental Proyecto Focus.png`.
+> Diagramas adicionales en `docs/diagrams/`: `Mapa Mental Proyecto Focus.png`.
 
 ## Convenciones de esquema (todas las tablas operativas)
 

@@ -52,7 +52,7 @@
 - `docs/security/AUDITORIA_SEGURIDAD_2026-06-22.md` — informe de auditoría completo.
 
 ### Diagramas (`docs/diagrams/`)
-- `Esquema BBDD Focus.png`, `Diagrama Focus BBDD.png` — ERDs.
+- `DIAGRAMA_ER_COMPLETO.md` — ERD Completo de 25 tablas (Mermaid).
 - `Mapa Mental Proyecto Focus.png` — mapa mental del proyecto.
 
 ### Histórico (referencia, NO vigente)

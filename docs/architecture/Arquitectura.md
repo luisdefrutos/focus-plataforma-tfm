@@ -19,33 +19,49 @@ Focus es una aplicación web **full-stack** construida sobre Next.js 16 (App Rou
 
 ## Vista por capas
 
-```
-Navegador
-   │  (HTML + componentes cliente puntuales)
-   ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Next.js (App Router) — app/src/app/                          │
-│                                                              │
-│  proxy.ts ......... middleware de auth (exige sesión)        │
-│                                                              │
-│  (dashboard)/ ..... páginas = React Server Components        │
-│      │                                                       │
-│      ▼                                                       │
-│  lib/queries/ ..... lógica de backend (consultas a BD)       │
-│      │              aplica scope/RLS, usa $queryRawUnsafe     │
-│      │              parametrizado                            │
-│      ▼                                                       │
-│  lib/cache.ts ..... unstable_cache (tag `billing`, TTL 5min) │
-│      │                                                       │
-│  app/api/ ......... endpoints REST (auth, export CSV,        │
-│                     revalidate)                              │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ Prisma 7 + adapter MariaDB
-                               ▼
-                        MySQL 8 (focus_dev)
-                               ▲
-                               │ seeds (tsx + xlsx)
-                        data/raw/*.xlsx  (no versionado)
+```mermaid
+flowchart TD
+    subgraph Cliente["Navegador Web (Cliente)"]
+        UI["UI (HTML + CSS + React Client Components)"]
+    end
+
+    subgraph Vercel["Despliegue Serverless (Vercel)"]
+        subgraph NextJS["Next.js 16 (App Router)"]
+            MW["Middleware (proxy.ts)<br/>Verifica Sesión Activa"]
+            
+            subgraph RSC["React Server Components"]
+                Pages["Páginas (dashboard, clientes, etc.)"]
+            end
+            
+            subgraph BackendLogic["Lógica de Backend"]
+                Queries["lib/queries/*<br/>(Consultas BD / RLS)"]
+                Cache["lib/cache.ts<br/>(unstable_cache)"]
+            end
+            
+            subgraph API["API REST (app/api/*)"]
+                Auth["Autenticación (NextAuth)"]
+                Export["Exportación CSV"]
+            end
+        end
+    end
+
+    subgraph DataInfra["Infraestructura de Datos"]
+        TiDB[("Base de Datos<br/>TiDB Serverless (MySQL 8)")]
+        Seeds["data/raw/*.xlsx<br/>(Seeds ETL locales)"]
+    end
+
+    subgraph Corp["Red Corporativa TÜV SÜD"]
+        AD["Active Directory (SOAP)<br/>Servicio LoginLDAP_AD"]
+    end
+
+    UI -->|"Peticiones HTTP(S)"| MW
+    MW --> Pages
+    MW --> API
+    Pages --> Queries
+    Queries --> Cache
+    Cache -->|"Prisma 7 + adapter MariaDB (TLS)"| TiDB
+    Auth -->|"Validación credenciales (MD5)"| AD
+    Seeds -.->|"Migraciones y sembrado inicial"| TiDB
 ```
 
 ## Estructura de carpetas clave (`app/`)
