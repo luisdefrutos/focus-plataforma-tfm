@@ -85,7 +85,8 @@ export default async function SegmentacionPage({
             borderColor: 'var(--ts-semantic-color-border-base-default)',
           }}
         >
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+          <table className="w-full min-w-[560px] text-sm">
             <thead
               className="border-b"
               style={{ borderColor: 'var(--ts-semantic-color-border-base-default)' }}
@@ -142,6 +143,7 @@ export default async function SegmentacionPage({
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
 
         {/* Breakdown (2/5) */}
