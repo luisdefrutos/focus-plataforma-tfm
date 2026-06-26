@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./app
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: './app/package-lock.json'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+        env:
+          DATABASE_URL: "mysql://dummy:dummy@localhost:3306/dummy"
+
+      - name: Type Check
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit Tests (Vitest)
+        run: npm run test
+
+      - name: E2E Tests (Playwright)
+        run: npx playwright test
+        env:
+          # Si tienes env vars necesarias para arrancar en local, añádelas aquí.
+          # Por ejemplo, AUTH_ALLOW_MOCK: "true"
+          AUTH_ALLOW_MOCK: "true"
+          DATABASE_URL: "mysql://dummy:dummy@localhost:3306/dummy"

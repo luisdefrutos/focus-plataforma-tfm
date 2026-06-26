@@ -8,9 +8,9 @@
 
 ## 1. Contexto y Problema a Resolver
 
-Las grandes corporaciones industriales operan frecuentemente a través de múltiples sociedades legales y divisiones (ITV, Industria, Certificaciones). En este escenario tecnológico fragmentado, los sistemas de facturación (ERPs como SAP) aíslan los registros de los clientes por cada entidad legal. 
+Las grandes corporaciones industriales operan frecuentemente a través de múltiples sociedades legales y divisiones. En este escenario tecnológico fragmentado, los sistemas de facturación (ERPs como SAP) aíslan los registros de los clientes por cada entidad legal. 
 
-El resultado directo es la **inexistencia de una visión única del cliente**: un mismo cliente real (por ejemplo, una gran empresa manufacturera) aparece duplicado múltiples veces con diferentes identificadores. Esto genera tres grandes problemas operativos:
+El resultado directo es la **inexistencia de una visión única del cliente**: un mismo cliente real aparece duplicado múltiples veces con diferentes identificadores. Esto genera tres grandes problemas operativos:
 
 1. **Opacidad comercial**: Imposibilidad de medir el valor real de la cuenta a nivel corporativo.
 2. **Oportunidades perdidas (Whitespots)**: Dificultad para detectar servicios que el cliente consume en una división pero no en otras (falta de *Cross-Selling*).
@@ -32,45 +32,37 @@ El motor de normalización de la plataforma agrupa dinámicamente los distintos 
 - 🎯 **Motor de Whitespots (Venta Cruzada)**: Algoritmo que cruza las líneas de negocio contratadas frente al catálogo corporativo, exponiendo las carencias y sugiriendo activaciones.
 - 📊 **Módulos Analíticos (Dashboards)**: Visualización en tiempo real del *revenue* por cliente, segmentación ABC, penetración sectorial y *share of wallet*.
 - 🏢 **Registro de Activos e Inspecciones**: Capa de control normativo para equipos a presión, ascensores e instalaciones eléctricas, mapeando la caducidad de inspecciones con alertas de renovación.
-- 🔐 **Control de Accesos Centralizado (IAM)**: Conexión con *Active Directory* (SOAP) y sistema de matrices de permisos granulares por rol y división, asegurando la privacidad del dato.
+- 🔐 **Control de Accesos Centralizado (IAM)**: Sistema de matrices de permisos granulares por rol y división, asegurando la privacidad del dato.
 
 ---
 
 ## 3. Arquitectura y Stack Tecnológico
 
-El proyecto ha sido desarrollado bajo una arquitectura moderna, escalable y fuertemente tipada. Se aplica el patrón de renderizado híbrido para optimizar tiempos de carga sin comprometer la seguridad.
+El proyecto ha sido desarrollado bajo una arquitectura moderna, escalable y Serverless. Se aplica el patrón de renderizado híbrido para optimizar tiempos de carga sin comprometer la seguridad.
 
 ```mermaid
 graph TD
     %% Usuarios y Clientes
     U((Usuario/Directivo)) <-->|Navegación UI| F
 
-    %% Frontend (Next.js)
-    subgraph "Capa de Presentación (Frontend)"
+    %% Frontend (Vercel)
+    subgraph "Capa de Presentación y Aplicación (Vercel Edge/Serverless)"
         F[Next.js 16 App Router]
         UI[Tailwind 4 + Design System]
-        C[TanStack Table / Recharts]
-    end
-
-    %% Backend y Auth
-    subgraph "Capa de Aplicación (Backend Node)"
-        API[API Routes / Server Actions]
+        API[Server Actions & API Routes]
         Auth[NextAuth v4]
         ORM[Prisma ORM 7]
     end
 
-    %% Infraestructura y Datos
-    subgraph "Capa de Persistencia y SSO"
-        AD{Active Directory LDAP}
-        DB[(MySQL 8 / MariaDB)]
+    %% Infraestructura y Datos (TiDB Cloud)
+    subgraph "Capa de Persistencia (Serverless DB)"
+        DB[(TiDB Cloud / MySQL 8)]
     end
 
     %% Relaciones
-    F <-->|Server Components| API
+    F <-->|RSC| API
     F --> UI
-    F --> C
     API --> Auth
-    Auth <-->|LDAP Web Service SOAP| AD
     API <--> ORM
     ORM <-->|Conexión TLS / Connection Pool| DB
 ```
@@ -79,53 +71,38 @@ graph TD
 
 | Componente | Tecnología Aplicada | Justificación Arquitectónica |
 | :--- | :--- | :--- |
-| **Framework Web** | Next.js 16 (App Router) + React 19 | Separación estricta entre *Server Components* (para peticiones a DB sin exponer APIs intermedias) y *Client Components*. |
-| **Lenguaje** | TypeScript (Strict Mode) | Prevención de errores en tiempo de compilación y tipado end-to-end con Prisma. |
-| **Persistencia** | Prisma 7 ORM | Abstracción de la base de datos MySQL, migraciones declarativas (`schema.prisma`) y protección nativa contra inyecciones SQL. |
-| **Motor de Base de Datos** | MySQL 8.0 | Motor relacional robusto para albergar el modelo normalizado (25 tablas) optimizado para transacciones analíticas mediante índices *b-tree*. |
-| **Autenticación** | Next-Auth v4 + AD SOAP | Delegación de identidad al Active Directory corporativo, gestionando la sesión mediante JWT (*JSON Web Tokens*). |
-| **Interfaz (UI)** | Tailwind CSS 4 | Estilado de componentes escalable. Implementación de un sistema de diseño institucional (*Design System*). |
+| **Infraestructura Cloud** | **Vercel** + **TiDB Cloud** | Despliegue automático (CD) sin mantenimiento de servidores. Escalado automático y base de datos distribuida nativa en la nube. |
+| **Framework Web** | **Next.js 16** (App Router) + React 19 | Separación estricta entre *Server Components* (para peticiones a DB sin exponer APIs intermedias) y *Client Components*. |
+| **Lenguaje** | **TypeScript** (Strict Mode) | Prevención de errores en tiempo de compilación y tipado end-to-end con Prisma. |
+| **Persistencia** | **Prisma 7 ORM** | Abstracción de la base de datos MySQL, migraciones declarativas (`schema.prisma`) y protección nativa contra inyecciones SQL. |
+| **Integración Continua** | **GitHub Actions** | CI automatizada (Linting, TypeScript check, Vitest y Playwright) en cada push a la rama `main`. |
+| **Interfaz (UI)** | **Tailwind CSS 4** | Estilado de componentes escalable. Implementación de un sistema de diseño institucional (*Design System*). |
 
 ---
 
-## 4. Modelo de Datos (Diagrama Entidad-Relación Simplificado)
+## 4. Documentación de Ingeniería
 
-El modelo de datos cuenta con **25 tablas** gestionadas por Prisma. El siguiente diagrama ilustra el flujo de deduplicación del *Golden Record*:
+La documentación técnica completa ha sido modularizada para facilitar su lectura. Se divide en tres áreas principales:
 
-```mermaid
-erDiagram
-    ORGANIZATIONS ||--|{ CUSTOMER_MASTER : "Agrupa"
-    CUSTOMER_MASTER ||--|{ BILLING_RECORDS : "Factura"
-    CUSTOMER_MASTER ||--|{ CONTACTS : "Posee"
-    BUSINESS_UNITS ||--|{ BILLING_RECORDS : "Emite"
-    
-    ORGANIZATIONS {
-        int org_id PK
-        string tax_id "Clave Fiscal (CIF)"
-        string legal_name
-    }
-    CUSTOMER_MASTER {
-        int customer_id PK
-        int org_id FK
-        string sap_number "ID fragmentado del ERP"
-    }
-    BILLING_RECORDS {
-        int billing_id PK
-        int customer_id FK
-        int bu_id FK
-        float invoice_amount
-    }
-    BUSINESS_UNITS {
-        int bu_id PK
-        string name "Línea de Negocio"
-    }
-```
+### Arquitectura de Sistemas
+- [Arquitectura Detallada](docs/architecture/Arquitectura.md): Flujo de SSR, caché y organización de carpetas.
+- [Modelo de Datos](docs/architecture/Modelo-de-Datos.md): Diccionario de datos, ERD y los 7 módulos (25 tablas).
+- [Decisiones de Diseño (ADRs)](docs/architecture/Decisiones-de-Diseno.md): Justificación de las tecnologías elegidas.
+- [IAM y Auditoría](docs/architecture/IAM-y-Auditoria.md): Control de acceso basado en roles y logs del sistema.
+- [Seguridad](docs/architecture/Seguridad.md): Hardening, cifrado y matriz de riesgos.
+
+### Datos y Pipelines
+- [Pipeline de Datos (ETL)](docs/data/Pipeline-de-Datos.md): Cómo se procesan y normalizan los datos en los *seeds*.
+
+### Producto y Funcionalidades
+- [Manual de Funcionalidades](docs/product/Funcionalidades.md): Explicación pantalla por pantalla.
+- [Glosario y Referencias](docs/product/Glosario-y-Referencias.md): Términos técnicos y de negocio.
 
 ---
 
 ## 5. Puesta en Marcha Local
 
-Para levantar el proyecto en un entorno local para su evaluación, se requiere **Node.js 20+** y un motor de base de datos **MySQL 8**.
+Para levantar el proyecto en un entorno local para su evaluación, se requiere **Node.js 20+** y un motor de base de datos **MySQL 8** (o conexión a TiDB Cloud).
 
 1. **Clonar e instalar dependencias**
    ```bash
@@ -134,15 +111,19 @@ Para levantar el proyecto en un entorno local para su evaluación, se requiere *
    ```
 
 2. **Configuración de Variables de Entorno (`.env`)**
-   Copiar `.env.example` a `.env` y asegurar las credenciales:
+   Copia el archivo de ejemplo y configura tu acceso a la BD:
+   ```bash
+   cp .env.example .env
+   ```
+   Asegúrate de tener la variable de conexión:
    ```env
    DATABASE_URL="mysql://usuario:clave@localhost:3306/focus_dev"
-   AUTH_ALLOW_MOCK="true"  # Habilita entorno offline sin Active Directory
    ```
 
-3. **Migración de Estructuras (DDL)**
+3. **Migración de Estructuras y Datos (DDL & Seeds)**
    ```bash
-   npx prisma migrate deploy
+   npx prisma migrate dev
+   npx tsx prisma/seeds/00-run-all.ts
    ```
 
 4. **Arranque del Servidor de Desarrollo**
@@ -153,15 +134,26 @@ Para levantar el proyecto en un entorno local para su evaluación, se requiere *
 
 ---
 
-## 6. Documentación Anexa
+## 6. Testing y CI/CD
 
-Dentro del repositorio, la carpeta `docs/` contiene el desarrollo documental extenso requerido para la defensa de la arquitectura y la gobernanza de datos:
+El proyecto cuenta con un flujo de **Integración Continua (CI)** configurado en GitHub Actions (`.github/workflows/ci.yml`).
 
-- **[TFM_ARQUITECTURA_Y_PRUEBAS.md](docs/TFM_ARQUITECTURA_Y_PRUEBAS.md)**: Memoria técnica detallada sobre Autenticación, CI/CD y Testing.
-- **[DOCUMENTACION_UNIFICADA.md](docs/v2-standardized/DOCUMENTACION_UNIFICADA_FOCUS_STANDARDIZED.md)**: Manual técnico extendido con casos de uso, diagrama de componentes y auditoría de decisiones de arquitectura.
-- **[INFORME_DIRECCION.md](docs/v2-standardized/INFORME_DIRECCION_PROYECTO_FOCUS_STANDARDIZED.md)**: Resumen ejecutivo orientado a la gerencia de la empresa, definiendo los OKRs (*Objectives and Key Results*) de la implantación.
-- **[Auditoría de Seguridad](docs/security/AUDITORIA_SEGURIDAD_2026-06-22.md)**: Análisis estático de vulnerabilidades (OWASP).
+En cada push a `main` o en cada Pull Request, GitHub Actions verifica automáticamente:
+1. **Calidad de Código**: `eslint` para mantener los estándares.
+2. **Tipado Estricto**: `tsc` para asegurar la robustez de TypeScript.
+3. **Tests Unitarios**: `vitest` ejecuta las pruebas de la lógica de negocio (ej. validación de CIFs).
+4. **Tests E2E**: `playwright` simula la navegación del usuario para verificar que la UI funciona correctamente.
+
+Si todos los checks pasan, **Vercel** despliega automáticamente la nueva versión en producción (CD).
+
+```bash
+# Ejecutar tests unitarios en local
+npm run test
+
+# Ejecutar tests E2E en local
+npx playwright test
+```
 
 ---
 
-> *Desarrollado y arquitecturado por Luis de Frutos como TFM en Ingeniería y Gestión de Datos.*
+> *Desarrollado y arquitecturado por Luis de Frutos como Trabajo Fin de Máster.*
