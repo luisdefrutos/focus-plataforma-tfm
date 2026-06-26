@@ -1129,10 +1129,12 @@ async function _getPortfolioWhitespots(opts: CustomerSearchOpts): Promise<Portfo
     FROM business_units bu
     JOIN legal_entities le ON le.entity_id = bu.entity_id
     JOIN divisions d ON d.division_id = bu.division_id
-    LEFT JOIN billing_records br
-      ON br.bu_id = bu.bu_id
-      AND br.customer_id IN (${filtered.sql})
-      ${activeExtra.join(' ')}
+    LEFT JOIN (
+      SELECT br_i.bu_id, br_i.invoice_amount, br_i.billing_id, br_i.customer_id
+      FROM billing_records br_i
+      JOIN (${filtered.sql}) f ON br_i.customer_id = f.customer_id
+      ${activeExtra.length > 0 ? 'WHERE ' + activeExtra.map(s => s.replace(/^AND\s+/i, '')).join(' AND ') : ''}
+    ) br ON br.bu_id = bu.bu_id
     ${catWhereClause}
     GROUP BY le.sap_code, le.legal_name, bu.bu_id, bu.bu_name, bu.bu_code, d.division_code
     ORDER BY le.sap_code ASC, total DESC
