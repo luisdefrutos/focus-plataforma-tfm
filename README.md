@@ -101,7 +101,18 @@ La documentación técnica completa ha sido modularizada para facilitar su lectu
 
 ---
 
-## 5. Puesta en Marcha Local
+## 5. Sanitización de Datos y Cumplimiento RGPD (Entorno Académico)
+
+El repositorio no contiene datos reales (PII de clientes, contactos o ingresos de la corporación) para cumplir estrictamente con el **RGPD** y garantizar la confidencialidad requerida en un Trabajo Fin de Máster.
+
+Los datos que nutren la base de datos local han sido ofuscados previamente:
+1. **Los archivos Excel originales (SAP/CRM)** han sido excluidos del repositorio.
+2. La carga de datos (los *seeds*) inyecta **datos generados de forma sintética (Fake)** que replican exactamente la misma estructura, volumetría y casuísticas anómalas (por ejemplo, exclusiones históricas de sociedades sin volumen) de la red real.
+3. El código del pipeline ETL y la aplicación permanece **100% inalterado**, demostrando su funcionamiento en condiciones de producción.
+
+---
+
+## 6. Puesta en Marcha Local
 
 Para levantar el proyecto en un entorno local para su evaluación, se requiere **Node.js 20+** y un motor de base de datos **MySQL 8** (o conexión a TiDB Cloud).
 
@@ -132,6 +143,19 @@ Para levantar el proyecto en un entorno local para su evaluación, se requiere *
    npm run dev
    ```
    La aplicación estará disponible en `http://localhost:3000`.
+
+### Modo Offline y Bypassing de Active Directory (Mock)
+
+En una red corporativa real, este sistema se conecta vía XML-SOAP (`LoginLDAP_AD`) al servidor de **Active Directory**, enviando un *passport* (`MD5(usuario + clave)`). Sin embargo, al ser evaluado en un entorno académico fuera de la VPN corporativa, el sistema incorpora un "Modo Mock". 
+
+Al inyectar la variable de entorno `AUTH_ALLOW_MOCK=true`, la aplicación **intercepta la llamada SOAP** y permite el inicio de sesión para cualquier usuario registrado en la base de datos local, independientemente de la contraseña introducida. 
+
+> **Para Evaluadores del TFM:**
+> Puedes iniciar sesión con el superusuario habilitado explícitamente para evaluación:
+> - **Usuario**: `moure-dev`
+> - **Contraseña**: *(cualquiera, el modo mock permite el acceso)*
+> 
+> *Nota: En producción, esta variable no se despliega y el bypass es imposible.*
 
 ---
 

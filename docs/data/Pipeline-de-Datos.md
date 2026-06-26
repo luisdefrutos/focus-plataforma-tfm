@@ -57,6 +57,7 @@ npm run seed:iam           # 09 — roles, permiso y usuarios admin
 | 16 | `16-dedupe-contacts.ts` | **Borra** contactos duplicados por organización (email / nombre / errata dist≤1). Soporta `--dry`. **Re-ejecutar tras 06 o 12** | `seed:dedupe-contacts` |
 | 17 | `17-inspections-apps.ts` | Inspecciones AT, BT, GESAP_TSA, GESAP_TSI. Tras cargar: re-ejecutar 15, 12 y 16 | `seed:inspections-apps` |
 | 18 | `18-service-incompatibilities.ts` | `SERVICE_INCOMPATIBILITIES` (88 pares: 19 TOTAL + 69 PARCIAL). Recarga completa. Soporta `--dry` | `seed:incompatibilities` |
+| 19 | `19-add-moure-dev.ts` | Alta de usuario `moure-dev` para evaluación académica TFM | `seed:add-moure` |
 
 ## Dependencias y re-ejecuciones (gotchas)
 
