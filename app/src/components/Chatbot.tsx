@@ -1,19 +1,24 @@
-// @ts-nocheck
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+interface Message {
+  id: string;
+  role: string;
+  content: string;
+}
 import { Bot, X, Send, Minimize2, Maximize2 } from 'lucide-react';
 
 export default function Chatbot() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (e: any) => setInput(e.target.value);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value);
   
-  const handleFormSubmit = async (e: any) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
     
@@ -81,7 +86,7 @@ export default function Chatbot() {
           </div>
         )}
         
-        {messages.map((m: any) => (
+        {messages.map((m: Message) => (
           <div
             key={m.id}
             className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
