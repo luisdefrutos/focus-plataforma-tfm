@@ -39,7 +39,7 @@ export function PortfolioWhitespotMap({ data }: { data: PortfolioWhitespots }) {
               className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-4 py-2.5"
               style={{ background: color.bg, color: color.fg }}
             >
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1 pr-4">
                 <span
                   className="block truncate text-sm font-bold tracking-wide"
                   title={`${g.legalName} (${g.sapCode})`}
@@ -66,7 +66,7 @@ export function PortfolioWhitespotMap({ data }: { data: PortfolioWhitespots }) {
               {g.bus.map(b => (
                 <div
                   key={b.buId}
-                  className="flex flex-col justify-between rounded-md border p-3"
+                  className="flex flex-col justify-between rounded-md border p-3 min-w-0"
                   style={{
                     borderColor: b.isActive ? color.bg : 'var(--ts-semantic-color-border-base-default)',
                     borderStyle: b.isActive ? 'solid' : 'dashed',
@@ -80,7 +80,7 @@ export function PortfolioWhitespotMap({ data }: { data: PortfolioWhitespots }) {
                 >
                   <div>
                     <h4
-                      className="text-sm font-semibold leading-tight"
+                      className="text-sm font-semibold leading-tight line-clamp-2 break-words"
                       style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}
                       title={b.buName}
                     >
