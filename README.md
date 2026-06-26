@@ -159,7 +159,7 @@ Al inyectar la variable de entorno `AUTH_ALLOW_MOCK=true`, la aplicación **inte
 
 ---
 
-## 6. Testing y CI/CD
+## 7. Testing y CI/CD
 
 El proyecto cuenta con un flujo de **Integración Continua (CI)** configurado en GitHub Actions (`.github/workflows/ci.yml`).
 
@@ -178,6 +178,25 @@ npm run test
 # Ejecutar tests E2E en local
 npx playwright test
 ```
+
+---
+
+## 8. Prueba de Concepto: Asistente Analítico con IA
+
+Como cierre innovador del TFM, la plataforma incluye un **Chatbot integrado impulsado por Inteligencia Artificial**. Este asistente actúa como un "Copiloto de Datos" capaz de explicar el modelo de negocio, la arquitectura y responder dudas funcionales sobre la plataforma Focus.
+
+Está construido utilizando **Vercel AI SDK** e integrado nativamente en el *App Router* de Next.js (`/api/chat`), consumiendo el modelo Open Source **Llama 3 (70B)** a través de las Unidades de Procesamiento de Lenguaje (LPUs) ultrarrápidas de **Groq**.
+
+> **Para Evaluadores del TFM (Cómo probar el asistente):**
+> 
+> 1. Inicia sesión en la plataforma (usa el usuario `moure-dev`).
+> 2. Haz clic en el icono del **bot flotante azul** situado en la esquina inferior derecha.
+> 3. Pregúntale cualquier duda sobre el modelo de negocio. Ejemplos:
+>    - *"¿Cuál es la diferencia entre Customer Master y Organizations?"*
+>    - *"¿Qué es un Whitespot y cómo lo detectáis?"*
+>    - *"¿Cómo funciona el filtrado de incompatibilidades de servicios?"*
+> 
+> *Nota Técnica:* Para entornos de despliegue en Vercel o local, es imperativo configurar la variable de entorno `GROQ_API_KEY` (gratuita en console.groq.com) para que el motor de IA pueda ejecutarse. En producción se inyecta desde las *Environment Variables* de Vercel.
 
 ---
 
