@@ -53,10 +53,28 @@ function buildPrismaClient(): PrismaClient {
 
   const isDebugSql = process.env.DEBUG_SQL === 'true';
 
-  return new PrismaClient({
+  const client = new PrismaClient({
     adapter,
-    log: isDebugSql ? ['query', 'info', 'warn', 'error'] : ['warn', 'error'],
+    log: isDebugSql
+      ? [
+          { emit: 'event', level: 'query' },
+          { emit: 'stdout', level: 'info' },
+          { emit: 'stdout', level: 'warn' },
+          { emit: 'stdout', level: 'error' },
+        ]
+      : ['warn', 'error'],
   });
+
+  if (isDebugSql) {
+    (client as any).$on('query', (e: any) => {
+      console.log(`[SQL Query] (${e.duration}ms)`);
+      console.log(`Query: ${e.query}`);
+      console.log(`Params: ${e.params}`);
+      console.log('----------------------------------------');
+    });
+  }
+
+  return client;
 }
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
