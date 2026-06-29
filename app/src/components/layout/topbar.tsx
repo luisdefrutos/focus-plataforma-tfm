@@ -42,7 +42,7 @@ function getUserInitials(name?: string | null, username?: string | null): string
   return words[0]?.slice(0, 2).toUpperCase() || '?';
 }
 
-export function Topbar() {
+export function Topbar({ onMenuClick }: { onMenuClick?: () => void } = {}) {
   const { data: session } = useSession();
   const router = useRouter();
   // Usar el nombre completo (name) que viene de la BD, fallback al username (email)
@@ -59,6 +59,13 @@ export function Topbar() {
     <header
       className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b px-6 bg-background"
     >
+      <div className="md:hidden flex items-center">
+        <TsIconButton
+          name="menu"
+          label="Menú"
+          onClick={onMenuClick}
+        />
+      </div>
       <div className="flex-1" />
 
       {/* Notificaciones */}

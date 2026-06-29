@@ -12,6 +12,7 @@
  */
 'use client';
 
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { GlobalNavigationLoader } from '@/components/ui/global-navigation-loader';
 import { AutoLogout } from '@/components/auth/auto-logout';
@@ -52,13 +53,15 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen" style={{ background: 'var(--ts-semantic-color-surface-subtle)' }}>
       <AutoLogout />
       <GlobalNavigationLoader />
-      <Sidebar />
-      <div className="pl-60">
-        <Topbar />
+      <Sidebar isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+      <div className="md:pl-60 transition-all duration-300">
+        <Topbar onMenuClick={() => setIsMobileMenuOpen(true)} />
         <main className="px-6 py-8">{children}</main>
       </div>
     </div>

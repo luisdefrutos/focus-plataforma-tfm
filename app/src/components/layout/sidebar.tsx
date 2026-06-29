@@ -39,7 +39,7 @@ const nav: NavItem[] = [
 
 import { useSession } from 'next-auth/react';
 
-export function Sidebar() {
+export function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose?: () => void } = {}) {
   const pathname = usePathname();
   const { data: session } = useSession();
   
@@ -51,9 +51,20 @@ export function Sidebar() {
   });
 
   return (
-    <aside
-      className="fixed inset-y-0 left-0 z-40 flex w-60 flex-col bg-sidebar text-sidebar-foreground"
-    >
+    <>
+      {isOpen && (
+        <div 
+          className="fixed inset-0 z-30 bg-black/50 md:hidden transition-opacity"
+          onClick={onClose}
+          aria-hidden="true"
+        />
+      )}
+      <aside
+        className={cn(
+          "fixed inset-y-0 left-0 z-40 flex w-60 flex-col bg-sidebar text-sidebar-foreground transition-transform duration-300 md:translate-x-0",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
       {/* Brand */}
       <div
         className="flex h-16 items-center gap-3 px-5 border-b"
@@ -80,6 +91,7 @@ export function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => onClose?.()}
               
               className={cn(
                 'group flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors',
@@ -117,5 +129,6 @@ export function Sidebar() {
         v0.8 · MVP
       </div>
     </aside>
+    </>
   );
 }

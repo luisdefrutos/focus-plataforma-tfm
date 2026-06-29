@@ -49,7 +49,7 @@ export default function Chatbot() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-50 flex items-center justify-center"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-50 flex items-center justify-center"
       >
         <Bot size={28} />
       </button>
@@ -58,17 +58,19 @@ export default function Chatbot() {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 bg-white border border-gray-200 shadow-2xl rounded-lg flex flex-col z-50 transition-all duration-300 ${
-        isExpanded ? 'w-[800px] h-[80vh]' : 'w-[400px] h-[600px]'
-      }`}
+      className={`fixed z-50 bg-white shadow-2xl flex flex-col transition-all duration-300
+        inset-0 w-full h-[100dvh] 
+        md:inset-auto md:bottom-6 md:right-6 md:border md:border-gray-200 md:rounded-lg
+        ${isExpanded ? 'md:w-[800px] md:h-[80vh]' : 'md:w-[400px] md:h-[600px]'}
+      `}
     >
-      <div className="bg-blue-600 text-white p-4 rounded-t-lg flex justify-between items-center">
+      <div className="bg-blue-600 text-white p-4 md:rounded-t-lg flex justify-between items-center">
         <div className="flex items-center gap-2">
           <Bot size={24} />
           <h3 className="font-semibold text-lg">Asistente Focus (Llama 3)</h3>
         </div>
         <div className="flex items-center gap-2">
-          <button onClick={() => setIsExpanded(!isExpanded)} className="hover:bg-blue-700 p-1 rounded">
+          <button onClick={() => setIsExpanded(!isExpanded)} className="hidden md:block hover:bg-blue-700 p-1 rounded">
             {isExpanded ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
           </button>
           <button onClick={() => setIsOpen(false)} className="hover:bg-blue-700 p-1 rounded">
