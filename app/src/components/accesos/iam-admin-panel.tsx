@@ -224,6 +224,7 @@ export function IamAdminPanel({ users, roles, permissions }: Props) {
               <button
                 key={u.userId}
                 onClick={() => handleUserSelect(u)}
+                title={`${u.fullName} (@${u.username})`}
                 className={`w-full text-left p-3 rounded-md transition-all flex items-center gap-3 border border-transparent ${
                   isSelected
                     ? 'bg-blue-50 border-blue-200'
