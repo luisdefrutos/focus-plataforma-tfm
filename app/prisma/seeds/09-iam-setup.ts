@@ -70,7 +70,6 @@ async function main() {
   console.log('   Insertando usuarios administradores...')
   const users = [
     { username: 'defru-li', userType: 'AD', fullName: 'Administrador (defru-li)', isActive: true },
-    { username: 'uriza-jo', userType: 'AD', fullName: 'Administrador (uriza-jo)', isActive: true },
   ]
 
   for (const u of users) {
@@ -82,14 +81,13 @@ async function main() {
   }
 
   const userDefru = await prisma.appUser.findUnique({ where: { username: 'defru-li' } })
-  const userUriza = await prisma.appUser.findUnique({ where: { username: 'uriza-jo' } })
 
-  if (!userDefru || !userUriza) throw new Error('Error recuperando usuarios')
+  if (!userDefru) throw new Error('Error recuperando usuarios')
 
   // Limpiar relaciones antiguas de usuario-rol por si venimos de otra BD
   await prisma.appUserRole.deleteMany({
     where: {
-      userId: { in: [userDefru.userId, userUriza.userId] }
+      userId: { in: [userDefru.userId] }
     }
   });
 
@@ -102,7 +100,6 @@ async function main() {
   } else {
     for (const bu of allBUs) {
       await prisma.appUserRole.create({ data: { userId: userDefru.userId, roleId: adminRole.roleId, buId: bu.buId } })
-      await prisma.appUserRole.create({ data: { userId: userUriza.userId, roleId: adminRole.roleId, buId: bu.buId } })
     }
   }
 

@@ -21,7 +21,7 @@ Se han añadido 4 nuevas tablas al esquema Prisma (`prisma/schema.prisma`):
 El login valida las credenciales **reales** contra el **Active Directory corporativo** a través de un **web service SOAP** (`LoginLDAP_AD` de `gestion.atisae.com/loginwebservice/login.asmx`; cliente en `src/lib/ad-soap.ts`).
 
 **A. ¿Cómo funciona el login?**
-- El usuario introduce su **usuario de Windows** (ej. `uriza-jo` o `WW001\uriza-jo`) y su **contraseña** corporativa.
+- El usuario introduce su **usuario de Windows** (ej. `moure-dev` o `WW001\moure-dev`) y su **contraseña** corporativa.
 - La app llama a `LoginLDAP_AD(user, password, passport)`, donde `passport = MD5(user + CLAVE_ENCRIPTACION_LDAP)` — replica la función `Encripta()` de las apps internas. La clave va en `.env` (`AD_SOAP_LDAP_KEY`) y **nunca** se versiona.
 - Si AD responde `OK`, se comprueba que el usuario exista y esté **activo** en `APP_USERS`. Si es así, se cargan sus permisos/roles/alcance (RLS) y entra; si no, se deniega el acceso aunque las credenciales AD sean válidas.
 - El servicio devuelve estados precisos que se traducen a mensajes: `USUARIO_NO_EXISTE`, `CONTRASENNA_INCORRECTA`, `USUARIO_DESHABILITADO`, `ERROR_NO_CONTROLADO`.

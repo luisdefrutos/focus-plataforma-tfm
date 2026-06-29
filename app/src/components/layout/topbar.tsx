@@ -24,12 +24,12 @@ import { useRouter } from 'next/navigation';
 /**
  * Siglas para el avatar. Prioriza un nombre real (primeras letras de las dos
  * primeras palabras). Si el nombre es un placeholder de una sola palabra
- * (p. ej. "Administrador (uriza-jo)"), las deriva del usuario AD con la
- * convención apellido-nombre → nombre+apellido ("uriza-jo" → "JU", "PER-JUA" → "JP").
+ * (p. ej. "Administrador (moure-dev)"), las deriva del usuario AD con la
+ * convención apellido-nombre → nombre+apellido ("moure-dev" → "MD", "PER-JUA" → "JP").
  */
 function getUserInitials(name?: string | null, username?: string | null): string {
   const words = (name ?? '')
-    .replace(/\([^)]*\)/g, ' ')         // descarta "(uriza-jo)"
+    .replace(/\([^)]*\)/g, ' ')         // descarta "(moure-dev)"
     .replace(/[^\p{L}\p{N}\s]/gu, ' ')  // descarta puntuación / guiones
     .trim()
     .split(/\s+/)

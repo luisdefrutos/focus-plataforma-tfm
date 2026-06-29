@@ -25,7 +25,6 @@
     "backfill:salesorder": "tsx prisma/seeds/11-billing-salesorder-backfill.ts",
     "seed:org-contacts": "tsx prisma/seeds/12-org-contacts.ts",
     "seed:customer-cnae": "tsx prisma/seeds/13-customer-cnae.ts",
-    "seed:add-uriza": "tsx prisma/seeds/14-add-uriza.ts",
     "seed:add-moure": "tsx prisma/seeds/19-add-moure-dev.ts",
     "seed:org-backfill": "tsx prisma/seeds/15-organizations-backfill.ts",
     "seed:dedupe-contacts": "tsx prisma/seeds/16-dedupe-contacts.ts",

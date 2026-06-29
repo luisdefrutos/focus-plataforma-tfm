@@ -15,6 +15,6 @@ describe('normalizeUsername', () => {
   });
 
   it('deja un identificador simple intacto', () => {
-    expect(normalizeUsername('uriza-jo')).toBe('uriza-jo');
+    expect(normalizeUsername('moure-dev')).toBe('moure-dev');
   });
 });

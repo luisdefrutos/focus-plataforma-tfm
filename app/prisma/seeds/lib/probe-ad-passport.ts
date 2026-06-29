@@ -17,7 +17,7 @@ import { createHash } from 'crypto'
 const URL = process.env.AD_SOAP_URL ?? 'https://gestion.atisae.com/loginwebservice/login.asmx'
 const NS = 'http://tempuri.org/LoginWebService/Login'
 const KEY = process.env.AD_SOAP_LDAP_KEY ?? ''
-const USER = process.argv[2] ?? 'uriza-jo'
+const USER = process.argv[2] ?? 'defru-li'
 
 if (!KEY) {
   console.error('❌ Falta AD_SOAP_LDAP_KEY en .env. Añádela (sin pegarla en el chat) y reejecuta.')
