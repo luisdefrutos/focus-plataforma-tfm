@@ -20,8 +20,8 @@ En el entorno empresarial, los usuarios no tienen una "contraseña web". En su l
 Para poder ejecutar, probar y evaluar la aplicación en la nube (Vercel) sin acceso a la Intranet corporativa privada ni al servidor SOAP, se ha implementado el **Modo de Simulación (Mock)**.
 
 - Se activa mediante la variable de entorno `AUTH_ALLOW_MOCK="true"`.
-- **Comportamiento:** En este modo, el sistema puentea temporalmente el envío de la contraseña al Active Directory. Cualquier contraseña tecleada se da por válida **si y solo si** el nombre de usuario existe previamente en la tabla `APP_USERS` de la base de datos (Ej: el usuario `mock`).
-- **Seguridad:** Este modo arroja una alerta roja por consola si se levanta en producción, impidiendo despliegues accidentales inseguros. Es estrictamente un puente para entornos académicos y *pipelines* de CI.
+- **Comportamiento:** En este modo, el sistema puentea temporalmente el envío de la contraseña al Active Directory. Cualquier contraseña tecleada se da por válida **si y solo si** el nombre de usuario existe previamente en la tabla `APP_USERS` de la base de datos (Ej: el usuario `moure-dev`).
+- **Seguridad y Auditoría:** Este modo arroja una alerta roja por consola si se levanta en producción, impidiendo despliegues accidentales inseguros. Es estrictamente un puente para entornos académicos y *pipelines* de CI. Además, por principios de *Compliance*, todo inicio de sesión realizado bajo este método registra el metadato explícito `{"mock": true}` en los logs de auditoría (tabla `APP_AUDIT_LOGS`), asegurando una total transparencia sobre cuándo se empleó la validación alternativa en lugar del Directorio Activo real.
 
 ---
 
