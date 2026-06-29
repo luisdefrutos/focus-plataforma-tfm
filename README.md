@@ -2,7 +2,9 @@
 
 > **Trabajo Fin de Máster (TFM)**  
 > **Autor:** Luis de Frutos  
-> **Ámbito:** Plataforma de Arquitectura de Datos, Dato Maestro (Master Data Management) y Activación Comercial.
+> **Ámbito:** Plataforma de Arquitectura de Datos, Dato Maestro (Master Data Management) y Activación Comercial.  
+> **💻 Repositorio GitHub:** [https://github.com/luisdefrutos/focus-plataforma-tfm](https://github.com/luisdefrutos/focus-plataforma-tfm)  
+> **🌍 URL de Producción (Vercel):** [https://focus-plataforma-tfm.vercel.app](https://focus-plataforma-tfm.vercel.app) *(Sujeto a posibles cambios de dominio)*
 
 ---
 
@@ -17,6 +19,29 @@ El resultado directo es la **inexistencia de una visión única del cliente**: u
 3. **Gestión de Privacidad (RGPD)**: Dificultades técnicas para asegurar consentimientos cruzados de comunicaciones corporativas.
 
 **Focus** nace como solución tecnológica a este problema, sustituyendo informes estáticos pesados por una **aplicación web interactiva basada en el paradigma del Golden Record**.
+
+---
+
+## 1.1 Estructura del Proyecto
+
+El código fuente sigue las directrices del *App Router* de Next.js y está estructurado en los siguientes directorios principales:
+
+```text
+focus/
+├── .github/workflows/   # CI/CD: Pipeline de GitHub Actions (Lint, Vitest, Playwright)
+├── app/
+│   ├── docs/            # Notas y migraciones técnicas internas
+│   ├── prisma/          # Esquema de Base de Datos y Seeds (Fake Data generation)
+│   ├── public/          # Assets estáticos, logos e iconos
+│   ├── src/
+│   │   ├── app/         # Next.js App Router: Páginas, Layouts y API Routes
+│   │   ├── components/  # Componentes React (UI genérica y lógica de dominio)
+│   │   ├── lib/         # Utilidades puras, Prisma Client y adaptadores de IA
+│   │   └── types/       # Definiciones estrictas de TypeScript
+│   ├── package.json     # Dependencias y scripts de ejecución
+│   └── vitest.config.ts # Configuración de pruebas unitarias y cobertura
+└── docs/                # Documentación exhaustiva (TFM, Arquitectura, Modelo de Datos)
+```
 
 ---
 
