@@ -236,10 +236,10 @@ export function IamAdminPanel({ users, roles, permissions }: Props) {
                   {initials}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-sm truncate" style={{ color: 'var(--ts-semantic-color-text-primary-default)' }}>
+                  <div className="font-semibold text-sm truncate" style={{ color: 'var(--ts-semantic-color-text-primary-default)' }} title={u.fullName}>
                     {u.fullName}
                   </div>
-                  <div className="text-xs truncate opacity-70 mb-1" style={{ color: 'var(--ts-semantic-color-text-secondary-default)' }}>
+                  <div className="text-xs truncate opacity-70 mb-1" style={{ color: 'var(--ts-semantic-color-text-secondary-default)' }} title={`@${u.username}`}>
                     @{u.username}
                   </div>
                   <div className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-medium border ${
