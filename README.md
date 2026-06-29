@@ -3,6 +3,7 @@
 > **Trabajo Fin de Máster (TFM)**  
 > **Autor:** Luis de Frutos  
 > **Ámbito:** Plataforma de Arquitectura de Datos, Dato Maestro (Master Data Management) y Activación Comercial.  
+> **📊 Presentación Oficial (Defensa TFM):** [Descargar Presentación (.pptx)](docs/presentacion_tfm/PRESENTACION_TFM.pptx)  
 > **💻 Repositorio GitHub:** [https://github.com/luisdefrutos/focus-plataforma-tfm](https://github.com/luisdefrutos/focus-plataforma-tfm)  
 > **🌍 URL de Producción (Vercel):** [https://focus-plataforma-tfm.vercel.app](https://focus-plataforma-tfm.vercel.app) *(Sujeto a posibles cambios de dominio)*
 
@@ -127,14 +128,19 @@ La documentación técnica completa ha sido modularizada para facilitar su lectu
 
 ---
 
-## 5. Sanitización de Datos y Cumplimiento RGPD (Entorno Académico)
+## 5. Diseño de Base de Datos, Migraciones y Cumplimiento RGPD (Entorno Académico)
 
-El repositorio no contiene datos reales (PII de clientes, contactos o ingresos de la corporación) para cumplir estrictamente con el **RGPD** y garantizar la confidencialidad requerida en un Trabajo Fin de Máster.
+Para que el tribunal pueda evaluar correctamente el proyecto, es fundamental entender cómo se gestiona el modelo de datos y por qué ciertos archivos no se encuentran en este repositorio público de GitHub.
 
-Los datos que nutren la base de datos local han sido ofuscados previamente:
-1. **Los archivos Excel originales (SAP/CRM)** han sido excluidos del repositorio.
-2. La carga de datos (los *seeds*) inyecta **datos generados de forma sintética (Fake)** que replican exactamente la misma estructura, volumetría y casuísticas anómalas (por ejemplo, exclusiones históricas de sociedades sin volumen) de la red real.
-3. El código del pipeline ETL y la aplicación permanece **100% inalterado**, demostrando su funcionamiento en condiciones de producción.
+### 5.1 Las Migraciones Iniciales (Estructura)
+El repositorio **sí incluye las migraciones de Prisma** (`app/prisma/migrations/`), las cuales definen la arquitectura relacional de la plataforma. Estas migraciones iniciales construyen de forma automatizada las **25 tablas de la base de datos divididas en 7 módulos funcionales** (como la estructura organizativa, facturación, y control de accesos IAM). El comando de Prisma se encarga de crear el esquema desde cero en cualquier entorno.
+
+### 5.2 Ausencia de Datos Crudos en GitHub (RGPD)
+Sin embargo, **el repositorio NO contiene ningún dato real (PII de clientes, contactos o ingresos de la corporación)**. Por estricto cumplimiento legal del **RGPD (Reglamento General de Protección de Datos)** y para garantizar la confidencialidad corporativa exigida en un TFM, la base de datos de producción o desarrollo (archivos `.sql`, volcados o ficheros `.xlsx` de SAP/CRM) jamás se suben ni se versionan en GitHub.
+
+¿Cómo se prueba entonces la plataforma?
+1. **Datos Sintéticos Ofuscados:** La carga de datos (los scripts *seeds* en `app/prisma/seeds/`) inyecta datos generados algorítmicamente que replican exactamente la misma estructura, volumetría y casuística anómala de la red corporativa real.
+2. **Pipeline Inalterado:** El código del pipeline ETL que normaliza estos datos y construye el "Golden Record" es 100% idéntico al de producción. De este modo, el tribunal puede evaluar el código completo, las migraciones y la lógica de negocio sin exponer información confidencial.
 
 ---
 

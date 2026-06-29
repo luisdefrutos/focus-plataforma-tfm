@@ -13,10 +13,11 @@ Antes de **Focus**, TÜV LFD utilizaba un informe de Power BI muy pesado (108 MB
 Focus es una **Plataforma de Inteligencia Estratégica**. Su propósito principal es crear un **Golden Record** — una identidad única para cada cliente. La identidad funciona en dos niveles: cada registro SAP vive en `CUSTOMER_MASTER` (identidad fuerte: `sap_customer_code`), y la tabla `ORGANIZATIONS` agrupa los N registros SAP de una misma entidad real **deduplicando por CIF/NIF**. Sobre esta base limpia, Focus proporciona:
 
 1. **Visión 360º del Cliente**: Un buscador (`/clientes`) con filtros multi-selección, export a CSV y ficha de detalle (`/clientes/[id]`) con la facturación histórica, contactos y direcciones.
-2. **Análisis de Whitespots (venta cruzada manual)**: El buscador tiene un *modo whitespot* que cruza la cartera filtrada contra todas las sociedades/BUs del grupo y muestra dónde NO hay facturación (oportunidad de cross-sell). **Nota:** el motor *automático* de oportunidades que existió en versiones tempranas se desactivó por decisión de producto — la tabla `CROSS_SELL_OPPORTUNITIES` existe pero está vacía y no hay procesos batch que la alimenten.
-3. **Módulos Analíticos**: Dashboard Ejecutivo (`/dashboard`), Segmentación y Top Clientes (`/segmentacion`, `/top-clientes`), Catálogo de Servicios (`/catalogo`).
-4. **Activos Inspeccionables** (nuevo, junio 2026): modelo de instalaciones e inspecciones reglamentarias con caducidad. Cinco fuentes cargadas: ascensores (AS), alta tensión (AT), baja tensión (BT) y equipos a presión GESAP (INSPECCION_SA 8888 y TÜV LFD Iberia 9999). Titular ≠ gestor, periodicidades y enlace con facturación por nº de documento (78-90% según fuente). De momento es capa de datos (sin pantalla propia).
-5. **Control de Accesos (IAM)**: roles y permisos por usuario con alcance por Business Unit y filtros granulares (CCAA, materiales…). Se administra en `/accesos` (accesible desde el menú del avatar).
+2. **Matriz de Oportunidades (`/oportunidades`)**: Una vista matricial dinámica de la cartera, cruzando clientes por servicios (Material Codes). Reutiliza el sistema de filtrado 360º y permite exportar en streaming.
+3. **Análisis de Whitespots**: El buscador tiene un *modo whitespot* y la ficha de cliente cuenta con un mapa interactivo para detectar oportunidades de cross-sell. Adicionalmente, el sistema evalúa **Incompatibilidades Legales** (Anexo 4 GG6) bloqueando u observando servicios incompatibles.
+4. **Módulos Analíticos**: Dashboard Ejecutivo (`/dashboard`) reescrito para mostrar KPIs de ciclo de vida de cartera (Fieles, Nuevos, Recuperados, Perdidos) y Pareto por división. Además cuenta con Segmentación y Top Clientes (`/segmentacion`, `/top-clientes`), y Catálogo de Servicios (`/catalogo`).
+5. **Activos Inspeccionables**: Modelo de instalaciones e inspecciones reglamentarias con caducidad. Cinco fuentes cargadas (ascensores, alta tensión, etc.). Titular ≠ gestor, periodicidades y enlace con facturación por nº de documento. De momento es capa de datos (sin pantalla propia).
+6. **Control de Accesos (IAM)**: Roles y permisos por usuario con alcance por Business Unit y filtros granulares. Validado contra SOAP corporativo (Active Directory). Se administra en `/accesos`.
 
 ---
 
@@ -90,3 +91,12 @@ Dado que usamos React Server Components, para depurar la lógica del backend (qu
 4. Navega a la página en tu navegador para que el editor capture la ejecución.
 
 *¡Bienvenido al equipo de Focus!*
+
+---
+
+## 6. Anexo: Cambios Críticos Recientes (Junio 2026)
+- **Dashboard en modo Mock-up:** Para la presentación ejecutiva/tribunal, `dashboard/page.tsx` incluye el flag `PRESENTATION_MOCKUP = true`, renderizando cifras estáticas. Para conectarlo a datos reales, cambiar el flag a `false`.
+- **Incompatibilidades Legales de Servicios:** La matriz de exclusión (Anexo 4 GG6) bloquea completamente una organización si cruza servicios "TOTALES" o añade un badge de aviso en "PARCIALES".
+- **Optimización de Carga:** Filtros lazy-loaded y queries agrupadas por ID numérico en la base de datos (se eliminaron índices redundantes de la tabla `BILLING_RECORDS`).
+- **Retirada de Facturación Pre-2021:** Se ha limpiado la base de datos de facturación obsoleta (2018-2020). La aplicación asume como inicio operativo el año **2021**. Esta limpieza fue manual y el histórico se encuentra respaldado de manera *offline* en tablas de backup.
+- **Gotcha de Migraciones:** No ejecutar `npx prisma migrate dev` sobre la base de datos de desarrollo. Debido a la existencia de tablas de backup *raw* que no están en el modelo de Prisma (para prevenir pérdida de datos masiva histórica), Prisma detecta un *drift* y propone reiniciar la DB. Aplicar migraciones con extrema cautela y resolver manualmente con `migrate resolve`.

@@ -1,5 +1,7 @@
 # Diagrama Entidad-Relación Completo (Focus v1)
 
+![Diagrama Entidad Relación Completo (Imagen Descargable)](DIAGRAMA_ER_COMPLETO.png)
+
 Este diagrama modela las 25 tablas completas de la base de datos `focus_dev` tal y como están definidas en el archivo `schema.prisma`. 
 
 ```mermaid
