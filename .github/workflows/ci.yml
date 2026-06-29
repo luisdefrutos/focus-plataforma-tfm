@@ -50,7 +50,7 @@ jobs:
 
       - name: Report Coverage to GitHub Actions
         if: always()
-        uses: davelosert/vitest-coverage-action@v2
+        uses: davelosert/vitest-coverage-report-action@v2
         with:
           json-summary-path: './app/coverage/coverage-summary.json'
           json-final-path: './app/coverage/coverage-final.json'
