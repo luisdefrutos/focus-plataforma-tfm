@@ -51,7 +51,12 @@ function buildPrismaClient(): PrismaClient {
     ...(useSsl ? { ssl: { rejectUnauthorized: true, servername: host } as any } : {}),
   });
 
-  return new PrismaClient({ adapter });
+  const isDebugSql = process.env.DEBUG_SQL === 'true';
+
+  return new PrismaClient({
+    adapter,
+    log: isDebugSql ? ['query', 'info', 'warn', 'error'] : ['warn', 'error'],
+  });
 }
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
