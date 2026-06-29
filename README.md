@@ -85,9 +85,10 @@ graph TD
 La documentación técnica completa ha sido modularizada para facilitar su lectura. Se divide en tres áreas principales:
 
 ### Arquitectura de Sistemas
+- [Memoria Técnica (TFM): CI/CD, Pruebas y Autenticación](docs/TFM_ARQUITECTURA_Y_PRUEBAS.md): Explicación del pipeline automático (GitHub Actions), Testing (Vitest) y Observabilidad SQL.
 - [Arquitectura Detallada](docs/architecture/Arquitectura.md): Flujo de SSR, caché, organización de carpetas y **Diagrama de Arquitectura (Mermaid)**.
 - [Modelo de Datos](docs/architecture/Modelo-de-Datos.md): Diccionario de datos y explicación de los 7 módulos (25 tablas).
-  - ↳ [Diagrama Entidad-Relación Completo](docs/diagrams/DIAGRAMA_ER_COMPLETO.md) *(Nuevo)*
+  - ↳ [Diagrama Entidad-Relación Completo](docs/diagrams/DIAGRAMA_ER_COMPLETO.md)
 - [Decisiones de Diseño (ADRs)](docs/architecture/Decisiones-de-Diseno.md): Justificación de las tecnologías elegidas.
 - [IAM y Auditoría](docs/architecture/IAM-y-Auditoria.md): Control de acceso basado en roles y logs del sistema.
 - [Seguridad](docs/architecture/Seguridad.md): Hardening, cifrado y matriz de riesgos.

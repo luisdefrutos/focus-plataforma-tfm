@@ -29,11 +29,16 @@ Para poder ejecutar, probar y evaluar la aplicación en la nube (Vercel) sin acc
 
 El proyecto se despliega de manera automatizada utilizando repositorios Git y arquitecturas *Serverless*.
 
-### 2.1 Pipeline de Vercel & Railway
+### 2.1 Pipeline de Vercel & Base de Datos (TiDB)
 Dado el contexto del TFM, la arquitectura de despliegue se moderniza:
-- **Frontend y API Serverless (Vercel)**: La plataforma Next.js está conectada directamente a la rama `main` de GitHub. Cada *push* o *Merge Request* levanta un entorno de vista previa (Preview Deployment) donde se compila el código (Turbopack) y se ejecutan linters.
-- **Base de Datos Gestionada (Railway)**: MySQL 8.0 se aloja en Railway, proporcionando conexión TCP cifrada con TLS al frontend en Vercel. 
-- **Flujo**: GitHub → Hook a Vercel → Build (`npm run build`) → Despliegue de los Edge Functions → Online.
+- **Frontend y API Serverless (Vercel)**: La plataforma Next.js está conectada directamente a la rama `main` de GitHub. Cada *push* o *Merge Request* dispara un despliegue donde se compila el código y se ejecutan linters.
+- **Base de Datos Gestionada (TiDB)**: MySQL/TiDB se aloja en la nube, proporcionando conexión TCP cifrada con TLS al frontend en Vercel. 
+- **Flujo**: GitHub → Hook a Vercel → Build (`npm run build`) → Despliegue de los Serverless Functions → Online.
+
+### 2.2 Validación Automática con GitHub Actions (QA)
+Para asegurar la calidad del código, se ha implementado un flujo de trabajo (Workflow) en **GitHub Actions** (`ci.yml`):
+1. **Ejecución de Tests (Vitest):** Ante cada cambio en la rama principal, un contenedor ejecuta automáticamente la batería de pruebas unitarias solicitando extracción de métricas (`npm run test:coverage`).
+2. **Generación de Reporte de Cobertura:** Se emplea la acción especializada `vitest-coverage-report-action`, que lee los resultados JSON de Vitest y genera una tabla visual y detallada directamente en la pestaña **Summary** de GitHub Actions. Esto aporta un sello de garantía QA auditable, permitiendo al tribunal evaluar la calidad del software asíncronamente (Ver capturas adjuntas en la memoria principal).
 
 ---
 
@@ -46,21 +51,29 @@ Se realizan pruebas unitarias de los módulos lógicos (funciones puras) crític
 - **`src/lib/csv.test.ts`**: Valida que la exportación masiva sanitice inyecciones de fórmulas (mitigando vulnerabilidades CSV Injection CWE-1236).
 - **`src/lib/spain.test.ts`**: Valida las conversiones de códigos postales y provincias españolas, vital para mapas de calor.
 
-**¿Cómo ejecutarlos tú mismo?**
-Abre una terminal en tu entorno y ejecuta:
+**¿Cómo ejecutarlos localmente?**
+Abre una terminal en el proyecto y ejecuta:
 ```bash
 cd app
 npm run test
-# O para ver la cobertura de código:
+# O para ver la tabla de cobertura en consola:
 npm run test:coverage
 ```
 
 ### 3.2 Pruebas End-to-End (E2E) con Playwright
-En un entorno real, las pruebas de UI se realizan simulando un navegador completo. Recomendamos (y documentamos) el uso de **Playwright**.
+En un entorno real, las pruebas de UI se realizan simulando un navegador completo. Recomendamos el uso de **Playwright**.
 Un flujo típico E2E comprueba lo siguiente:
 1. Playwright levanta Chromium.
 2. Navega a `/login`.
 3. Introduce el usuario `mock` y clica en Entrar.
-4. Verifica que la URL cambia a `/dashboard` y que aparece la barra de navegación "TÜV LFD".
+4. Verifica que la URL cambia a `/dashboard`.
 
 *Nota para el Tribunal: Dado el enfoque de Arquitectura de Datos del TFM, la cobertura visual (E2E) es secundaria respecto a la integridad del modelo de datos backend (Unit/Integration).*
+
+---
+
+## 4. Observabilidad y Auditoría en Producción
+
+Para garantizar el diagnóstico eficaz en un entorno de nube sin acceso directo a las herramientas locales, se ha ajustado la capa de persistencia (Prisma ORM):
+- **Event-Driven SQL Logging:** Activando la variable `DEBUG_SQL=true` en Vercel, se habilita la captura de eventos a bajo nivel del cliente de Prisma (`client.$on('query')`).
+- **Visibilidad de Parámetros:** Por diseño contra Inyecciones SQL (SQLi), el ORM parametriza las consultas (Ej: `WHERE cnae_id IN (?)`). Gracias al logger implementado, la consola en vivo de Vercel (Pestaña "Logs") muestra no solo la estructura SQL construida, sino también el array exacto con los argumentos en tiempo real (Ej: `Params: [1, 5, "uuid-sesion"]`), permitiendo depurar problemas de *Row Level Security* sin comprometer la seguridad corporativa.
