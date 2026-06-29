@@ -219,7 +219,7 @@ export function OpportunitiesMatrix({ data }: { data: OpportunityMatrixResult })
             <thead className="sticky top-0 z-30 bg-background text-muted-foreground">
               <tr className="border-b border-border">
                 <th 
-                  className="px-4 py-3 font-semibold uppercase tracking-wider text-xs sticky left-0 z-40 border-r border-border bg-background"
+                  className="px-4 py-3 font-semibold uppercase tracking-wider text-xs md:sticky md:left-0 z-40 border-r border-border bg-background"
                   style={{ 
                     width: '300px',
                     minWidth: '300px',
@@ -229,7 +229,7 @@ export function OpportunitiesMatrix({ data }: { data: OpportunityMatrixResult })
                   Cliente
                 </th>
                 <th 
-                  className="px-4 py-3 font-semibold uppercase tracking-wider text-xs text-right sticky left-[300px] z-40 bg-background"
+                  className="px-4 py-3 font-semibold uppercase tracking-wider text-xs text-right md:sticky md:left-[300px] z-40 bg-background"
                   style={{ 
                     width: '140px',
                     minWidth: '140px',
@@ -259,7 +259,7 @@ export function OpportunitiesMatrix({ data }: { data: OpportunityMatrixResult })
                   className="border-b border-border transition-colors group hover:bg-muted/50"
                 >
                   <td 
-                    className="px-4 py-2.5 font-medium sticky left-0 z-10 border-r border-border bg-background group-hover:bg-muted/50"
+                    className="px-4 py-2.5 font-medium md:sticky md:left-0 z-10 border-r border-border bg-background group-hover:bg-muted/50"
                     style={{ 
                       width: '300px',
                       minWidth: '300px',
@@ -279,7 +279,7 @@ export function OpportunitiesMatrix({ data }: { data: OpportunityMatrixResult })
                     </div>
                   </td>
                   <td 
-                    className="px-4 py-2.5 text-right font-semibold tabular-nums sticky left-[300px] z-10 text-foreground bg-background group-hover:bg-muted/50"
+                    className="px-4 py-2.5 text-right font-semibold tabular-nums md:sticky md:left-[300px] z-10 text-foreground bg-background group-hover:bg-muted/50"
                     style={{ 
                       width: '140px',
                       minWidth: '140px',
