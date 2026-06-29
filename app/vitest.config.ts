@@ -15,7 +15,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reportsDirectory: './coverage',
-      reporter: ['text', 'cobertura'],
+      reporter: ['text', 'cobertura', 'json-summary', 'json', 'html'],
       // Acotado a propósito a las utilidades puras que SÍ tienen tests. Amplía
       // este `include` a medida que añadas cobertura (queries, componentes…).
       include: [

@@ -45,8 +45,16 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Unit Tests (Vitest)
-        run: npm run test
+      - name: Unit Tests with Coverage
+        run: npm run test:coverage
+
+      - name: Report Coverage to GitHub Actions
+        if: always()
+        uses: davelosert/vitest-coverage-action@v2
+        with:
+          json-summary-path: './app/coverage/coverage-summary.json'
+          json-final-path: './app/coverage/coverage-final.json'
+          name: "Cobertura de Tests"
 
       - name: E2E Tests (Playwright)
         run: npx playwright test
