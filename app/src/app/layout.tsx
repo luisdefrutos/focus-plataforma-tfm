@@ -9,7 +9,6 @@ import { AlgorithmInit } from "@/components/algorithm-init";
 import { Providers } from "@/components/providers";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
-import Chatbot from "@/components/Chatbot";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -30,7 +29,6 @@ export default function RootLayout({
         <Providers>
           <AlgorithmInit />
           {children}
-          <Chatbot />
         </Providers>
       </body>
     </html>

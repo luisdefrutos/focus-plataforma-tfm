@@ -16,6 +16,7 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { GlobalNavigationLoader } from '@/components/ui/global-navigation-loader';
 import { AutoLogout } from '@/components/auth/auto-logout';
+import Chatbot from '@/components/Chatbot';
 
 const Sidebar = dynamic(
   () => import('@/components/layout/sidebar').then(m => m.Sidebar),
@@ -64,6 +65,7 @@ export default function DashboardLayout({
         <Topbar onMenuClick={() => setIsMobileMenuOpen(true)} />
         <main className="px-6 py-8">{children}</main>
       </div>
+      <Chatbot />
     </div>
   );
 }
