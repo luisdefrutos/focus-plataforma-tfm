@@ -52,7 +52,7 @@ npm run seed:iam           # 09 — roles, permiso y usuarios admin
 | 11 | `11-billing-salesorder-backfill.ts` | Backfill `sales_order_number` en `BILLING_RECORDS` (2019-2026) | `backfill:salesorder` |
 | 12 | `12-org-contacts.ts` | `ORGANIZATION_CONTACTS` (recarga por fuente). **Re-ejecutar 16 después** | `seed:org-contacts` |
 | 13 | `13-customer-cnae.ts` | `CUSTOMER_CNAE` (CNAE principal por cliente; depende de 05 + 08) | `seed:customer-cnae` |
-
+| 14 | *(retirado)* | Script eliminado del repositorio. | — |
 | 15 | `15-organizations-backfill.ts` | Golden record **universal**: cura gemelos T7, crea `ORGANIZATIONS` para todo CIF y enlaza `org_id` | `seed:org-backfill` |
 | 16 | `16-dedupe-contacts.ts` | **Borra** contactos duplicados por organización (email / nombre / errata dist≤1). Soporta `--dry`. **Re-ejecutar tras 06 o 12** | `seed:dedupe-contacts` |
 | 17 | `17-inspections-apps.ts` | Inspecciones AT, BT, GESAP_TSA, GESAP_TSI. Tras cargar: re-ejecutar 15, 12 y 16 | `seed:inspections-apps` |
@@ -81,6 +81,6 @@ Mezcla **utilidades reales** —`normalize.ts`, `parse-profit-centers.ts` (parse
 
 ## Refresco de caché tras re-seedear
 
-Tras recargar datos, la caché de agregaciones (tag `billing`, TTL 5 min) puede quedar obsoleta. Invalídala con `POST /api/revalidate` (ver [Arquitectura](/Arquitectura) y [Funcionalidades](/Funcionalidades)).
+Tras recargar datos, la caché de agregaciones (tag `billing`, TTL 5 min) puede quedar obsoleta. Inválidala con `POST /api/revalidate` (ver [Arquitectura](../architecture/Arquitectura.md) y [Funcionalidades](../product/Funcionalidades.md)).
 
-> **Siguiente**: [Funcionalidades](/Funcionalidades) — qué hace cada pantalla con estos datos.
+> **Siguiente**: [Funcionalidades](../product/Funcionalidades.md) — qué hace cada pantalla con estos datos.

@@ -6,7 +6,7 @@ Todas las pantallas viven bajo `app/src/app/(dashboard)/` y requieren **sesión 
 
 Panel ejecutivo: **KPIs** y **facturación histórica**. Es la página de atercaje tras el login.
 
-- Agregaciones de solo lectura, **cacheadas** (tag `billing`, TTL 5 min — ver [Arquitectura](/Arquitectura)).
+- Agregaciones de solo lectura, **cacheadas** (tag `billing`, TTL 5 min — ver [Arquitectura](../architecture/Arquitectura.md)).
 - Selector de años *data-driven* (`SELECT DISTINCT YEAR(invoice_date)`); el mínimo está fijado en `MIN_BILLING_YEAR=2021` (`lib/queries/dashboard.ts`).
 
 ## Buscador 360 — Clientes (`/clientes`)
@@ -17,7 +17,7 @@ La pantalla central de Focus. Un buscador de clientes con **filtros multi-selecc
 - **Agrupación por Golden Record**: alterna entre agrupar por **CIF** (organización) o por **registro SAP** individual.
 - **Export CSV**: exporta **todo el resultado de la búsqueda** (no solo la página visible), respetando los filtros aplicados. Vía `app/src/app/api/clientes/export`.
 - **Modo whitespot**: un toggle cambia entre **tabla** (lo que se factura) y **whitespot** (dónde *no* se factura). El whitespot cruza la cartera filtrada contra todas las sociedades/BUs y revela huecos = oportunidades de venta cruzada (análisis **manual**).
-- **Incompatibilidades legales de servicios**: al filtrar por un material (incluir), las incompatibilidades **TOTAL** excluyen la organización completa y las **PARCIAL** marcan la fila con un badge "⚠ Conflicto parcial" (+ columna en el CSV). Un banner persistente indica cuántas organizaciones se excluyeron y los pares en conflicto. Ver [Modelo de Datos](/Modelo-de-Datos#incompatibilidades-legales-de-servicios).
+- **Incompatibilidades legales de servicios**: al filtrar por un material (incluir), las incompatibilidades **TOTAL** excluyen la organización completa y las **PARCIAL** marcan la fila con un badge "⚠ Conflicto parcial" (+ columna en el CSV). Un banner persistente indica cuántas organizaciones se excluyeron y los pares en conflicto. Ver [Modelo de Datos](../architecture/Modelo-de-Datos.md#incompatibilidades-legales-de-servicios).
 
 ## Ficha 360 del cliente (`/clientes/[id]`)
 
@@ -53,11 +53,11 @@ Visor del **registro de auditoría** (`AUDIT_EVENTS`). Requiere **`IAM_MANAGE`**
 
 - Filtros server-side por usuario, categoría, tipo, resultado, rango de fechas y texto libre, con paginación y **export CSV**.
 - Desde el detalle de un evento de exportación se puede **reexportar** (reconstruye la descarga con los filtros guardados, sobre los datos *actuales*).
-- Detalle en [IAM y Auditoría](/IAM-y-Auditoria).
+- Detalle en [IAM y Auditoría](../architecture/IAM-y-Auditoria.md).
 
 ## Login (`/login`)
 
-Única ruta pública (junto con `/api/auth` y los estáticos). Valida usuario + contraseña contra **Active Directory por SOAP**. Ver [Autenticación](/Autenticacion).
+Única ruta pública (junto con `/api/auth` y los estáticos). Valida usuario + contraseña contra **Active Directory por SOAP**. Ver [Autenticación](../TFM_ARQUITECTURA_Y_PRUEBAS.md).
 
 ---
 
@@ -69,4 +69,4 @@ Visor del **registro de auditoría** (`AUDIT_EVENTS`). Requiere **`IAM_MANAGE`**
 | `clientes/export` y otros `*/export` | Generan los **CSV** (clientes, oportunidades, auditoría). Auditan la exportación vía `after()`. |
 | `revalidate` | `POST` invalida la caché (tag `billing`) tras re-seedear. Protegido con `IAM_MANAGE` o `REVALIDATE_SECRET` (cabecera `x-revalidate-secret`). |
 
-> **Siguiente**: [Autenticación](/Autenticacion) — cómo se entra y cómo se protege.
+> **Siguiente**: [Autenticación](../TFM_ARQUITECTURA_Y_PRUEBAS.md) — cómo se entra y cómo se protege.

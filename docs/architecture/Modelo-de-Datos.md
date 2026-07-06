@@ -38,7 +38,7 @@ El corazón del cliente. `CUSTOMER_MASTER` es cada registro SAP; la identidad de
 ### Módulo 5 — Control de acceso (IAM) + Auditoría
 `APP_USERS` · `APP_ROLES` · `APP_PERMISSIONS` · `APP_USER_ROLES` · `APP_ROLE_PERMISSIONS` · `AUDIT_EVENTS`
 
-Detalle en [IAM y Auditoría](/IAM-y-Auditoria).
+Detalle en [IAM y Auditoría](IAM-y-Auditoria.md).
 
 ### Módulo 6 — Referencia
 `STATUS_CATALOG` (23 estados precargados)
@@ -138,4 +138,4 @@ El seed precarga **23 filas** (4 CUSTOMER + 8 OPPORTUNITY + 4 CAMPAIGN + 4 TARGE
 
 La facturación viva cubre **2021–2026**. En 2026-06-15 se retiraron 213.162 filas de 2018-2020 de `BILLING_RECORDS` (backup en `billing_records_bak_pre2021`). Fue una operación **manual sobre `focus_dev`, no reproducible vía seeds**. Los selectores de año son *data-driven* (`SELECT DISTINCT YEAR(invoice_date)`), así que se ajustan solos; el único valor hardcodeado es `MIN_BILLING_YEAR=2021` en `app/src/lib/queries/dashboard.ts`.
 
-> **Siguiente**: [Pipeline de Datos](/Pipeline-de-Datos) — cómo se cargan estas tablas.
+> **Siguiente**: [Pipeline de Datos](../data/Pipeline-de-Datos.md) — cómo se cargan estas tablas.

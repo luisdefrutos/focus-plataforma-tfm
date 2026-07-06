@@ -5,7 +5,9 @@
 > **Ámbito:** Plataforma de Arquitectura de Datos, Dato Maestro (Master Data Management) y Activación Comercial.
 > **📊 Presentación Oficial (Defensa TFM):** [Descargar Presentación (.pptx)](docs/presentacion_tfm/PRESENTACION_TFM.pptx)
 > **💻 Repositorio GitHub:** [https://github.com/luisdefrutos/focus-plataforma-tfm](https://github.com/luisdefrutos/focus-plataforma-tfm)
-> **🌍 URL de Producción (Vercel):** [https://focus-plataforma-tfm.vercel.app](https://focus-plataforma-tfm.vercel.app)
+>
+> **🌍 URL de Producción:** [https://focus-plataforma-tfm.vercel.app](https://focus-plataforma-tfm.vercel.app)
+> **🔑 Acceso para evaluadores:** usuario `moure-dev` — contraseña: *cualquiera* (modo mock, sin VPN)
 
 ![CI](https://github.com/luisdefrutos/focus-plataforma-tfm/actions/workflows/ci.yml/badge.svg)
 
@@ -69,37 +71,7 @@ El motor de normalización agrupa dinámicamente los distintos números de clien
 
 ## 3. Arquitectura y Stack Tecnológico
 
-El proyecto ha sido desarrollado bajo una arquitectura moderna, escalable y Serverless. Se aplica el patrón de renderizado híbrido (React Server Components) para optimizar tiempos de carga sin comprometer la seguridad.
-
-```mermaid
-graph TD
-    U((Usuario/Directivo)) <-->|Navegación UI| F
-
-    subgraph "Capa de Presentación y Aplicación (Vercel Edge/Serverless)"
-        F[Next.js 16 App Router]
-        UI[Tailwind 4 + Design System TÜV]
-        API[Server Actions & API Routes]
-        Auth[NextAuth v4]
-        ORM[Prisma 7 ORM]
-        MW[Middleware proxy.ts]
-    end
-
-    subgraph "Capa de Persistencia (Serverless DB)"
-        DB[(TiDB Cloud / MySQL 8)]
-    end
-
-    subgraph "Red Corporativa"
-        AD[Active Directory SOAP]
-    end
-
-    F <-->|RSC| API
-    F --> UI
-    MW --> F
-    API --> Auth
-    Auth -->|LoginLDAP_AD MD5| AD
-    API <--> ORM
-    ORM <-->|Conexión TLS / Connection Pool| DB
-```
+El sistema sigue una arquitectura **full-stack Serverless** con renderizado híbrido (React Server Components). El diagrama de capas completo — con middleware, caché, flujo RSC y conexión a Active Directory — está en [docs/architecture/Arquitectura.md](docs/architecture/Arquitectura.md).
 
 ### Tecnologías Core
 
@@ -175,7 +147,8 @@ Variables mínimas requeridas:
 ```env
 DATABASE_URL="mysql://usuario:clave@localhost:3306/focus_dev"
 NEXTAUTH_SECRET="una-clave-aleatoria-segura"
-AUTH_ALLOW_MOCK="true"   # activa el modo sin Active Directory (ver sección 6.4)
+AUTH_ALLOW_MOCK="true"   # activa el modo sin Active Directory (ver sección 6.5)
+REVALIDATE_SECRET="un-secreto-aleatorio"  # para POST /api/revalidate — invalida caché tras re-seedear
 ```
 
 ### 6.3 Migración de Estructura y Carga de Datos
@@ -203,16 +176,13 @@ npm run dev
 # Disponible en http://localhost:3000
 ```
 
-### 6.5 Modo Offline — Bypass de Active Directory (Mock)
+### 6.5 Bypass de Active Directory para Evaluación (Modo Mock)
 
-En producción, el login valida credenciales contra el **Active Directory** corporativo vía SOAP (`LoginLDAP_AD`). Para evaluación fuera de la VPN corporativa, la variable `AUTH_ALLOW_MOCK=true` **intercepta la llamada SOAP** y permite el acceso a cualquier usuario dado de alta en `APP_USERS`, independientemente de la contraseña.
+En producción, el login valida credenciales contra el **Active Directory** corporativo vía SOAP (`LoginLDAP_AD`). La variable `AUTH_ALLOW_MOCK=true` **intercepta esa llamada SOAP** y permite el acceso con cualquier contraseña a cualquier usuario dado de alta en la base de datos.
 
-> **Para Evaluadores del TFM:**
-> Inicia sesión con:
-> - **Usuario**: `moure-dev`
-> - **Contraseña**: *(cualquiera, el modo mock permite el acceso)*
+> *Las credenciales de acceso para evaluadores están en el encabezado de este documento.*
 >
-> *Nota: En producción esta variable no se despliega y el bypass es imposible.*
+> *En producción esta variable no se despliega — el bypass es imposible fuera del entorno de evaluación.*
 
 ---
 

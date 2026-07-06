@@ -65,7 +65,7 @@ En un entorno real, las pruebas de UI se realizan simulando un navegador complet
 Un flujo típico E2E comprueba lo siguiente:
 1. Playwright levanta Chromium.
 2. Navega a `/login`.
-3. Introduce el usuario `mock` y clica en Entrar.
+3. Introduce el usuario `moure-dev` y clica en Entrar.
 4. Verifica que la URL cambia a `/dashboard`.
 
 *Nota para el Tribunal: Dado el enfoque de Arquitectura de Datos del TFM, la cobertura visual (E2E) es secundaria respecto a la integridad del modelo de datos backend (Unit/Integration).*

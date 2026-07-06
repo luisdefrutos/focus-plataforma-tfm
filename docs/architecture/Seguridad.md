@@ -4,7 +4,7 @@
 
 ## Modelo de amenaza
 
-Focus es una **herramienta interna corporativa de BI de solo lectura**, accesible en la red corporativa, con login real contra Active Directory y **RLS deliberadamente desactivado** (todos los usuarios autenticados ven todos los datos — decisión de negocio, no un fallo). Ver [Autenticación](/Autenticacion).
+Focus es una **herramienta interna corporativa de BI de solo lectura**, accesible en la red corporativa, con login real contra Active Directory y **RLS deliberadamente desactivado** (todos los usuarios autenticados ven todos los datos — decisión de negocio, no un fallo). Ver [Autenticación](../TFM_ARQUITECTURA_Y_PRUEBAS.md).
 
 ## Postura general
 
@@ -33,7 +33,7 @@ Casi todos los hallazgos se corrigieron en código:
 
 ### Hallazgo A-1 NO corregido (a propósito)
 
-`AUTH_ALLOW_MOCK` sin guarda de `NODE_ENV` en `auth.ts` — **decisión del usuario**: ese código no estará en producción. Aun así, es el riesgo más grave si la variable se cuela en un `.env` de producción (login como admin sin contraseña). Trátalo con cuidado. Ver [Autenticación → Modo mock](/Autenticacion#modo-mock-solo-desarrollo).
+`AUTH_ALLOW_MOCK` sin guarda de `NODE_ENV` en `auth.ts` — **decisión del usuario**: ese código no estará en producción. Aun así, es el riesgo más grave si la variable se cuela en un `.env` de producción (login como admin sin contraseña). Trátalo con cuidado. Ver [Autenticación → Modo mock](../TFM_ARQUITECTURA_Y_PRUEBAS.md#12-entorno-simulado-modo-de-evaluaci%C3%B3n-tfm-auth_allow_mock).
 
 ## ⚠️ Acciones operativas pendientes (no son código)
 
@@ -63,4 +63,4 @@ De la re-auditoría tras el endurecimiento (todos **low/info**, ninguno high/med
 - Cambiar `xlsx@0.18.5` en los seeds (solo offline, sin superficie web).
 - Instalar el paquete `server-only` (mitigado parcialmente moviendo `normalizeUsername` a `lib/username.ts`).
 
-> **Siguiente**: [Puesta en Marcha Local](/Puesta-en-Marcha-Local) — montar el entorno de desarrollo.
+> **Siguiente**: [Puesta en Marcha Local](../../README.md#6-puesta-en-marcha-local) — montar el entorno de desarrollo.

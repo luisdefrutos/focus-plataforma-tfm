@@ -44,12 +44,11 @@
 - **`README.md`** (raíz) — portada del repo.
 
 ### Onboarding y diseño
-- `docs/OnBoarding/Focus_Technical_and_Functional_Overview.md` — overview técnico-funcional.
-- `docs/OnBoarding/Focus_Cambios_Recientes_2026-06.md` — changelog de junio 2026.
-- `docs/data-cleanup/REFACTOR_CUSTOMER_IDENTITY.md` — refactor de identidad de cliente.
+- `docs/OnBoarding/` — overview técnico-funcional y changelog *(documentos internos, no incluidos en este repositorio público)*.
+- `docs/data-cleanup/REFACTOR_CUSTOMER_IDENTITY.md` — refactor de identidad de cliente *(interno)*.
 
 ### Seguridad
-- `docs/security/AUDITORIA_SEGURIDAD_2026-06-22.md` — informe de auditoría completo.
+- `docs/security/AUDITORIA_SEGURIDAD_2026-06-22.md` — informe de auditoría completo *(interno, disponible bajo solicitud al autor)*.
 
 ### Diagramas (`docs/diagrams/`)
 - `DIAGRAMA_ER_COMPLETO.md` — ERD Completo de 25 tablas (Mermaid).
@@ -63,11 +62,12 @@
 ### Material ejecutivo (`docs/executive/`)
 - `Briefing Ejecutivo Proyecto Focus.docx`, `Focus_Strategic_Intelligence.pptx` — material de dirección (parcialmente fuera de git).
 
-> ⚠️ `docs/executive/backfill_cif_recuperado.csv` contiene **PII** (CIF reales). Está gitignoreado; pendiente de borrar/mover (ver [Seguridad](/Seguridad)).
+> ⚠️ `docs/executive/backfill_cif_recuperado.csv` contiene **PII** (CIF reales). Está gitignoreado; pendiente de borrar/mover (ver [Seguridad](../architecture/Seguridad.md)).
 
 ## Recursos externos
 
-- **Repositorio**: `https://dev.azure.com/tuvsud01/Focus/_git/Focus` (rama `main`).
+- **Repositorio GitHub (público):** `https://github.com/luisdefrutos/focus-plataforma-tfm`
+- **Repositorio Azure DevOps (privado interno TÜV):** `https://dev.azure.com/tuvsud01/Focus/_git/Focus` — rama `main`.
 - **Skill `tuvsud-algorithm`**: ayuda para construir UI con el design system corporativo.
 
 ---

@@ -12,7 +12,7 @@ Focus es una aplicación web **full-stack** construida sobre Next.js 16 (App Rou
 | Gráficas / tablas | **recharts** · **TanStack Table** | |
 | ORM | **Prisma 7.8** | Driver adapter **`@prisma/adapter-mariadb`** (no el conector nativo). |
 | Base de datos | **MySQL 8** | `focus_dev` en local. |
-| Autenticación | **next-auth v4** (JWT) | Login contra Active Directory por SOAP. Ver [Autenticación](/Autenticacion). |
+| Autenticación | **next-auth v4** (JWT) | Login contra Active Directory por SOAP. Ver [Autenticación](../TFM_ARQUITECTURA_Y_PRUEBAS.md). |
 | ETL / seeds | **tsx** + **xlsx** | Scripts TypeScript que leen los Excel de `data/raw/`. |
 
 > ⚠️ **Next.js 16 no es el que conoces.** Tiene cambios de API y convenciones. Antes de escribir código, consulta las guías en `app/node_modules/next/dist/docs/` (ver `app/AGENTS.md`). Ejemplo concreto: el middleware, que en versiones previas era `middleware.ts`, aquí se llama **`proxy.ts`**.
@@ -88,7 +88,7 @@ Las páginas son **Server Components**: se ejecutan en el servidor, llaman direc
 
 - No hay una "API REST" intermedia para la mayoría de las lecturas; la página *es* el backend.
 - Los endpoints en `app/api/` se reservan para casos que necesitan ser invocables fuera del render: **export CSV**, **autenticación** y **revalidación de caché**.
-- Para **depurar el backend**, se ponen breakpoints en `lib/queries/` y se usa la configuración *"Next.js: debug server-side"* del IDE (ver [Puesta en Marcha Local](/Puesta-en-Marcha-Local)).
+- Para **depurar el backend**, se ponen breakpoints en `lib/queries/` y se usa la configuración *"Next.js: debug server-side"* del IDE (ver [Puesta en Marcha Local](../../README.md#6-puesta-en-marcha-local)).
 
 ## Caché de agregaciones
 
@@ -98,6 +98,6 @@ Las páginas son **Server Components**: se ejecutan en el servidor, llaman direc
 
 ## Decisiones de arquitectura
 
-El *por qué* de las elecciones (Next 16 + Prisma, descartar shadcn/Tremor, adapter MariaDB, RLS desactivado, etc.) está documentado en [Decisiones de Diseño](/Decisiones-de-Diseno).
+El *por qué* de las elecciones (Next 16 + Prisma, descartar shadcn/Tremor, adapter MariaDB, RLS desactivado, etc.) está documentado en [Decisiones de Diseño](Decisiones-de-Diseno.md).
 
-> **Siguiente**: [Modelo de Datos](/Modelo-de-Datos) — las 25 tablas y cómo se relacionan.
+> **Siguiente**: [Modelo de Datos](Modelo-de-Datos.md) — las 25 tablas y cómo se relacionan.

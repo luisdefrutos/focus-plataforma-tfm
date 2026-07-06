@@ -28,7 +28,7 @@ Registro del *por qué* de las decisiones técnicas y de producto más important
 
 **Decisión (2026-06-22).** **Todos los usuarios autenticados ven todos los datos.** `loadUserScope` concede alcance global a cualquier usuario activo. La fontanería (`buIds`, `allowedFilters`, `applyAllowedFilters`) **se conserva** por si se reintroduce.
 
-**Por qué.** Focus es una herramienta interna de **BI de solo lectura**; el coste de mantener el scoping no compensaba. Es una decisión de **negocio**, no un fallo. Ver [Autenticación](/Autenticacion).
+**Por qué.** Focus es una herramienta interna de **BI de solo lectura**; el coste de mantener el scoping no compensaba. Es una decisión de **negocio**, no un fallo. Ver [Autenticación](../TFM_ARQUITECTURA_Y_PRUEBAS.md).
 
 ---
 
@@ -44,7 +44,7 @@ Registro del *por qué* de las decisiones técnicas y de producto más important
 
 **Decisión (refactor 2026-05-28).** `sap_customer_code` es la identidad fuerte de `CUSTOMER_MASTER`; `tax_id` es atributo nullable. El Golden Record real por CIF es **`ORGANIZATIONS`** (N registros SAP → 1 organización), universal desde el seed 15.
 
-**Consecuencias.** Existen los "gemelos T7" (~27,7k pares con código duplicado); el seed les copia el `tax_id` para que agrupen, pero **no se fusionan** físicamente (decisión de negocio pendiente). Detalle en [Modelo de Datos](/Modelo-de-Datos) y `docs/data-cleanup/REFACTOR_CUSTOMER_IDENTITY.md`.
+**Consecuencias.** Existen los "gemelos T7" (~27,7k pares con código duplicado); el seed les copia el `tax_id` para que agrupen, pero **no se fusionan** físicamente (decisión de negocio pendiente). Detalle en [Modelo de Datos](Modelo-de-Datos.md).
 
 ---
 
@@ -68,7 +68,7 @@ Registro del *por qué* de las decisiones técnicas y de producto más important
 
 **Decisión (refactor 2026-06-22).** RBAC reducido a **1 permiso** (`IAM_MANAGE`) y **2 roles** (`ADMINISTRADOR`, `USUARIO`). Se eliminaron los roles/permisos antiguos por no comprobarse en código.
 
-**Por qué.** Para una app de BI de solo lectura con alcance global, el RBAC complejo era deuda muerta. Ver [IAM y Auditoría](/IAM-y-Auditoria).
+**Por qué.** Para una app de BI de solo lectura con alcance global, el RBAC complejo era deuda muerta. Ver [IAM y Auditoría](IAM-y-Auditoria.md).
 
 ---
 
@@ -94,6 +94,6 @@ Registro del *por qué* de las decisiones técnicas y de producto más important
 
 ## D-12 · Hallazgo A-1 (mock-mode) no corregido a propósito
 
-**Decisión (del usuario).** `AUTH_ALLOW_MOCK` sin guarda de `NODE_ENV` **no** se corrige: ese código no estará en producción. Compensación: vigilar que la variable nunca llegue a un `.env` de prod. Ver [Seguridad](/Seguridad).
+**Decisión (del usuario).** `AUTH_ALLOW_MOCK` sin guarda de `NODE_ENV` **no** se corrige: ese código no estará en producción. Compensación: vigilar que la variable nunca llegue a un `.env` de prod. Ver [Seguridad](Seguridad.md).
 
-> **Siguiente**: [Glosario y Referencias](/Glosario-y-Referencias).
+> **Siguiente**: [Glosario y Referencias](../product/Glosario-y-Referencias.md).

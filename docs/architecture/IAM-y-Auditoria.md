@@ -9,7 +9,7 @@
   - **`ADMINISTRADOR`** (tiene `IAM_MANAGE`): gestiona accesos en `/accesos`, consulta la auditoría en `/auditoria` y ve todos los datos.
   - **`USUARIO`** (sin permisos): solo visualiza.
 
-> **Todos los usuarios ven TODO.** El alcance de datos es **global y no depende del usuario** (`loadUserScope` concede todas las BUs y sin `allowed_filters` a cualquier usuario activo — ver [Autenticación](/Autenticacion)). El rol **solo** decide si administras accesos.
+> **Todos los usuarios ven TODO.** El alcance de datos es **global y no depende del usuario** (`loadUserScope` concede todas las BUs y sin `allowed_filters` a cualquier usuario activo — ver [Autenticación](../TFM_ARQUITECTURA_Y_PRUEBAS.md)). El rol **solo** decide si administras accesos.
 
 ### Tablas IAM
 
@@ -66,4 +66,4 @@ El catálogo y el logger son **extensibles**: añadir un nuevo tipo de evento no
 
 Desde el detalle de un evento de exportación, un admin puede **reexportar**: se reconstruye la URL del endpoint con los filtros guardados (`metadata.filters`) y se descarga el CSV sobre los **datos actuales** (no es una copia histórica). La reexportación **queda auditada** a nombre del admin, con `metadata.reexportOf` = id del evento original. El mapa tipo→endpoint (`EXPORT_ENDPOINTS`) está en `lib/audit-events.ts`.
 
-> **Siguiente**: [Seguridad](/Seguridad) — postura global y acciones pendientes.
+> **Siguiente**: [Seguridad](Seguridad.md) — postura global y acciones pendientes.
