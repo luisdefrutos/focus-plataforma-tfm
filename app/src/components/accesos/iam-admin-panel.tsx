@@ -101,7 +101,7 @@ function getActiveRestrictions(filters: AllowedFilters | null | undefined, catal
     { label: 'tipos entidad', count: getCount(filters.entityTypes, catalogs.entityTypes), isNone: filters.entityTypes?.[0] === '__NONE__' },
     { label: 'CNAE', count: getCount(filters.cnaes, catalogs.cnaes), isNone: filters.cnaes?.[0] === '__NONE__' },
     { label: 'rangos €', count: getCount(filters.amountRanges, catalogs.amountRanges), isNone: filters.amountRanges?.[0] === '__NONE__' },
-    { label: 'intercompany', count: getCount(filters.intercompany as string[] | undefined, catalogs.intercompany), isNone: filters.intercompany?.[0] === '__NONE__' },
+    { label: 'intercompany', count: getCount(filters.intercompany as string[] | undefined, catalogs.intercompany), isNone: (filters.intercompany as string[] | undefined)?.[0] === '__NONE__' },
   ];
   return dims.filter(d => d.count > 0 || d.isNone);
 }
