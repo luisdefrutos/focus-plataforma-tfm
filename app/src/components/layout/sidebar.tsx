@@ -23,18 +23,20 @@ type NavItem = {
   /** Material Symbol name (https://fonts.google.com/icons) */
   icon: string;
   badge?: string;
-  /** Permiso requerido para ver esta ruta. Si está vacío, cualquiera puede verla. */
+  /** Permiso IAM clásico requerido (ej. IAM_MANAGE). Si está vacío, no se comprueba. */
   requiredPermission?: string;
+  /** Código de módulo MODULE_* para filtrado granular. */
+  moduleCode?: string;
 };
 
 const nav: NavItem[] = [
-  { href: '/dashboard',     label: 'Dashboard',      icon: 'dashboard' },
-  { href: '/clientes',      label: 'Buscador 360',   icon: 'search' },
-  { href: '/oportunidades', label: 'Oportunidades',  icon: 'table_chart' },
-  { href: '/top-clientes',  label: 'Top Clientes',   icon: 'star' },
-  { href: '/segmentacion',  label: 'Segmentación',   icon: 'pie_chart' },
-  { href: '/catalogo',      label: 'Catálogo',       icon: 'list' },
-  // 'Gestión de Accesos' (IAM) vive ahora en el menú del avatar (topbar), no aquí.
+  { href: '/dashboard',     label: 'Dashboard',      icon: 'dashboard',   moduleCode: 'MODULE_DASHBOARD' },
+  { href: '/clientes',      label: 'Buscador 360',   icon: 'search',      moduleCode: 'MODULE_CLIENTES' },
+  { href: '/oportunidades', label: 'Oportunidades',  icon: 'table_chart', moduleCode: 'MODULE_OPORTUNIDADES' },
+  { href: '/top-clientes',  label: 'Top Clientes',   icon: 'star',        moduleCode: 'MODULE_TOP_CLIENTES' },
+  { href: '/segmentacion',  label: 'Segmentación',   icon: 'pie_chart',   moduleCode: 'MODULE_SEGMENTACION' },
+  { href: '/catalogo',      label: 'Catálogo',       icon: 'list',        moduleCode: 'MODULE_CATALOGO' },
+  // 'Gestión de Accesos' (IAM) vive en el menú del avatar (topbar), no aquí.
 ];
 
 import { useSession } from 'next-auth/react';
@@ -44,10 +46,15 @@ export function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose?: () =>
   const { data: session } = useSession();
   
   const userPermissions = session?.user?.permissions ?? [];
+  // null = sin restricción (superusuario). string[] = solo esos módulos.
+  const allowedModules = session?.user?.allowedModules ?? null;
 
   const visibleNav = nav.filter(item => {
-    if (!item.requiredPermission) return true;
-    return userPermissions.includes(item.requiredPermission);
+    // Si requiere un permiso IAM clásico, verificarlo.
+    if (item.requiredPermission && !userPermissions.includes(item.requiredPermission)) return false;
+    // Si el usuario tiene módulos restringidos, verificar que el módulo esté permitido.
+    if (allowedModules !== null && item.moduleCode && !allowedModules.includes(item.moduleCode)) return false;
+    return true;
   });
 
   return (

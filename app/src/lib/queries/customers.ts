@@ -1258,11 +1258,11 @@ async function _getFilterCatalogs(buIds?: number[], allowedFilters?: AllowedFilt
   const f: AllowedFilters = allowedFilters ?? {};
   const years = yearRows.map(r => Number(r.year));
   return {
-    entities,
-    divisions,
+    entities: f.entities ? entities.filter(e => f.entities!.includes(e.sapCode)) : entities,
+    divisions: f.divisions ? divisions.filter(d => f.divisions!.includes(d.divisionCode)) : divisions,
     entityDivisionMap,
     years,
-    cnaes,
+    cnaes: f.cnaes ? cnaes.filter(c => f.cnaes!.includes(c.code)) : cnaes,
     ccaas: f.ccaas ? CCAAS.filter(c => f.ccaas!.includes(c)) : CCAAS,
     provinces: f.provinces ? PROVINCES.filter(p => f.provinces!.includes(p)) : PROVINCES,
     entityTypes: f.entityTypes ? ENTITY_TYPES.filter(e => f.entityTypes!.includes(e.code)) : ENTITY_TYPES,

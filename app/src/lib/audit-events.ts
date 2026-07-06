@@ -23,9 +23,12 @@ export const AUDIT_EVENTS = {
   EXPORT_CLIENTES:      { category: 'EXPORT', label: 'Exportación de clientes (CSV)' },
   EXPORT_OPORTUNIDADES: { category: 'EXPORT', label: 'Exportación de oportunidades (CSV)' },
   EXPORT_AUDITORIA:     { category: 'EXPORT', label: 'Exportación del registro de auditoría (CSV)' },
-  USER_CREATED:         { category: 'IAM',    label: 'Alta de usuario' },
-  USER_ROLE_CHANGED:    { category: 'IAM',    label: 'Cambio de rol de usuario' },
-  AUTHZ_DENIED:         { category: 'IAM',    label: 'Acceso denegado (sin permiso)' },
+  USER_CREATED:           { category: 'IAM',    label: 'Alta de usuario' },
+  USER_ROLE_CHANGED:      { category: 'IAM',    label: 'Cambio de rol de usuario' },
+  USER_FILTERS_CHANGED:   { category: 'IAM',    label: 'Cambio de filtros de usuario' },
+  USER_DEACTIVATED:       { category: 'IAM',    label: 'Baja lógica de usuario' },
+  ROLE_MODULES_CHANGED:   { category: 'IAM',    label: 'Módulos de rol actualizados' },
+  AUTHZ_DENIED:           { category: 'IAM',    label: 'Acceso denegado (sin permiso)' },
 } as const satisfies Record<string, AuditEventMeta>;
 
 export type AuditEventType = keyof typeof AUDIT_EVENTS;

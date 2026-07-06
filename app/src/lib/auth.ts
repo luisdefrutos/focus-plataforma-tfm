@@ -1,7 +1,7 @@
 import { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { prisma } from './prisma'
-import type { AllowedFilters } from './access'
+// AllowedFilters + MODULE_* types imported inside loadUserScope below
 import { loginLdapAd, type RetornoLogin } from './ad-soap'
 import { normalizeUsername } from './username'
 import { recordAuditEvent, clientInfoFromNextAuthReq, clientInfoFromHeaders } from './audit'
@@ -19,6 +19,9 @@ const useSecureCookies = process.env.NODE_ENV === 'production';
 // (error 'pool timeout') cuando Next.js hace múltiples peticiones simultáneas.
 const SCOPE_TTL_MS = 10 * 1000; // 10 segundos
 
+import type { AllowedFilters, ModuleCode } from './access'
+import { ALL_MODULES } from './access'
+
 type UserScope = {
   id: string;
   name: string;
@@ -27,6 +30,8 @@ type UserScope = {
   bus: string[];
   buIds: number[];
   allowedFilters: AllowedFilters;
+  /** null = sin restricción (acceso total). string[] = solo esos módulos. */
+  allowedModules: string[] | null;
 };
 
 /** Carga permisos + alcance de un usuario activo. Devuelve null si no existe o está inactivo. */
@@ -44,7 +49,6 @@ async function loadUserScope(username: string): Promise<UserScope | null> {
 
   if (!user || !user.isActive) return null
 
-  // Los permisos siguen saliendo del rol (lo único relevante: IAM_MANAGE).
   const permissions = new Set<string>()
   user.userRoles.forEach(ur => {
     ur.role.rolePermissions.forEach(rp => {
@@ -52,19 +56,28 @@ async function loadUserScope(username: string): Promise<UserScope | null> {
     })
   })
 
-  // Política de visibilidad: TODOS los usuarios ven TODO. El alcance de datos es
-  // global y NO depende del usuario — se concede acceso a todas las BUs y sin
-  // filtros granulares. El rol solo decide si administra accesos (IAM_MANAGE).
+  // Si el rol tiene IAM_MANAGE → acceso total a todos los módulos.
+  // Si el rol tiene permisos MODULE_* específicos → solo esos módulos.
+  // Si el rol no tiene ningún MODULE_* → acceso a todos (retrocompatibilidad).
+  const permArray = Array.from(permissions)
+  const modulePerms = permArray.filter(p => p.startsWith('MODULE_')) as ModuleCode[]
+  const hasAllModules = modulePerms.length === 0
+  const allowedModules: string[] | null = hasAllModules ? null : modulePerms
+
   const allBus = await prisma.businessUnit.findMany({ select: { buId: true, buCode: true } })
+
+  // Leer filtros granulares reales almacenados en BD (puede ser null → sin restricción).
+  const rawFilters = user.allowedFilters as AllowedFilters | null
 
   return {
     id: user.userId.toString(),
     name: user.fullName,
     username: user.username,
-    permissions: Array.from(permissions),
+    permissions: permArray,
     bus: allBus.map(b => b.buCode),
     buIds: allBus.map(b => b.buId),
-    allowedFilters: {},
+    allowedFilters: rawFilters ?? {},
+    allowedModules,
   }
 }
 
@@ -166,6 +179,7 @@ export const authOptions: NextAuthOptions = {
           bus: scope.bus,
           buIds: scope.buIds,
           allowedFilters: scope.allowedFilters,
+          allowedModules: scope.allowedModules,
         }
       }
     })
@@ -212,6 +226,7 @@ export const authOptions: NextAuthOptions = {
         token.bus = user.bus
         token.buIds = user.buIds
         token.allowedFilters = user.allowedFilters
+        token.allowedModules = user.allowedModules
         token.scopeRefreshedAt = Date.now()
       } else if (
         token.username &&
@@ -225,12 +240,14 @@ export const authOptions: NextAuthOptions = {
           token.bus = scope.bus
           token.buIds = scope.buIds
           token.allowedFilters = scope.allowedFilters
+          token.allowedModules = scope.allowedModules
         } else {
           // Usuario desactivado o eliminado → revocar alcance (deja de ver datos).
           token.permissions = []
           token.bus = []
           token.buIds = []
           token.allowedFilters = {}
+          token.allowedModules = []
         }
         token.scopeRefreshedAt = Date.now()
       }
@@ -243,6 +260,7 @@ export const authOptions: NextAuthOptions = {
         session.user.bus = token.bus ?? [];
         session.user.buIds = token.buIds ?? [];
         session.user.allowedFilters = token.allowedFilters ?? {};
+        session.user.allowedModules = token.allowedModules ?? null;
       }
       return session;
     }

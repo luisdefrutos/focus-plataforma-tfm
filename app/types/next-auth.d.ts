@@ -10,6 +10,12 @@ declare module 'next-auth' {
       buIds: number[]
       /** Listas blancas granulares por dimensión (RLS). */
       allowedFilters?: AllowedFilters | null
+      /**
+       * Módulos (pantallas) que el usuario puede ver.
+       * undefined = sin restricción (acceso total, superusuario).
+       * string[] = solo los módulos listados.
+       */
+      allowedModules?: string[] | null
     } & DefaultSession['user']
   }
 
@@ -19,6 +25,7 @@ declare module 'next-auth' {
     bus: string[]
     buIds: number[]
     allowedFilters?: AllowedFilters | null
+    allowedModules?: string[] | null
   }
 }
 
@@ -30,6 +37,7 @@ declare module 'next-auth/jwt' {
     bus?: string[]
     buIds?: number[]
     allowedFilters?: AllowedFilters | null
+    allowedModules?: string[] | null
     /** Epoch ms del último refresco de alcance desde BD (ver callback jwt). */
     scopeRefreshedAt?: number
   }
