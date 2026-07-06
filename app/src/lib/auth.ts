@@ -26,6 +26,7 @@ type UserScope = {
   id: string;
   name: string;
   username: string;
+  email: string | null;
   permissions: string[];
   bus: string[];
   buIds: number[];
@@ -73,6 +74,7 @@ async function loadUserScope(username: string): Promise<UserScope | null> {
     id: user.userId.toString(),
     name: user.fullName,
     username: user.username,
+    email: user.email,
     permissions: permArray,
     bus: allBus.map(b => b.buCode),
     buIds: allBus.map(b => b.buId),
@@ -241,6 +243,8 @@ export const authOptions: NextAuthOptions = {
           token.buIds = scope.buIds
           token.allowedFilters = scope.allowedFilters
           token.allowedModules = scope.allowedModules
+          token.name = scope.name
+          token.email = scope.email
         } else {
           // Usuario desactivado o eliminado → revocar alcance (deja de ver datos).
           token.permissions = []

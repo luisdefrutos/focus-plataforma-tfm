@@ -84,26 +84,30 @@ function isAllSelected(selected: string[] | undefined, catalog: CatalogItem[]) {
 /** Muestra un resumen corto de restricciones activas de un usuario. */
 function getActiveRestrictions(filters: AllowedFilters | null | undefined, catalogs: Catalogs) {
   if (!filters) return [];
-  const getCount = (sel: string[] | undefined, cat: CatalogItem[]) => {
-    if (isAllSelected(sel, cat)) return 0;
-    if (sel?.length === 1 && sel[0] === '__NONE__') return 0; // Or return a special marker if you want to show "0 allowed", but the label will say "0 limitados". Better to return -1 or a text, wait, let's just return 0 to hide it, or return a fake count like "0 permitidos".
-    // Actually, if it's __NONE__, count is 0, so it says "0 limitados"? No, it should say "0 permitidos". Let's handle it below.
-    return sel?.length ?? 0;
+  const getInfo = (sel: string[] | undefined, cat: CatalogItem[]) => {
+    if (isAllSelected(sel, cat)) return null;
+    if (sel?.length === 1 && sel[0] === '__NONE__') return 'Bloqueado (0)';
+    const count = sel?.length ?? 0;
+    const excluded = cat.length - count;
+    if (count > cat.length / 2) {
+      return `${excluded} excluido${excluded > 1 ? 's' : ''}`;
+    }
+    return `${count} permitido${count > 1 ? 's' : ''}`;
   };
 
-  const dims: { label: string; count: number, isNone: boolean }[] = [
-    { label: 'provincias', count: getCount(filters.provinces, catalogs.provinces), isNone: filters.provinces?.[0] === '__NONE__' },
-    { label: 'materiales', count: getCount(filters.materials, catalogs.materials), isNone: filters.materials?.[0] === '__NONE__' },
-    { label: 'CC', count: getCount(filters.profitCenters, catalogs.profitCenters), isNone: filters.profitCenters?.[0] === '__NONE__' },
-    { label: 'CCAA', count: getCount(filters.ccaas, catalogs.ccaas), isNone: filters.ccaas?.[0] === '__NONE__' },
-    { label: 'divisiones', count: getCount(filters.divisions, catalogs.divisions), isNone: filters.divisions?.[0] === '__NONE__' },
-    { label: 'sociedades', count: getCount(filters.entities, catalogs.entities), isNone: filters.entities?.[0] === '__NONE__' },
-    { label: 'tipos entidad', count: getCount(filters.entityTypes, catalogs.entityTypes), isNone: filters.entityTypes?.[0] === '__NONE__' },
-    { label: 'CNAE', count: getCount(filters.cnaes, catalogs.cnaes), isNone: filters.cnaes?.[0] === '__NONE__' },
-    { label: 'rangos €', count: getCount(filters.amountRanges, catalogs.amountRanges), isNone: filters.amountRanges?.[0] === '__NONE__' },
-    { label: 'intercompany', count: getCount(filters.intercompany as string[] | undefined, catalogs.intercompany), isNone: (filters.intercompany as string[] | undefined)?.[0] === '__NONE__' },
+  const dims: { label: string; info: string | null; isNone: boolean }[] = [
+    { label: 'provincias', info: getInfo(filters.provinces, catalogs.provinces), isNone: filters.provinces?.[0] === '__NONE__' },
+    { label: 'materiales', info: getInfo(filters.materials, catalogs.materials), isNone: filters.materials?.[0] === '__NONE__' },
+    { label: 'CC', info: getInfo(filters.profitCenters, catalogs.profitCenters), isNone: filters.profitCenters?.[0] === '__NONE__' },
+    { label: 'CCAA', info: getInfo(filters.ccaas, catalogs.ccaas), isNone: filters.ccaas?.[0] === '__NONE__' },
+    { label: 'divisiones', info: getInfo(filters.divisions, catalogs.divisions), isNone: filters.divisions?.[0] === '__NONE__' },
+    { label: 'sociedades', info: getInfo(filters.entities, catalogs.entities), isNone: filters.entities?.[0] === '__NONE__' },
+    { label: 'tipos entidad', info: getInfo(filters.entityTypes, catalogs.entityTypes), isNone: filters.entityTypes?.[0] === '__NONE__' },
+    { label: 'CNAE', info: getInfo(filters.cnaes, catalogs.cnaes), isNone: filters.cnaes?.[0] === '__NONE__' },
+    { label: 'rangos €', info: getInfo(filters.amountRanges, catalogs.amountRanges), isNone: filters.amountRanges?.[0] === '__NONE__' },
+    { label: 'intercompany', info: getInfo(filters.intercompany as string[] | undefined, catalogs.intercompany), isNone: (filters.intercompany as string[] | undefined)?.[0] === '__NONE__' },
   ];
-  return dims.filter(d => d.count > 0 || d.isNone);
+  return dims.filter((d): d is { label: string; info: string; isNone: boolean } => d.info !== null);
 }
 
 // ─── StatusPill ───────────────────────────────────────────────────────────────
@@ -171,8 +175,10 @@ function FilterSection({
             <span className="text-xs font-medium text-green-700 bg-green-100 px-2 py-0.5 rounded-full">✓ Permitido (todo)</span>
           ) : selected.length === 1 && selected[0] === '__NONE__' ? (
             <span className="text-xs font-medium text-red-700 bg-red-100 px-2 py-0.5 rounded-full">Bloqueado (0)</span>
+          ) : selected.length > items.length / 2 ? (
+            <span className="text-xs font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">⚠ {items.length - selected.length} excluido{(items.length - selected.length) > 1 ? 's' : ''}</span>
           ) : (
-            <span className="text-xs font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">⚠ {selected.length} limitados</span>
+            <span className="text-xs font-medium text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">⚠ {selected.length} permitido{selected.length > 1 ? 's' : ''}</span>
           )}
           {!isAll && (
             <button onClick={selectAll} className="text-xs text-green-600 hover:underline font-semibold ml-1">
@@ -852,7 +858,7 @@ export function IamAdminPanel({ users, roles, permissions, modulesMeta, catalogs
                           <div className="flex flex-wrap gap-1">
                             {restrictions.map(r => (
                               <span key={r.label} className={`px-2 py-0.5 border rounded text-[11px] font-medium ${r.isNone ? 'bg-red-50 text-red-700 border-red-200' : 'bg-amber-50 text-amber-700 border-amber-200'}`}>
-                                {r.isNone ? '0 permitidos' : `${r.count} limitados`} ({r.label})
+                                {r.info} ({r.label})
                               </span>
                             ))}
                           </div>
