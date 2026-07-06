@@ -142,7 +142,7 @@ function FilterSection({
       return;
     }
     
-    let currentSelected = selected.filter(c => c !== '__NONE__');
+    const currentSelected = selected.filter(c => c !== '__NONE__');
 
     if (currentSelected.includes(code)) {
       const next = currentSelected.filter(c => c !== code);
