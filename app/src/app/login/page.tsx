@@ -92,7 +92,7 @@ export default function LoginPage() {
               type="text"
               value={username}
               onInput={(e: React.FormEvent<HTMLInputElement>) => setUsername(e.currentTarget.value)}
-              placeholder="Ej: defru-li o WW001\defru-li"
+              placeholder="Ej: moure-dev o dominio\moure-dev"
               className="w-full"
               required
             >
@@ -111,7 +111,7 @@ export default function LoginPage() {
               type="password"
               value={password}
               onInput={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.currentTarget.value)}
-              placeholder="Tu contraseña de Windows"
+              placeholder="Contraseña: cualquiera (modo mock, sin VPN)"
               className="w-full"
               required
             >
