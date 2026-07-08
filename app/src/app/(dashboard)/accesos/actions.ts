@@ -243,6 +243,14 @@ export async function lookupAdUser(rawUsername: string) {
   if (!username) return { success: false as const, error: 'Indica un nombre de usuario.' };
 
   try {
+    const mockMode = process.env.AUTH_ALLOW_MOCK === 'true';
+    if (mockMode) {
+      return {
+        success: true as const,
+        user: { username, fullName: `Mock ${username}`, email: `${username}@mock.com`, disabled: false },
+      };
+    }
+
     const ad = await existeUsuarioLdapAd(username);
     if (ad.errorLdap) return { success: false as const, error: 'El Directorio Activo devolvió un error.' };
     if (!ad.exists) return { success: false as const, error: `El usuario "${username}" no existe en el Directorio Activo.` };
@@ -267,11 +275,16 @@ export async function createAppUser(rawUsername: string, roleId: number, emailOv
     if (existing) return { success: false, error: 'Ya existe un usuario de Focus con ese identificador.' };
 
     let ad;
-    try {
-      ad = await existeUsuarioLdapAd(username);
-    } catch (err) {
-      console.error('Error consultando AD (alta):', err);
-      return { success: false, error: 'No se pudo contactar con el Directorio Activo.' };
+    const mockMode = process.env.AUTH_ALLOW_MOCK === 'true';
+    if (mockMode) {
+      ad = { exists: true, errorLdap: false, samAccountName: username, fullName: `Mock ${username}`, email: `${username}@mock.com`, disabled: false };
+    } else {
+      try {
+        ad = await existeUsuarioLdapAd(username);
+      } catch (err) {
+        console.error('Error consultando AD (alta):', err);
+        return { success: false, error: 'No se pudo contactar con el Directorio Activo.' };
+      }
     }
     if (ad.errorLdap) return { success: false, error: 'El Directorio Activo devolvió un error.' };
     if (!ad.exists) return { success: false, error: `El usuario "${username}" no existe en el Directorio Activo.` };
