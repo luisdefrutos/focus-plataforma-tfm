@@ -54,15 +54,8 @@
 - `DIAGRAMA_ER_COMPLETO.md` — ERD Completo de 25 tablas (Mermaid).
 - `Mapa Mental Proyecto Focus.png` — mapa mental del proyecto.
 
-### Histórico (referencia, NO vigente)
-- `docs/v2-standardized/` — diseño del modelo de 19 tablas (abril 2026). Útil por el diccionario de datos y los ERD, pero describe módulos no implementados (Exclusiones, Campañas). Lleva nota de vigencia en cabecera.
-- `docs/v1-legacy/` — modelo v1 de 10 tablas, archivado.
-- `db/legacy-oracle/` — DDL Oracle de referencia. **No** ejecutar contra MySQL.
-
-### Material ejecutivo (`docs/executive/`)
-- `Briefing Ejecutivo Proyecto Focus.docx`, `Focus_Strategic_Intelligence.pptx` — material de dirección (parcialmente fuera de git).
-
-> ⚠️ `docs/executive/backfill_cif_recuperado.csv` contiene **PII** (CIF reales). Está gitignoreado; pendiente de borrar/mover (ver [Seguridad](../architecture/Seguridad.md)).
+### Material ejecutivo y Defensa
+- `docs/presentacion_tfm/PRESENTACION_TFM.pptx` — Presentación final del Trabajo Fin de Máster.
 
 ## Recursos externos
 
